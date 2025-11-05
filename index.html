@@ -1,0 +1,2517 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asir Justifus - Parallel Entrepreneur & Visionary</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #1a365d;
+            --secondary: #2b6cb0;
+            --accent: #ecc94b;
+            --light: #f7fafc;
+            --dark: #2d3748;
+            --gray: #718096;
+            --success: #38a169;
+            --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            --radius: 8px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+            overflow-x: hidden;
+             display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+        }
+
+        /* Professional Header */
+        .professional-header {
+            background: white;
+            padding: 40px 0;
+            box-shadow: 0 2px 10px rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 100px;
+            flex-direction: row-reverse; /* This swaps the order */
+        }
+
+        .header-text {
+            flex: 1;
+        }
+
+        .title-section h1 {
+            font-size: 2.4rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: var(--gray);
+            max-width: 600px;
+        }
+
+        .profile-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid white;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: var(--light);
+            border-radius: 50%;
+            color: var(--primary);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* Navigation */
+        .sticky-nav {
+            position: sticky;
+            top: 0;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .main-nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px 0;
+            position: relative;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            padding: 5px 0;
+            transition: color 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--primary);
+    cursor: pointer;
+    padding: 8px 12px;
+    z-index: 1001;
+    transition: all 0.3s ease;
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        section {
+            margin-bottom: 80px;
+            scroll-margin-top: 80px;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 15px;
+            font-weight: 600;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+        h3 {
+            font-size: 1.4rem;
+            color: var(--secondary);
+            margin: 25px 0 15px;
+            font-weight: 600;
+        }
+
+        h4 {
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin: 20px 0 10px;
+            font-weight: 600;
+        }
+
+        p {
+            margin-bottom: 20px;
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--dark);
+        }
+
+        ul {
+            margin-bottom: 20px;
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+            line-height: 1.6;
+            position: relative;
+            padding-left: 15px;
+        }
+/* 
+        li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        } */
+
+        a {
+            color: var(--secondary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--primary);
+        }
+
+        /* Cards */
+        .card {
+            background: white;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 30px;
+            margin-bottom: 30px;
+            border-top: 3px solid var(--secondary);
+        }
+
+        /* Two Column Layout */
+        .ai-row {
+            display: grid;
+            /* grid-template-columns: 1fr 1fr; */
+            gap: 40px;
+            align-items: start;
+        }
+
+        .content-with-image {
+            display: flex;
+            gap: 40px;
+            align-items: flex-start;
+            margin: 30px 0;
+        }
+
+        .content-with-image.reverse {
+            flex-direction: column;
+        }
+
+        .content-text {
+            flex: 1;
+            text-align: justify;
+        }
+
+        .content-image {
+            flex: 0 0 320px;
+            
+          
+        }
+        img {
+    max-width: 100%;
+    height: auto;
+}
+
+        .content-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .content-image:hover img {
+            transform: scale(1.03);
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: var(--radius);
+            padding: 25px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: transform 0.3s ease;
+            border-top: 3px solid var(--secondary);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-icon {
+            font-size: 2rem;
+            color: var(--secondary);
+            margin-bottom: 15px;
+        }
+
+        /* Stats */
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+
+        .stat-card {
+            background: white;
+            border-radius: var(--radius);
+            padding: 25px;
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+
+        .stat-number {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+
+        /* Quote */
+        .quote {
+            background: white;
+            color: var(--dark);
+            padding: 30px;
+            border-radius: var(--radius);
+            margin: 40px 0;
+            text-align: center;
+            position: relative;
+            box-shadow: var(--shadow);
+            border-left: 4px solid var(--accent);
+        }
+
+        .quote-text {
+            font-size: 1.2rem;
+            font-style: italic;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .quote-author {
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+       
+
+
+        
+        .horizontal-scroll {
+             display: flex;
+    overflow-x: auto;
+    gap: 30px; 
+    padding: 20px 15px; 
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: var(--secondary) var(--light);
+        }
+
+        .horizontal-scroll::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .horizontal-scroll::-webkit-scrollbar-track {
+            background: var(--light);
+            border-radius: 10px;
+        }
+
+        .horizontal-scroll::-webkit-scrollbar-thumb {
+            background: var(--secondary);
+            border-radius: 10px;
+        }
+
+        .gallery-item {
+            flex: 0 0 auto;
+            width: 300px;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            position: relative;
+            transition: transform 0.3s ease;
+              margin: 12px; 
+    cursor: pointer;  
+        }
+
+        .gallery-item:hover {
+          
+             transform: scale(1.05);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.7));
+            padding: 15px;
+            color: white;
+        }
+
+        .gallery-caption p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        .video-section {
+            margin: 50px 0;
+        }
+
+        .video-section h4 {
+            color: var(--primary);
+            margin-bottom: 25px;
+            text-align: center;
+            font-size: 1.5rem;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .video-item {
+            background: white;
+            border-radius: var(--radius);
+            padding: 20px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .video-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .video-content {
+            background: var(--light);
+            border-radius: 8px;
+            padding: 40px 20px;
+            margin-bottom: 15px;
+        }
+
+        .video-content i {
+            font-size: 3rem;
+            color: var(--secondary);
+            margin-bottom: 15px;
+        }
+
+        .video-content h5 {
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .video-content p {
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .video-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: var(--secondary);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            transition: background 0.3s ease;
+        }
+
+        .video-btn:hover {
+            background: #2980b9;
+        }
+
+        .infographics-section {
+            margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+        }
+
+        .infographics-section h4 {
+            color: var(--primary);
+            margin-bottom: 25px;
+            text-align: center;
+            font-size: 1.5rem;
+        }
+
+        .infographics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .infographic-item {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 30px;
+            border-radius: var(--radius);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .infographic-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .infographic-item div {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .infographic-item p {
+            margin: 0;
+            font-size: 1.1rem;
+            color: #ccc;
+        }
+
+        .full-gallery {
+            display: none;
+            padding: 40px 0;
+        }
+
+        .gallery-categories {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .category-btn {
+            padding: 10px 20px;
+            background: var(--light);
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .category-btn.active, .category-btn:hover {
+            background: var(--secondary);
+            color: white;
+        }
+
+        .category-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+            gap: 35px;
+            margin-bottom: 40px;
+        }
+
+        .category-gallery.hidden {
+            display: none;
+        }
+
+        .back-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: var(--radius);
+            margin-bottom: 20px;
+            transition: background 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background: #1a252f;
+        }
+
+        
+
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: white;
+            padding: 50px 0 20px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-section h3 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+
+        .footer-section p,
+        .footer-section li {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .footer-section a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.85rem;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.8s ease forwards;
+        }
+
+        .content-with-image {
+            display: flex;
+            gap: 40px;
+            align-items: flex-start;
+            margin: 30px 0;
+        }
+
+        .content-text {
+            flex: 1;
+        }
+
+        /* .content-image {
+    flex: 0 0 280px;
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+} */
+
+        .content-image img {
+            width: 90%;
+            height: 60% !important;
+            display: block;
+            transition: transform 0.5s ease;
+            margin-left: 0px;
+        }
+        .content-images img {
+            width: 100%;
+            height: 150% !important;
+            display: block;
+            transition: transform 0.5s ease;
+            /* margin-left: 0px; */
+            margin-top: 30px !important;
+        }
+
+        .content-image:hover img {
+            transform: scale(1.03);
+        }
+
+
+
+#gallery .container {
+    padding-bottom: 0 !important;
+}
+
+/* Remove extra margin from the connect section */
+#connect {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+     width: 100% !important;
+}
+/* section:not(#connect) {
+    margin-bottom: 0 !important;
+} */
+#connect .container-fluid.bg-dark {
+    margin: 0 !important;
+    padding: 50px 0 0 0 !important;
+    width: 100% !important;
+    background-color: #245bc9 !important;
+}
+
+/* Ensure no extra space in footer */
+.container-fluid.bg-dark.text-light.footer {
+    margin-top: 0 !important;
+}
+
+/* Footer Horizontal Layout */
+.container-fluid.bg-dark.text-light.footer .container.py-1 .row.g-5 {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.container-fluid.bg-dark.text-light.footer .container.py-1 .row.g-5 > div {
+    flex: 1;
+    min-width: 250px;
+    margin-bottom: 2rem;
+}
+
+/* Address Section */
+.container-fluid.bg-dark.text-light.footer .col-lg-3.col-md-6:first-child {
+    padding-right: 2rem;
+}
+
+/* Quick Links Section - Uncomment and style if needed */
+/*
+.container-fluid.bg-dark.text-light.footer .col-lg-3.col-md-6:nth-child(2) {
+    padding: 0 2rem;
+}
+*/
+
+/* Social Media Section */
+.container-fluid.bg-dark.text-light.footer .col-lg-3.col-md-6:nth-child(2) {
+    text-align: center;
+    padding: 0 2rem;
+}
+
+/* Contact Form Section */
+.container-fluid.bg-dark.text-light.footer .col-md-3.col-sm-12 {
+    padding-left: 2rem;
+}
+
+/* Social Media Buttons Horizontal Layout */
+.container-fluid.bg-dark.text-light.footer .d-flex.pt-2.mx-3 {
+    justify-content: center;
+    flex-wrap: nowrap;
+    gap: 10px;
+}
+
+/* Contact Form Horizontal Improvements */
+.container-fluid.bg-dark.text-light.footer .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.container-fluid.bg-dark.text-light.footer .contact-form input,
+.container-fluid.bg-dark.text-light.footer .contact-form textarea {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 0;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: var(--radius);
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.container-fluid.bg-dark.text-light.footer .contact-form textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.container-fluid.bg-dark.text-light.footer .contact-form input::placeholder,
+.container-fluid.bg-dark.text-light.footer .contact-form textarea::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.container-fluid.bg-dark.text-light.footer .contact-form input:focus,
+.container-fluid.bg-dark.text-light.footer .contact-form textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0 0 3px rgba(236, 201, 75, 0.2);
+}
+
+/* Remove extra br tags spacing */
+.container-fluid.bg-dark.text-light.footer .contact-form br {
+    display: none;
+}
+
+/* Button Styling */
+.container-fluid.bg-dark.text-light.footer .contact-form .btn {
+    background: linear-gradient(135deg, var(--accent), #f7c933);
+    color: var(--primary);
+    border: none;
+    padding: 12px 30px;
+    border-radius: var(--radius);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.container-fluid.bg-dark.text-light.footer .contact-form .btn:hover {
+    background: linear-gradient(135deg, #f7c933, var(--accent));
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Social Media Button Enhancements */
+.container-fluid.bg-dark.text-light.footer .btn-social {
+    width: 45px;
+    height: 45px;
+    border-radius: 50% !important;
+    border: 2px solid rgba(255, 255, 255, 0.3) !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    background: transparent !important;
+}
+
+.container-fluid.bg-dark.text-light.footer .btn-social:hover {
+    background: var(--accent) !important;
+    border-color: var(--accent) !important;
+    transform: translateY(-3px) scale(1.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.container-fluid.bg-dark.text-light.footer .btn-social i {
+    font-size: 1.2rem;
+    color: rgb(255, 255, 255);
+}
+
+/* Address Icons */
+/* .container-fluid.bg-dark.text-light.footer .d-flex .fa {
+    color: var(--accent) !important;
+    margin-top: 0.2rem;
+} */
+
+/* Headings Styling */
+.container-fluid.bg-dark.text-light.footer h4 {
+    color: rgb(255, 255, 255) !important;
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem !important;
+    font-weight: 600;
+    position: relative;
+    display: inline-block;
+}
+
+.container-fluid.bg-dark.text-light.footer h4::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background: var(--accent);
+    border-radius: 2px;
+}
+
+/* Text Styling */
+.container-fluid.bg-dark.text-light.footer p {
+    color: rgba(255, 255, 255, 0.85) !important;
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+/* Copyright Section */
+.container-fluid.bg-dark.text-light.footer .copyright {
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    padding-top: 2rem;
+    margin-top: 3rem;
+    text-align: center;
+    position: relative;
+}
+
+.container-fluid.bg-dark.text-light.footer .copyright::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 2px;
+    background: var(--accent);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+    display: block;
+    margin: auto;
+    max-width: 90%;
+    max-height: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1001;
+    transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+    color: #ccc;
+}
+
+.modal-caption {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px 20px;
+    border-radius: 20px;
+    max-width: 80%;
+}
+
+/* Gallery Section Styles - Added to match your design */
+        .gallery-section {
+            margin: 40px 0;
+        }
+
+        .gallery-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .gallery-header h4 {
+            color: var(--primary);
+            font-size: 1.5rem;
+        }
+
+        .view-all-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: var(--secondary);
+            color: white;
+            text-decoration: none;
+            border-radius: var(--radius);
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .view-all-btn:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+        /* Updated Video Gallery Styles for Button Alignment */
+.video-section {
+    margin: 50px 0;
+}
+
+.video-section h4 {
+    color: var(--primary);
+    margin-bottom: 25px;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.video-item {
+    background: white;
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.video-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.video-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.video-embed {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.video-embed iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 8px 8px 0 0;
+}
+
+.video-content h5 {
+    padding: 1.5rem 1.5rem 0.5rem;
+    margin: 0;
+    font-size: 1.2rem;
+    color: var(--primary);
+    font-weight: 600;
+    flex-grow: 1;
+}
+
+.video-content p {
+    padding: 0 1.5rem;
+    margin: 0;
+    color: var(--dark);
+    opacity: 0.8;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.video-actions {
+    padding: 1rem 1.5rem 1.5rem;
+    margin-top: auto;
+    min-height: 70px;
+    display: flex;
+    align-items: flex-end;
+}
+
+
+.youtube-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.5rem;
+    background: linear-gradient(135deg, #ff0000, #cc0000);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    width: auto;
+    justify-content: center;
+    white-space: nowrap;
+    margin-right: 1rem; 
+}
+
+.youtube-btn:hover {
+    background: linear-gradient(135deg, #cc0000, #990000);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 0, 0, 0.3);
+}
+
+
+
+
+ .professional-header {
+        padding: 30px 0;
+    }
+
+    .title-section h1 {
+        font-size: 2rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+
+
+/* Mobile Responsiveness for Header and Navigation */
+@media (max-width: 768px) {
+    .professional-header {
+        padding: 1rem;
+    }
+
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+        gap:0px;
+    }
+
+    .header-text {
+        margin-bottom: 1rem;
+    }
+
+    .title-section h1 {
+        font-size: 1.8rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    .profile-image img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+
+    .main-nav {
+        position: relative;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #fffdfd;
+        padding: 1rem;
+        text-align: center;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a {
+        padding: 0.5rem 0;
+        font-size: 1.2rem;
+    }
+
+    .mobile-menu-btn {
+        display: block;
+    }
+}
+
+@media (max-width: 480px) {
+    .title-section h1 {
+        font-size: 1.5rem;
+    }
+
+    .subtitle {
+        font-size: 0.9rem;
+    }
+
+    .profile-image img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .social-links a {
+        font-size: 1.2rem;
+    }
+
+    .nav-links a {
+        font-size: 1rem;
+    }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    #ventures {
+        padding: 1rem;
+    }
+
+    .card h2 {
+        font-size: 1.6rem;
+    }
+
+    .card h4 {
+        font-size: 1.3rem;
+    }
+
+    .card p {
+        font-size: 0.95rem;
+    }
+
+    .content-with-image {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .content-text,
+    .content-image {
+        flex: none;
+        width: 100%;
+    }
+
+    .content-image img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .column {
+        gap: 1rem;
+    }
+
+    .column h3 {
+        font-size: 1.2rem;
+    }
+
+    .card > div[style*="border-left"] {
+        padding: 1rem;
+        margin: 1rem 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .card h2 {
+        font-size: 1.4rem;
+    }
+
+    .card h4 {
+        font-size: 1.1rem;
+    }
+
+    .card p {
+        font-size: 0.9rem;
+    }
+
+    .column h3 {
+        font-size: 1rem;
+    }
+
+    .card {
+        padding: 1rem;
+    }
+}
+
+
+
+
+/*  */
+
+
+
+
+</style>
+</head>
+<body>
+    <!-- Professional Header -->
+    <header class="professional-header">
+        <div class="header-content">
+            <div class="header-text">
+                <div class="title-section">
+                    <h1>Asir Justifus</h1>
+                    <p class="subtitle">Parallel Entrepreneur | Founder and Chairman - SART Accelerator | Author |
+                        Mentor | Visionary</p>
+                </div>
+                <!-- <div class="social-links">
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div> -->
+            </div>
+            <div class="profile-image">
+                <img src="images/img1.jpg" alt="Asir Justifus">
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <div class="sticky-nav">
+        <div class="nav-container">
+            <nav class="main-nav">
+                <div class="nav-links">
+                    <a href="#about">About</a>
+                    <a href="#ventures">Ventures</a>
+                    <!-- <a href="#ai">AI & Cybersecurity</a> -->
+                    <a href="#author">Author</a>
+                    <!-- <a href="#sart">SART Accelerator</a> -->
+                    <a href="#mentor">Mentorship</a>
+                    <a href="#community">Community</a>
+                    <a href="#gallery">Gallery</a>
+                    <a href="#connect">Connect</a>
+                </div>
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- About Section -->
+        <section id="about" class="fade-in">
+            <h2>About Asir Justifus</h2>
+            <div class="content-with-image">
+                <div class="content-text" style="text-align: justify;">
+                    <p>Asir Justifus is an entrepreneur with value-based marketplace mindset, ecosystem builder, and
+                        author, whose ventures span logistics, talent tech, housing innovation, integration and digital
+                        transformation. He is the Founder and Chairman of <a href="https://www.sartaccel.com/"
+                            target="_blank">SART Accelerator</a>, where he mentors startups and scales ventures across
+                        the USA, India, and the Middle East.</p>
+                    <p>Born on July 22, 1971, in Waterfall Estate, Valparai — a serene tea plantation nestled in the
+                        Anaimalai hills of Pollachi, Tamil Nadu — Asir's early life was shaped by nature, tradition, and
+                        community. He grew up in Santhapuram, a small village near Nagercoil in the Kanyakumari
+                        district, where the values of faith, dignity, and perseverance were deeply woven into his
+                        upbringing.</p>
+                    <p>Over the years, Asir’s journey as an entrepreneur has enriched his expertise across industries.
+                        Fueled by a passion for innovation and a relentless drive for growth, Asir Justifus continues to
+                        lead as a visionary entrepreneur. His journey is defined by the transformation of bold ideas
+                        into meaningful solutions—solutions that deliver measurable value and help shape the future of
+                        the startups and ventures he champions. industries. He has consulted with leading global
+                        companies including:
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="stats-container">
+                <div class="stat-card">
+                    <div class="stat-number">20+</div>
+                    <div class="stat-label">Years of Experience</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">15+</div>
+                    <div class="stat-label">Ventures Founded</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">3</div>
+                    <div class="stat-label">Continents</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">100+</div>
+                    <div class="stat-label">Startups Mentored</div>
+                </div>
+            </div>
+            <div class="content-image">
+                <img src="images/img2.jpg" alt="Early Life">
+            </div>
+        </section>
+
+        <!-- Ventures Section -->
+        <!-- Ventures Section -->
+        <section id="ventures" class="fade-in">
+            <h2>Trailblazer in Innovation & Impact</h2>
+            <div class="card">
+                <h4>Asir Justifus, A Visionary Entrepreneur Driving Transformation Across Industries</h4>
+
+                <p>From the tea plantation companies of Tamil Nadu to boardrooms across continents, Asir Justifus has
+                    carved a legacy as a strategic problem solver, solution building as an entrepreneur, ecosystem
+                    builder, and global logistics innovator. His leadership journey is a masterclass in seeing solutions
+                    for problems and challenges at least 10 years ahead, putting together the blueprint needed to
+                    transform the visionary ideas into scalable, purpose-driven ventures.</p>
+                <div class="content-with-image">
+                    <div class="content-text">
+                        <div class="column">
+                            <div>
+                                <h3>Founder of Game-Changing Platforms</h3>
+                                <p>Asir launched <a href="https://translogix.org/" target="_blank">Tranzlogix</a> in
+                                    2012, which evolved into <a href="https://truckercloud.com/"
+                                        target="_blank">TruckerCloud</a> in 2020 after securing investment from Rule1
+                                    Ventures, Buckhead, Atlanta, revolutionizing logistics visibility and operations for
+                                    Risk Management by leveraging Electronic Logging Devices (ELD) data through
+                                    Telematics. He didn't stop there — he built ELDMarketplace.com, TruckerGIG, and
+                                    EnterKey Solutions, each designed to streamline supply chains and empower digital
+                                    transformation.</p>
+                            </div>
+
+                            <div>
+                                <h3>Global Influence in Logistics</h3>
+                                <p>Asir founded <strong>Trusted Roadways and Logistics Pvt Ltd</strong> in 2004, which
+                                    later evolved into Tranzlogix Solutions. He also founded United Technology Solutions
+                                    (India) Pvt Ltd. in 2004 and later merged with Compvue in 2018. His international
+                                    footprint includes a Board Member role at the <a href="http://www.ltna.org"
+                                        target="_blank">Logistics & Transportation Association of North America</a>
+                                    (LTNA) — shaping the future of global mobility and innovation.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-image">
+                        <img src="images/img6.jpg" alt="Logistics Innovation">
+                    </div>
+                </div>
+                <div>
+                    <h3>Champion of Talent & Tech</h3>
+                    <p>With <a href="https://www.talentturbo.us/" target="_blank">TalentTurbo</a> launched in 2016, Asir
+                        created a platform that not only connects job seekers to opportunities but also monetizes talent
+                        discovery. His work at SART Accelerator fuels startup growth through strategic marketing, sales
+                        acceleration, and founder mentorship.</p>
+                </div>
+                <div
+                    style="background: var(--light); padding: 25px; border-radius: var(--radius); margin: 30px 0; border-left: 4px solid var(--accent);">
+                    <h4>Beyond Logistics: Expanding Horizons</h4>
+                    <p>Every venture he touches reflects a relentless drive to build smarter systems, empower people,
+                        and create lasting impact. Whether he's launching startups, advising founders, or steering
+                        global conversations, Asir Justifus leads with vision, velocity, and values.</p>
+                    <p>SART Accelerator has diversified into Eco Tourism. For this, Ecosystems such as <a
+                            href="https://www.romarking.in/" target="_blank">RomarKing</a>, <a
+                            href="https://simplego.in/" target="_blank">SimpleGo Taxi</a> and <a
+                            href="https://www.homiefix.in/" target="_blank">HomieFix</a> platforms have evolved. <a
+                            href="https://www.romarking.in/" target="_blank">RomarKing</a> is into <b>FRP (Fiber
+                            Reinforced Polymer)</b> based prefabricated housing and the ecosystem, bringing sustainable,
+                        disaster-resilient architecture to mountainous terrains towards conserving nature.</p>
+                    <p>Through SART Accelerator, Asir is also associated with the FinTech Digital Negotiation and
+                        Settlement platform <a href="https://setld.app/" target="_blank">SeTLD</a> and also Digital
+                        Social Scoring platform <a href="https://tiipstr.com/" target="_blank">tiipstr</a>. SART
+                        Accelerator has invested in Automated Deal Resolution Exchange (ADRX), USA based group that has
+                        developed proprietary Smart Settle Technology and Smart Score Technology. ADRX group thrives to
+                        redefine the way America does business and makes payments.</p>
+                </div>
+            </div>
+        </section>
+        <!-- AI & Cybersecurity Section -->
+        <section id="ai" class="fade-in">
+            <h2>AI Enablement & Cyber Security</h2>
+            <h3>Driving Intelligent Transformation Across Industries</h3>
+
+            <div class="content-with-image reverse">
+                <p>Asir Justifus's entrepreneurial journey continues to evolve through a bold commitment to
+                    <em>AI-driven innovation</em> and <em>cyber resilience</em>. His work spans multiple
+                    domains—TalentTech, FinTech, Healthcare, CRM, and beyond—where he architects solutions that are not
+                    only smart, but secure.
+                </p>
+                <div class="content-text">
+
+                    <h4>AI-Driven Platforms</h4>
+
+                    <div class="ai-row" style="grid-template-columns: 1fr 1fr; margin: 30px 0;">
+                        <div class="content-image" style="margin-top: 50px;">
+                            <img src="images/img7.jpg" alt="AI & Cybersecurity">
+                        </div>
+                        <div class="col" style="grid-template-columns: 1fr 1fr;">
+                            <div class="platform-card"
+                                style="background: var(--light); padding: 25px; border-radius: var(--radius); border-left: 4px solid var(--secondary); margin-bottom: 20px;">
+                                <h5
+                                    style="font-size: 1.2rem; color: var(--secondary); margin-bottom: 15px; font-weight: 600;">
+                                    Talent Management Solutions</h5>
+                                <p style="font-size: 1rem; margin-bottom: 0;">Leveraging predictive analytics and
+                                    behavioral
+                                    AI to match candidates with purpose-driven roles, optimize hiring pipelines, and
+                                    enable
+                                    continuous workforce development.</p>
+                            </div>
+
+                            <div class="platform-card"
+                                style="background: var(--light); padding: 25px; border-radius: var(--radius); border-left: 4px solid var(--secondary); margin-bottom: 20px;">
+                                <h5
+                                    style="font-size: 1.2rem; color: var(--secondary); margin-bottom: 15px; font-weight: 600;">
+                                    FinTech Intelligence</h5>
+                                <p style="font-size: 1rem; margin-bottom: 0;">Designing secure, scalable systems that
+                                    use
+                                    machine learning for fraud detection, credit scoring, and personalized financial
+                                    experiences.</p>
+                            </div>
+
+                            <div class="platform-card"
+                                style="background: var(--light); padding: 25px; border-radius: var(--radius); border-left: 4px solid var(--secondary); margin-bottom: 20px;">
+                                <h5
+                                    style="font-size: 1.2rem; color: var(--secondary); margin-bottom: 15px; font-weight: 600;">
+                                    Healthcare Transformation</h5>
+                                <p style="font-size: 1rem; margin-bottom: 0;">Building emotionally intelligent platforms
+                                    that support behavioral health, patient engagement, and clinical decision-making
+                                    with
+                                    AI-powered insights.</p>
+                            </div>
+
+                            <div class="platform-card"
+                                style="background: var(--light); padding: 25px; border-radius: var(--radius); border-left: 4px solid var(--secondary); margin-bottom: 20px;">
+                                <h5
+                                    style="font-size: 1.2rem; color: var(--secondary); margin-bottom: 15px; font-weight: 600;">
+                                    CRM Evolution</h5>
+                                <p style="font-size: 1rem; margin-bottom: 0;">Integrating AI into customer relationship
+                                    systems to enhance personalization, automate workflows, and drive loyalty through
+                                    data-driven empathy.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        style="background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color: white; padding: 30px; border-radius: var(--radius); margin: 40px 0;">
+                        <h4 style="color: white; margin-top: 0;"><a href="https://www.cyberarcadia.in/" target="_blank"
+                                style="color: var(--accent);">CyberArcadia</a>: The Digital Fortress</h4>
+                        <p style="color: rgba(255, 255, 255, 0.9);">Asir is a strategic force behind CyberArcadia, a
+                            visionary initiative focused on building secure digital ecosystems for the future.</p>
+
+                        <h4 style="color: white; margin: 25px 0 15px;">CyberArcadia champions:</h4>
+                        <ul style="margin-bottom: 0;">
+                            <li style="color: rgba(255, 255, 255, 0.9);">Zero-trust architecture and AI-enhanced threat
+                                detection</li>
+                            <li style="color: rgba(255, 255, 255, 0.9);">Cyber literacy and resilience for enterprises
+                                and communities</li>
+                            <li style="color: rgba(255, 255, 255, 0.9);">Interoperable security frameworks that adapt
+                                across industries</li>
+
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Author Section -->
+        <section id="author" class="fade-in">
+            <h2>Author & Thought Leader</h2>
+            <div class="content-with-image">
+                <div class="content-text">
+                    <p>Asir has written two influential books that reflect his philosophy and entrepreneurial journey:
+                    </p>
+                    <ul>
+                        <li><a href="https://emeraldpublishers.com/product/parallel-entrepreneurship-journey/"
+                                target="_blank"><em>Parallel Entrepreneurship Journey</em></a> - A guide to building
+                            multiple ventures with clarity and purpose.</li>
+                        <li><em>Internet of Humans</em> - A vision for networks built on trust, empathy, and
+                            collaboration — not just machines.</li>
+                    </ul>
+                    <p>His writing reflects a deep understanding of both technology and human dynamics, offering
+                        insights that bridge the gap between innovation and human values.</p>
+                </div>
+                <div class="content-image">
+                    <img src="images/img8.jpg" alt="Books">
+                </div>
+            </div>
+        </section>
+
+        <!-- SART Accelerator Section -->
+        <section id="sart" class="fade-in">
+            <h2>SART Accelerator</h2>
+            <h3>Turning Vision into Velocity for Early-Stage Startups</h3>
+
+            <div class="card">
+                <p>SART Accelerator, under the strategic leadership of Asir Justifus, empowers startups navigating the
+                    critical pre-revenue and early-revenue stages. With a sharp focus on <strong>market readiness and
+                        growth acceleration</strong>, it offers:</p>
+
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <p>Structured business frameworks for scalable operations</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <p>Compliance and performance monitoring</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <p>Equity-based investment opportunities</p>
+                    </div>
+                </div>
+
+                <!-- Centered service cards -->
+                <div style="display: flex; justify-content: center; gap: 25px; flex-wrap: wrap; margin: 20px 0;">
+                    <div class="service-card" style="flex: 0 0 280px; max-width: 300px;">
+                        <div class="service-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <p>Strategic networks for timely and successful exits</p>
+                    </div>
+                    <div class="service-card" style="flex: 0 0 280px; max-width: 300px;">
+                        <div class="service-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <p>Marketing & Sales acceleration to ignite traction and revenue</p>
+                    </div>
+                </div>
+
+                <p>Whether you're refining your product or preparing to scale, SART is where bold ideas become
+                    investable, impactful ventures.</p>
+                <p>He also serves as <b>Brand Ambassador for the Indo-American Chamber of Commerce – Atlanta</b>,
+                    promoting cross-cultural entrepreneurship.</p>
+            </div>
+        </section>
+
+        <!-- Mentorship Section -->
+        <section id="mentor" class="fade-in">
+            <h2>Motivator & Mentor</h2>
+            <h3>Empowering People. Inspiring Possibility. Building Legacy.</h3>
+
+            <div class="content-with-image">
+                <div class="content-text">
+                    <p>Asir Justifus is a sought-after motivational speaker and mentor whose influence spans boardrooms,
+                        classrooms, and grassroots communities. His approach blends empathy with strategy, unlocking
+                        potential in individuals and teams across the spectrum.</p>
+
+                    <h4>What Sets Him Apart:</h4>
+<ul>
+                <li>Inclusive Team Building — Unites high-net-worth investors and
+                                    everyday changemakers into purpose-driven ecosystems.</li>
+                                     <li>Youth & Founder Empowerment — Guides first-time founders and
+                                    emerging leaders with clarity, courage, and actionable wisdom.</li>
+                                      <li>Human-Centric Innovation — Champions solutions that honor
+                                    dignity, diversity, and the lived experiences of real people.</li>
+                                      <li>Values-Driven Leadership — Inspires bold action rooted in
+                                    integrity, service, and long-term impact.</li>
+               
+            </ul>
+                    <div style="display: grid; gap: 20px; margin: 25px 0;">
+                        <div style="display: flex; gap: 15px; align-items: flex-start;">
+                            <div style="font-size: 1.5rem; color: var(--secondary); flex-shrink: 0;"></div>
+                            <div>
+                                <strong style="color: var(--primary);"></strong>
+                                <p style="margin: 8px 0 0 0; font-size: 0.95rem;"></p>
+                            </div>
+                        </div>
+
+                        <div style="display: flex; gap: 15px; align-items: flex-start;">
+                            <div style="font-size: 1.5rem; color: var(--secondary); flex-shrink: 0;"></div>
+                            <div>
+                                <strong style="color: var(--primary);"></strong>
+                                <p style="margin: 8px 0 0 0; font-size: 0.95rem;"></p>
+                            </div>
+                        </div>
+
+                        <div style="display: flex; gap: 15px; align-items: flex-start;">
+                            <div style="font-size: 1.5rem; color: var(--secondary); flex-shrink: 0;"></div>
+                            <div>
+                                <strong style="color: var(--primary);"></strong>
+                                <p style="margin: 8px 0 0 0; font-size: 0.95rem;"></p>
+                            </div>
+                        </div>
+
+                        <div style="display: flex; gap: 15px; align-items: flex-start;">
+                            <div style="font-size: 1.5rem; color: var(--secondary); flex-shrink: 0;"></div>
+                            <div>
+                                <strong style="color: var(--primary);"></strong>
+                                <p style="margin: 8px 0 0 0; font-size: 0.95rem;"></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="border-top: 2px solid var(--accent); margin: 30px 0; padding-top: 25px;">
+                        <h4 style="color: var(--primary); margin-bottom: 20px;">His Reach:</h4>
+
+                          <li>Keynote speaker at entrepreneurial summits,
+                                    cultural forums, and youth leadership events</li>
+                                      <li>Mentor to startups, accelerators, and
+                                    community initiatives across India and the U.S.</li>
+                                      <li>Active contributor to organizations like RISE,
+                                    FeTNA, Rotary, and The Rise Global</li>
+                        <div style="display: grid; gap: 0px;">
+                            <!-- <div style="display: flex; gap: 12px; align-items: flex-start;">
+                                <div style="font-size: 1.2rem; color: var(--secondary); flex-shrink: 0;"></div>
+                                <p style="margin: 0; font-size: 0.95rem;"></p>
+                            </div> -->
+
+                            <!-- <div style="display: flex; gap: 12px; align-items: flex-start;">
+                                <div style="font-size: 1.2rem; color: var(--secondary); flex-shrink: 0;"></div>
+                                <p style="margin: 0; font-size: 0.95rem;"></p>
+                            </div> -->
+
+                            <!-- <div style="display: flex; gap: 12px; align-items: flex-start;">
+                                <div style="font-size: 1.2rem; color: var(--secondary); flex-shrink: 0;"></div>
+                                <p style="margin: 0; font-size: 0.95rem;"></p>
+                            </div> -->
+                        </div>
+                    </div>
+                    <p style="font-style: italic; color: var(--gray); margin-top: 45px;">
+                        Whether you're launching a venture or leading a movement, Asir brings the kind of mentorship
+                        that transforms ambition into legacy.
+                    </p>
+                    <div style="border-top: 2px solid var(--accent); margin: 30px 0; padding-top: 25px;">
+                        <h4 style="color: var(--primary); margin-bottom: 20px;">Asir is a sought-after motivational
+                            speaker and mentor, known for:</h4>
+
+
+                         <li>Building inclusive teams of high-net-worth and
+                                    everyday individuals</li>   
+                                    
+                         <li>Empowering youth and first-time founders</li>   
+                          <li>Championing human-centric innovation</li>    
+                         <li>Inspiring action through values-driven
+                                    leadership</li>
+
+
+                        <div style="display: grid; gap: 15px;">
+                            <div style="display: flex; gap: 12px; align-items: flex-start;">
+                                <div style="font-size: 1.2rem; color: var(--secondary); flex-shrink: 0;"></div>
+                                <p style="margin: 0; font-size: 0.95rem;"></p>
+                            </div>
+
+                            <div style="display: flex; gap: 12px; align-items: flex-start;">
+                                <div style="font-size: 1.2rem; color: var(--secondary); flex-shrink: 0;"></div>
+                                <p style="margin: 0; font-size: 0.95rem;"></p>
+                            </div>
+
+                            <div style="display: flex; gap: 12px; align-items: flex-start;">
+                                <div style="font-size: 1.2rem; color: var(--secondary); flex-shrink: 0;"></div>
+                                <p style="margin: 0; font-size: 0.95rem;"></p>
+                            </div>
+                            <div style="display: flex; gap: 12px; align-items: flex-start;">
+                                <div style="font-size: 1.2rem; color: var(--secondary); flex-shrink: 0;"></div>
+                                <p style="margin: 0; font-size: 0.95rem;"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-image">
+                    <img src="images/img9.jpg" alt="Mentorship">
+                </div>
+            </div>
+
+            <!-- <div class="quote">
+        <p class="quote-text">"Progress without people is shallow. True growth must honor human networks, value systems, and the dignity of life itself."</p>
+        <p class="quote-author">— Asir Justifus</p>
+    </div> -->
+        </section>
+
+        <section id="community" class="fade-in">
+    <h2>Community and Organizational Involvement</h2>
+    
+    <div class="content-with-image">
+        <div class="content-images">
+            <img src="images/img10.jpg" alt="Community Involvement">
+        </div>
+    
+        <div class="community-text">
+            <p>Asir Justifus is deeply committed to fostering entrepreneurship, cultural empowerment, and
+                community development through active engagement in diverse organizations across the globe.</p>
+
+            <ul>
+                <li><a href="https://tamilrise.org/" target="_blank">The Rise Global</a> — Driving global
+                    initiatives that promote inclusive growth and positive change.</li>
+                <li>US Tamil Groups — Strengthening Tamil entrepreneurship and diaspora collaboration across
+                    North America and beyond.</li>
+                <li><a href="https://fetna.org/" target="_blank">FeTNA</a>(Federation of Tamil Sangams of North
+                    America) – Supporting cultural preservation, youth empowerment, and community development.
+                </li>
+                <li>Indo-American Chamber of Commerce — Atlanta — Serving as Brand Ambassador, promoting
+                    cross-cultural business and economic partnerships.</li>
+                <li>Rotary Club (since 2014) — Actively contributing to community service initiatives and civic
+                    engagement.</li>
+                <li>Transportation Club of Atlanta — Participating in industry discussions, logistics
+                    innovation, and professional networking.</li>
+            </ul>
+
+            <p>Through these affiliations, Asir bridges grassroots communities with global platforms, embodying
+                his belief that progress must be inclusive, values-driven, and deeply human.</p>
+        </div>
+    </div>
+</section>
+
+        <!-- Community & Services Section -->
+        <section id="community-services" class="fade-in">
+            <h2>Community Engagement & Strategic Services</h2>
+
+            <div class="card">
+                <p style="font-size: 1.1rem; color: var(--primary); font-weight: 600; margin-bottom: 25px;">
+                    Asir is deeply involved in organizations that promote cultural and entrepreneurial empowerment
+                </p>
+
+                <div
+                    style="background: linear-gradient(135deg, var(--light) 0%, #f0f4f8 100%); padding: 30px; border-radius: var(--radius); margin: 30px 0; border: 1px solid rgba(0,0,0,0.05);">
+                    <h4 style="color: var(--secondary); margin-bottom: 10px;">Strategic Care & Mentorship</h4>
+                    <h3 style="color: var(--primary); margin: 15px 0 20px 0; font-size: 1.3rem;">Strategic Acceleration
+                        with Empathy, Precision & Vision</h3>
+                    <p style="margin-bottom: 25px;">Under Asir Justifus's personal guidance, ventures receive more than
+                        just services—they gain a trusted partner in their journey toward scalable success:</p>
+
+                    <div style="display: grid; gap: 20px;">
+                        <div style="display: flex; gap: 15px; align-items: flex-start;">
+                            <!-- <div style="font-size: 1.8rem; flex-shrink: 0;"></div> -->
+                            <div>
+                                <strong style="color: var(--primary);">Product Development</strong>
+                                <p style="margin: 8px 0 0 0; font-size: 0.95rem;">From ideation to execution, Asir helps
+                                    craft solutions that are human-centric, technically sound, and market-ready.</p>
+                            </div>
+                        </div>
+
+                        <div style="display: flex; gap: 15px; align-items: flex-start;">
+                            <!-- <div style="font-size: 1.8rem; flex-shrink: 0;"></div> -->
+                            <div>
+                                <strong style="color: var(--primary);">Marketing & Sales Acceleration</strong>
+                                <p style="margin: 8px 0 0 0; font-size: 0.95rem;">With deep insight into buyer
+                                    psychology and brand storytelling, he empowers teams to activate growth channels and
+                                    convert traction into revenue.</p>
+                            </div>
+                        </div>
+
+                        <div style="display: flex; gap: 15px; align-items: flex-start;">
+                            <!-- <div style="font-size: 1.8rem; flex-shrink: 0;"></div> -->
+                            <div>
+                                <strong style="color: var(--primary);">Startup Due Diligence & Investment
+                                    Assistance</strong>
+                                <p style="margin: 8px 0 0 0; font-size: 0.95rem;">Founders benefit from Asir's hands-on
+                                    support in preparing for funding, refining business models, and building investor
+                                    confidence through strategic clarity.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+       <!-- The 1971 Imprint Section -->
+    <section id="imprint-1971">
+        <h2>The 1971 Imprint</h2>
+        <h3>A Life of Purpose, Connection & Reinvention</h3>
+
+        <!-- First section: Image on right, content on left -->
+        <div class="content-with-image image-right-content-left">
+            <div class="content-text">
+                <div class="highlight-box">
+                    <h4> Born into a World of Change</h4>
+                    <p>The year 1971 marked a turning point in global history — a time when nations were redefining themselves, technology was shifting from mainframes to microchips, and a new generation of leaders, artists, and innovators was quietly emerging.</p>
+                    <p>Among them was Asir Justifus, born in Santhapuram, Nagercoil, in the southern tip of Tamil Nadu, India. His early life was steeped in the rhythms of family, faith, and community, where values like dignity, perseverance, and service were not just taught but lived. These foundational principles would later become the compass for his entrepreneurial journey.</p>
+                </div>
+            </div>
+            <div class="content-image">
+                <img src="images/img11.jpg" alt="1971 Generation">
+            </div>
+        </div>
+
+        <!-- Second section: Image on left, content on right -->
+        <div class="content-with-image12 image-left-content-right" style="margin-bottom: 0;">
+            <div class="content-image12" style="width: 400px; height: 600px !important;">
+                <img src="images/img12.jpg" alt="1971 Generation">
+            </div>
+            <div class="content-text12" style="margin-top: -600px; margin-left: 500px;">
+                <h4>A Generational Kinship</h4>
+                <div class="content-text12">
+                <p>Asir shares his birth year (1971) with a remarkable cohort of changemakers:</p>
+</div>
+                <ul>
+                    <li><strong>Volodymyr Zelenskyy</strong> – Leading with courage</li>
+                    <li><strong>Justin Trudeau</strong> – Governing a diverse democracy</li>
+                    <li><strong>Mary J. Blige, Snoop Dogg, Ricky Martin</strong> – Reshaping music</li>
+                    <li><strong>Winona Ryder, Ewan McGregor, Sandra Oh</strong> – Defining global cinema</li>
+                    <li><strong>Pete Sampras, Lance Armstrong</strong> – Testing human endurance</li>
+                </ul>
+
+                <p class="quote">Though their paths diverged, they all carried the 1971 imprint — a calling to challenge, disrupt, and rebuild.</p>
+            </div>
+        </div>
+
+        <!-- Third section: Normal full-width text -->
+        <div class="full-width-content" style="text-align: justify; margin-top: 100px;">
+            <h4>The First Leap: Late 1990s</h4>
+            <p>Asir's first overseas engagement in the late 1990s was a defining moment. It exposed him to the power of global networks and the promise of entrepreneurship. What began as a fascination with transportation and systems evolved into a mission to build ventures that solve real-world problems.</p>
+            <p>Armed with little more than faith, grit, and vision, he stepped into the world of startups — transforming his passion into platforms that empower others.</p>
+        </div>
+    </section>
+
+        <!-- Philosophy & Internet of Humans Section -->
+        <section id="philosophy" class="fade-in">
+            <h2>Philosophy & Vision</h2>
+
+            <div class="card">
+                <h4>A Philosophy Rooted in Values</h4>
+                <p>Over the decades, Asir's journey has been marked by:</p>
+
+                <div class="two-column" style="grid-template-columns: 1fr 1fr; margin: 20px 0;">
+                    <ul style="margin-bottom: 0;">
+                        <li>Accomplishments and setbacks</li>
+                        <li>Alliances and separations</li>
+                        <li>Obligations and dreams</li>
+                    </ul>
+                    <!-- <ul style="margin-bottom: 0;">
+               
+            </ul> -->
+                </div>
+
+                <p>Yet through it all, he held fast to a core belief:</p>
+
+                <div class="quote" style="margin: 25px 0;">
+                    <p class="quote-text">"Progress without people is shallow. True growth must honor human networks,
+                        value systems, and the dignity of life itself."</p>
+                </div>
+
+                <p>This philosophy is reflected in his ventures, mentorship, and writing — especially in his book
+                    <em>Internet of Humans</em>, which envisions a world where technology serves connection, not
+                    isolation.
+                </p>
+                <div
+                    style="background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color: white; padding: 30px; border-radius: var(--radius); margin: 30px 0; display: flex; align-items: flex-start; gap: 30px; position: relative;">
+                    <!-- Left Content -->
+                    <div style="flex: 1;">
+                        <h4 style="color: white; margin-bottom: 15px;">🌐 The Internet of Humans</h4>
+                        <p style="color: rgba(255, 255, 255, 0.9); margin-bottom: 15px;"> Asir's generational calling
+                            culminates in his vision for the Internet of Humans — a network not just of machines, but of
+                            people bound by trust, collaboration, and purpose. It's a response to the fragmentation of
+                            modern life and a blueprint for restoring meaningful relationships in business, society, and
+                            beyond. </p>
+
+                        <div style="border-left: 3px solid var(--accent); padding-left: 20px; margin-top: 20px;">
+                            <p style="color: white; font-style: italic; margin: 0;">"1971 was not just the year of my
+                                birth. It was the year destiny placed me among dreamers, risk-takers, and leaders."</p>
+                            <p style="color: var(--accent); margin-top: 10px; font-weight: 600; text-align: right;">—
+                                Asir Justifus</p>
+                        </div>
+                    </div>
+
+                    <!-- Right Image -->
+                    <div style="flex: 0 0 200px; margin-top: 10px;">
+                        <img src="images/img13.jpg" alt="Internet of Humans Concept"
+                            style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
+                    </div>
+                </div>
+        </section>
+        <!-- Gallery Section -->
+        <section id="timeline" class="fade-in">
+            <h2>Career Timeline</h2>
+
+
+            <div class="gallery-container" style="margin: 40px 0;">
+                <!-- First Row - Two Images Side by Side -->
+                <div class="gallery-row" style="display: flex; gap: 25px; margin-bottom: 25px;">
+                    <!-- Left Image -->
+                    <div class="gallery-item-large">
+                        <img src="images/img3.jpg" alt="Professional Engagement"
+                            style="width: 100%; height: 500px;  transition: transform 0.5s ease; margin-left: 50px;">
+                    </div>
+
+                    <!-- Right Image -->
+                    <div class="gallery-item-large">
+                        <img src="images/img4.jpg" alt="Leadership Moment"
+                            style="width: 60%; height: 500px;  transition: transform 0.5s ease; margin-left: 250px;">
+                    </div>
+                </div>
+
+        </section>
+
+        <section id="vision" class="fade-in">
+    <h2>Vision & Mission</h2>
+    <div class="vision-row" style="display: flex; justify-content: center;">
+        <div class="vision-item-center" style="width: 70%;">
+            <img src="images/img5.jpg" alt="Community Impact"
+                style="width: 100%; height: 500px; transition: transform 0.5s ease;">
+        </div>
+    </div>
+</section>
+
+<section id="journey" class="fade-in">
+    <h2>Asir Justifus's Entrepreneurial Journey Milestones</h2>
+    <div class="journey-row" style="display: flex; justify-content: center;">
+        <div class="journey-item-center" style="width: 70%;">
+            <img src="images/img14.jpeg" alt="Journey Timeline"
+                style="width: 100%; height: 500px; transition: transform 0.5s ease;">
+        </div>
+    </div>
+</section>
+
+    
+
+
+ <!-- Gallery Section - Added after your existing sections -->
+<section id="gallery" class="fade-in">
+    <div class="container">
+        <h2>Media Gallery</h2>
+        <h3>Photos, Interviews & Event Highlights</h3>
+
+        <!-- Horizontal Photo Gallery -->
+        <div class="gallery-section">
+            <div class="gallery-header">
+                <h4>Photo Gallery</h4>
+                <a href="Gallery.html" class="view-all-btn" id="viewAllBtn">View All Photos</a>
+            </div>
+            <div class="horizontal-scroll">
+                <div class="gallery-item">
+                    <img src="images/meeting/1.ATMA.jpg" alt="">
+                    <div class="gallery-caption">
+                        <!-- <p>Entrepreneurship Summit 2023</p> -->
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/meeting/1.Rotary.jpg" alt="">
+                    <div class="gallery-caption">
+                        <!-- <p>Keynote Speech - Tech Conference</p> -->
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/meeting/11-Meet.jpg" alt="">
+                    <div class="gallery-caption">
+                        <!-- <p>Mentorship Session</p> -->
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/meeting/12Meet.jpg" alt="">
+                    <div class="gallery-caption">
+                        <!-- <p>Community Outreach</p> -->
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/meeting/13.Meet.jpg" alt="">
+                    <div class="gallery-caption">
+                        <!-- <p>Team Building Activity</p> -->
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/meeting/13.MeetBFast.jpg" alt="">
+                    <div class="gallery-caption">
+                        <!-- <p>Product Launch Event</p> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Video Gallery -->
+        <div class="video-section">
+            <h4>Interview Videos & Talks</h4>
+            <div class="video-grid">
+                <!-- Video 1: Parallel Entrepreneurship Journey -->
+                <div class="video-item">
+                    <div class="video-content">
+                        <div class="video-embed">
+                            <iframe 
+                                src="https://www.youtube.com/embed/DJd73xwDHU4?rel=0&modestbranding=1" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen
+                                loading="lazy">
+                            </iframe>
+                        </div>
+                        <h5>Parallel Entrepreneurship Journey of Asir Justifus</h5>
+                        <div class="video-actions">
+                            <a href="https://www.youtube.com/watch?v=DJd73xwDHU4" target="_blank" class="youtube-btn">
+                                <i class="fab fa-youtube"></i> Watch on YouTube
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video 2: AI & Future of Business -->
+                <div class="video-item">
+                    <div class="video-content">
+                        <div class="video-embed">
+                            <iframe 
+                                src="https://www.youtube.com/embed/Z8bxhzS8p14?rel=0&modestbranding=1" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen
+                                loading="lazy">
+                            </iframe>
+                        </div>
+                        <h5>From Kanyakumari to Solving Global Transportation Industry problem</h5>
+                        <div class="video-actions">
+                            <a href="https://www.youtube.com/live/Z8bxhzS8p14" target="_blank" class="youtube-btn">
+                                <i class="fab fa-youtube"></i> Watch on YouTube
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video 3: Entrepreneurial Ecosystem -->
+                <div class="video-item">
+                    <div class="video-content">
+                        <div class="video-embed">
+                            <iframe 
+                                src="https://www.youtube.com/embed/EOQEBDh-xCY?rel=0&modestbranding=1" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen
+                                loading="lazy">
+                            </iframe>
+                        </div>
+                        <h5>Exclusive Interview: Asir Justifus on RISE NA 2020</h5>
+                        <div class="video-actions">
+                            <a href="https://www.youtube.com/live/EOQEBDh-xCY" target="_blank" class="youtube-btn">
+                                <i class="fab fa-youtube"></i> Watch on YouTube
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video 4: Business Strategy -->
+                <div class="video-item">
+                    <div class="video-content">
+                        <div class="video-embed">
+                            <iframe 
+                                src="https://www.youtube.com/embed/w2PXkMBHAjE?rel=0&modestbranding=1" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen
+                                loading="lazy">
+                            </iframe>
+                        </div>
+                        <h5>Developing an Entrepreneurial Ecosystem</h5>
+                        <div class="video-actions">
+                            <a href="https://www.youtube.com/watch?v=w2PXkMBHAjE" target="_blank" class="youtube-btn">
+                                <i class="fab fa-youtube"></i> Watch on YouTube
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video 5: Exclusive Interview -->
+                <div class="video-item">
+                    <div class="video-content">
+                        <div class="video-embed">
+                            <iframe 
+                                src="https://www.youtube.com/embed/9oAcxlDvDYk?rel=0&modestbranding=1" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen
+                                loading="lazy">
+                            </iframe>
+                        </div>
+                        <h5>The Rise North America Summit</h5>
+                        <div class="video-actions">
+                            <a href="https://www.youtube.com/watch?v=9oAcxlDvDYk" target="_blank" class="youtube-btn">
+                                <i class="fab fa-youtube"></i> Watch on YouTube
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Video 6: Business Innovation & Technology -->
+                <div class="video-item">
+                    <div class="video-content">
+                        <div class="video-embed">
+                            <iframe 
+                                src="https://www.youtube.com/embed/UG7a_69VAcA?rel=0&modestbranding=1" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen
+                                loading="lazy">
+                            </iframe>
+                        </div>
+                        <h5>Business Innovation & Technology</h5>
+                        <div class="video-actions">
+                            <a href="https://www.youtube.com/watch?v=UG7a_69VAcA" target="_blank" class="youtube-btn">
+                                <i class="fab fa-youtube"></i> Watch on YouTube
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Infographics -->
+        <div class="infographics-section">
+            <h4>📊 Infographics & Highlights</h4>
+            <div class="infographics-grid">
+                <div class="infographic-item">
+                    <div>20+</div>
+                    <p>Years of Entrepreneurial Experience</p>
+                </div>
+                <div class="infographic-item">
+                    <div>15+</div>
+                    <p>Ventures Founded & Scaled</p>
+                </div>
+                <div class="infographic-item">
+                    <div>100+</div>
+                    <p>Startups Mentored</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+</div>
+
+
+<!-- Connect Section -->
+<section id="connect" class="fade-in" style="margin: 0; padding: 0; width: 100%;">
+    <div class="container-fluid bg-dark text-light footer wow fadeIn" data-wow-delay="0.1s" style="margin: 0; padding: 50px 0 0 0; background-color: #245bc9; font-size: 20px; width: 100%;">
+        <div class="container py-1">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-light mb-4">Location</h4>
+                   <div class="d-flex align-items-center" style="display: flex; align-items: center;">
+    <i class="fa fa-map-marker-alt me-3" style="color: white; flex-shrink: 0;"></i>
+    <p class="text-light mb-0" style="margin-left: 10px;margin-top: 30px; padding: 0; line-height: 1.5;">
+        Atlanta, GA | Chennai, India | San Francisco Bay Area
+    </p>
+</div>
+                    <div class="d-flex align-items-center mt-3" style="display: flex; align-items: center;">
+                        <i class="fa fa-envelope me-2" style="color: white;"></i>
+                        <p class="text-light mb-0" style="margin-left: 10px;" >
+                            justifus@gmail.com
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-light mb-4">Social Media</h4>
+                    <p class="text-light mb-4">Sign up for more updates</p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-outline-light btn-social me-2" href="https://www.facebook.com/share/18kC7NvxME/" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a class="btn btn-outline-light btn-social me-2" href="https://www.instagram.com/justifus.asir?igsh=ajNqa3FrcmJ0c3Jv" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a class="btn btn-outline-light btn-social me-2" href="https://www.linkedin.com/in/justifus?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="https://www.youtube.com/@AsirJustifus" target="_blank"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-12">
+                    <h4 class="text-light mb-4">Connect with Justifus Asir</h4>
+                    <form class="contact-form" method="POST" action="https://api.web3forms.com/submit">
+                        <input type="hidden" name="access_key" value="90efeba1-2826-4722-8b89-8cc70fab73fd" />
+                        <input type="hidden" name="replyto" value="{{aashvinianbalagan@gmail.com}}" />
+                        <input type="hidden" name="subject" value="New Message from Contact Form" />
+                        <input type="hidden" name="redirect" value="https://web3forms.com/success" />
+                        <input type="text" name="name" placeholder="Name" required class="form-control mb-3">
+                        <input type="email" name="email" placeholder="Email" required class="form-control mb-3">
+                        <textarea name="message" placeholder="Message" required class="form-control mb-3" rows="3"></textarea>
+                        <button class="btn btn-warning w-100" type="submit" style="background: var(--accent); color: var(--primary); font-weight: 600;">Send</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid" style="color: white; margin-top: 30px;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center py-3" style="text-align: center;">
+                        &copy; SART. All Rights Reserved. Developed by <a class="border-bottom" style="text-decoration: none; color: white;" target="_blank" href="https://www.enterkeysolutions.com/">EnterKey Solutions</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<script>
+    // Simple animations and interactions
+    document.addEventListener('DOMContentLoaded', function () {
+        // Fade in elements on scroll
+        const fadeElements = document.querySelectorAll('.fade-in');
+
+        const fadeInOnScroll = function () {
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.style.opacity = "1";
+                    element.style.transform = "translateY(0)";
+                }
+            });
+        };
+
+        // Set initial state
+        fadeElements.forEach(element => {
+            element.style.opacity = "0";
+            element.style.transform = "translateY(20px)";
+            element.style.transition = "opacity 0.8s ease, transform 0.8s ease";
+        });
+
+        window.addEventListener('scroll', fadeInOnScroll);
+        fadeInOnScroll(); // Check on load
+
+        // Mobile menu functionality
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+
+        if (mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', function () {
+                navLinks.classList.toggle('active');
+            });
+        }
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function () {
+                if (window.innerWidth <= 768) {
+                    navLinks.classList.remove('active');
+                }
+            });
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function (event) {
+            if (window.innerWidth <= 768) {
+                if (!event.target.closest('.main-nav') && navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                }
+            }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+
+                    // Close mobile menu if open
+                    if (window.innerWidth <= 768) {
+                        navLinks.classList.remove('active');
+                    }
+                }
+            });
+        });
+
+        // Gallery functionality
+        const viewAllBtn = document.getElementById('viewAllBtn');
+        const backBtn = document.getElementById('backBtn');
+        const gallerySection = document.getElementById('gallery');
+        const fullGallerySection = document.getElementById('fullGallery');
+
+        if (viewAllBtn && backBtn && gallerySection && fullGallerySection) {
+            // Toggle between main gallery and full gallery
+            viewAllBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                gallerySection.style.display = 'none';
+                fullGallerySection.style.display = 'block';
+            });
+
+            backBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                fullGallerySection.style.display = 'none';
+                gallerySection.style.display = 'block';
+            });
+
+            // Category filtering functionality
+            const categoryButtons = document.querySelectorAll('.category-btn');
+            const allGalleryItems = document.querySelectorAll('#all-gallery .gallery-item');
+            
+            // Initialize category galleries with appropriate items
+            function initializeCategoryGalleries() {
+                const entrepreneurGallery = document.getElementById('entrepreneur-gallery');
+                const familyGallery = document.getElementById('family-gallery');
+                const eventsGallery = document.getElementById('events-gallery');
+                
+                allGalleryItems.forEach(item => {
+                    const category = item.getAttribute('data-category');
+                    const clone = item.cloneNode(true);
+                    
+                    if (category === 'entrepreneur') {
+                        entrepreneurGallery.appendChild(clone);
+                    } else if (category === 'family') {
+                        familyGallery.appendChild(clone);
+                    } else if (category === 'events') {
+                        eventsGallery.appendChild(clone);
+                    }
+                });
+            }
+            
+            // Filter gallery by category
+            categoryButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Update active button
+                    categoryButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Get selected category
+                    const category = this.getAttribute('data-category');
+                    
+                    // Show/hide galleries based on category
+                    document.querySelectorAll('.category-gallery').forEach(gallery => {
+                        gallery.classList.add('hidden');
+                    });
+                    
+                    if (category === 'all') {
+                        document.getElementById('all-gallery').classList.remove('hidden');
+                    } else {
+                        document.getElementById(`${category}-gallery`).classList.remove('hidden');
+                    }
+                });
+            });
+            
+            // Initialize the galleries
+            initializeCategoryGalleries();
+        }
+
+        // Image Modal Functionality
+        const modal = document.getElementById('imageModal');
+        const modalImg = document.getElementById('modalImage');
+        const modalCaption = document.getElementById('modalCaption');
+        const closeBtn = document.querySelector('.close-btn');
+
+        // Function to open modal with image
+        function openModal(imgSrc, altText) {
+            if (modal && modalImg) {
+                modal.style.display = 'block';
+                modalImg.src = imgSrc;
+                modalCaption.textContent = altText || '';
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        // Function to close modal
+        function closeModal() {
+            if (modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        // Add click event to all gallery images
+        const galleryImages = document.querySelectorAll('.gallery-item img');
+        galleryImages.forEach(img => {
+            img.addEventListener('click', function() {
+                openModal(this.src, this.alt);
+            });
+        });
+
+        // Close modal when clicking X
+        if (closeBtn) {
+            closeBtn.addEventListener('click', closeModal);
+        }
+
+        // Close modal when clicking outside the image
+        if (modal) {
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    closeModal();
+                }
+            });
+        }
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && modal && modal.style.display === 'block') {
+                closeModal();
+            }
+        });
+    });
+</script>
+</body>
+</html>

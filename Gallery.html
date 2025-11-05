@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Photo Gallery - Asir Justifus</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #1a365d;
+      --secondary: #2b6cb0;
+      --accent: #ecc94b;
+      --light: #f7fafc;
+      --dark: #2d3748;
+      --gray: #718096;
+      --success: #38a169;
+      --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
+      --shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+      --radius: 8px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      line-height: 1.6;
+      color: var(--dark);
+      background-color: var(--light);
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    /* Navigation */
+    .sticky-nav {
+      position: sticky;
+      top: 0;
+      background: white;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      z-index: 1000;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      /* height: 130px; */
+    }
+ .fa-arrow-left:before{
+       margin-left: -5px;
+      }
+    .main-nav {
+      /* display: flex; */
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 0;
+    }
+
+    /* .back-btn {
+      background-color: rgb(75, 147, 203);
+      margin-top: 30px;
+      color: white;
+      padding: 10px 20px;
+      border-radius: var(--radius);
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    } */
+
+    .back-btn:hover {
+      background-color: #1a252f;
+      transform: translateY(-2px);
+    }
+
+    /* Gallery Page Styles */
+    .gallery-page {
+      padding: 40px 0;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .section-header h2 {
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+
+    .section-header h3 {
+      font-size: 1.2rem;
+      color: var(--gray);
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      color: var(--primary);
+      margin-bottom: 30px;
+      position: relative;
+      padding-bottom: 15px;
+      font-weight: 600;
+    }
+
+    h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background: var(--accent);
+      border-radius: 2px;
+      margin-left: 550px;
+
+    }
+
+    /* Gallery Categories */
+    .gallery-categories {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .category-btn {
+      padding: 10px 20px;
+      background: var(--light);
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      color: var(--dark);
+    }
+
+    .category-btn.active,
+    .category-btn:hover {
+      background: var(--secondary);
+      color: white;
+    }
+
+    /* Category Gallery */
+    .category-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+      gap: 35px;
+      margin-bottom: 40px;
+    }
+
+    .category-gallery.hidden {
+      display: none;
+    }
+
+    .gallery-item {
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      position: relative;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .gallery-item:hover {
+      transform: scale(1.05);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .gallery-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+      padding: 15px;
+      color: white;
+    }
+
+    .gallery-caption p {
+      margin: 0;
+      font-size: 0.9rem;
+    }
+
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      animation: fadeIn 0.3s ease;
+    }
+
+    .modal-content {
+      display: block;
+      margin: auto;
+      max-width: 90%;
+      max-height: 80%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 20px;
+      right: 35px;
+      color: #fff;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 1001;
+      transition: color 0.3s ease;
+    }
+
+    .close-btn:hover {
+      color: #ccc;
+    }
+
+    .modal-caption {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: white;
+      text-align: center;
+      font-size: 16px;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 10px 20px;
+      border-radius: 20px;
+      max-width: 80%;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+      .category-gallery {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 20px;
+      }
+
+      .section-header h2 {
+        font-size: 2rem;
+      }
+
+      .gallery-categories {
+        gap: 5px;
+      }
+
+      .category-btn {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .category-gallery {
+        grid-template-columns: 1fr;
+        gap: 15px;
+      }
+
+      .section-header h2 {
+        font-size: 1.8rem;
+      }
+
+      
+    }
+    
+    /* ===== TABLET STYLES (768px and up) ===== */
+    @media (min-width: 768px) {
+      .sticky-nav {
+        padding: 15px 0;
+      }
+
+      .nav-container {
+        padding: 0 20px;
+      }
+
+      .main-nav {
+        min-height: 80px;
+      }
+
+      .back-btn {
+        font-size: 26px;
+        width: 55px;
+        height: 55px;
+      }
+.fa-arrow-left:before{
+       margin-left:25px;
+      }
+      .nav-title h2 {
+        font-size: 1.6rem;
+      }
+
+      .gallery-page {
+        padding: 30px 0 50px;
+      }
+
+      .section-header {
+        margin-bottom: 40px;
+      }
+
+      .section-header h2 {
+        font-size: 2.2rem;
+      }
+
+      .section-header h3 {
+        font-size: 1.1rem;
+      }
+
+      h2 {
+        font-size: 1.8rem;
+        margin-bottom: 25px;
+      }
+
+      .gallery-categories {
+        margin-bottom: 30px;
+        gap: 12px;
+      }
+
+      .category-btn {
+        padding: 12px 22px;
+        font-size: 1rem;
+      }
+
+      .category-gallery {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 25px;
+        margin-bottom: 40px;
+      }
+
+      .gallery-item img {
+        height: 250px;
+      }
+
+      .close-btn {
+        top: 20px;
+        right: 30px;
+        font-size: 40px;
+        width: 45px;
+        height: 45px;
+      }
+
+      .modal-caption {
+        font-size: 15px;
+        bottom: 25px;
+      }
+    }
+
+    /* ===== DESKTOP STYLES (1024px and up) ===== */
+    @media (min-width: 1024px) {
+      .container {
+        padding: 0 30px;
+      }
+
+      .nav-container {
+        padding: 0 30px;
+      }
+
+      .main-nav {
+        min-height: 90px;
+      }
+
+      .back-btn {
+        font-size: 28px;
+        width: 60px;
+        height: 60px;
+      }
+
+      .nav-title h2 {
+        font-size: 1.8rem;
+      }
+
+      .gallery-page {
+        padding: 40px 0 60px;
+      }
+
+      .section-header h2 {
+        font-size: 2.5rem;
+      }
+
+      .section-header h3 {
+        font-size: 1.2rem;
+      }
+
+      h2 {
+        font-size: 2rem;
+        margin-bottom: 30px;
+      }
+
+      .gallery-categories {
+        margin-bottom: 35px;
+        gap: 15px;
+      }
+
+      .category-btn {
+        padding: 12px 24px;
+        font-size: 1rem;
+      }
+
+      .category-gallery {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 30px;
+        margin-bottom: 50px;
+      }
+
+      .gallery-item img {
+        height: 280px;
+      }
+
+      .gallery-caption {
+        padding: 15px;
+      }
+
+      .gallery-caption p {
+        font-size: 0.9rem;
+      }
+
+      .modal-content {
+        max-width: 90%;
+        max-height: 80%;
+      }
+
+      .close-btn {
+        top: 25px;
+        right: 35px;
+        font-size: 45px;
+        width: 50px;
+        height: 50px;
+      }
+
+      .modal-caption {
+        font-size: 16px;
+        bottom: 30px;
+      }
+    }
+
+    /* ===== LARGE DESKTOP STYLES (1200px and up) ===== */
+    @media (min-width: 1200px) {
+      .category-gallery {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 35px;
+      }
+
+      .gallery-item img {
+        height: 300px;
+      }
+    }
+
+    /* ===== SMALL MOBILE STYLES (480px and below) ===== */
+    @media (max-width: 480px) {
+      .container {
+        padding: 0 15px;
+      }
+
+      .nav-container {
+        padding: 0 10px;
+      }
+
+      .main-nav {
+        min-height: 50px;
+      }
+
+      .back-btn {
+        font-size: 24px;
+        width: 0px;
+        height: 0px;
+        /* padding: 8px; */
+      }
+      /* .fa-arrow-left:before{
+        margin-right: 10px;
+     } */
+
+      .nav-title h2 {
+        font-size: 1.2rem;
+      }
+
+      .gallery-page {
+        padding: 15px 0 30px;
+      }
+
+      .section-header {
+        margin-bottom: 20px;
+      }
+
+      .section-header h2 {
+        font-size: 1.6rem;
+      }
+
+      .section-header h3 {
+        font-size: 0.9rem;
+      }
+
+      h2 {
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+        padding-bottom: 8px;
+      }
+
+      h2::after {
+        width: 40px;
+        height: 2px;
+      }
+
+      .gallery-categories {
+        margin-bottom: 20px;
+        gap: 6px;
+      }
+
+      .category-btn {
+        padding: 8px 14px;
+        font-size: 0.8rem;
+        border-radius: 20px;
+      }
+
+      .category-gallery {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        margin-bottom: 25px;
+        padding: 0 5px;
+      }
+
+      .gallery-item img {
+        height: 200px;
+      }
+
+      .gallery-caption {
+        padding: 10px;
+        transform: translateY(0);
+        background: rgba(0, 0, 0, 0.7);
+      }
+
+      .gallery-caption p {
+        font-size: 0.8rem;
+      }
+
+      .modal-content {
+        max-width: 98%;
+        max-height: 90%;
+      }
+
+      .close-btn {
+        top: 10px;
+        right: 15px;
+        font-size: 30px;
+        width: 35px;
+        height: 35px;
+      }
+
+      .modal-caption {
+        font-size: 12px;
+        bottom: 15px;
+        padding: 8px 16px;
+        max-width: 95%;
+      }
+    }
+
+    /* ===== EXTRA SMALL MOBILE STYLES (360px and below) ===== */
+    @media (max-width: 360px) {
+      .container {
+        padding: 0 10px;
+      }
+.fa-arrow-left:before{
+        margin-left: -10px;
+     } 
+      .nav-title h2 {
+        font-size: 10px;
+      }
+
+      .section-header h2 {
+        font-size: 1.4rem;
+      }
+
+      .category-btn {
+        padding: 6px 12px;
+        font-size: 0.75rem;
+      }
+
+      .gallery-item img {
+        height: 180px;
+      }
+
+      .gallery-caption p {
+        font-size: 0.75rem;
+      }
+    }
+
+    /* ===== ACCESSIBILITY AND PERFORMANCE ===== */
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+
+    /* High contrast mode support */
+    @media (prefers-contrast: high) {
+      :root {
+        --primary: #000000;
+        --secondary: #0000ff;
+        --accent: #ff0000;
+        --light: #ffffff;
+        --dark: #000000;
+        --gray: #666666;
+      }
+    }
+
+    /* Touch device improvements */
+    @media (hover: none) {
+      .gallery-item:hover {
+        transform: none;
+      }
+
+      .gallery-item:hover img {
+        transform: none;
+      }
+
+      .gallery-caption {
+        transform: translateY(0);
+        background: rgba(0, 0, 0, 0.7);
+      }
+
+      .category-btn:hover {
+        transform: none;
+      }
+    }
+
+    /* Print styles */
+    @media print {
+      .sticky-nav,
+      .gallery-categories,
+      .close-btn {
+        display: none !important;
+      }
+
+      .category-gallery {
+        display: block !important;
+      }
+
+      .gallery-item {
+        break-inside: avoid;
+        margin-bottom: 20px;
+      }
+
+      .gallery-item img {
+        height: auto;
+        max-height: 300px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navigation -->
+  <!-- Navigation -->
+  <div class="sticky-nav">
+    <div class="nav-container">
+      <nav class="main-nav"
+        style="display: flex; justify-content: space-between; align-items: center; padding: 15px 0; position: relative; min-height: 90px;">
+        <a href="index.html#gallery" class="back-btn"
+          style="color: #1a365d; font-size: 30px; padding: 15px 25px; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 8px; background: rgba(255, 255, 255, 0.9); border: 2px solid #2b6cb0; z-index: 1000; position: relative; margin-left: 0px;">
+          <i class="fas fa-arrow-left" style="margin-left:-30px;"></i>
+        </a>
+        <div class="nav-title"
+          style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 100%; text-align: center; pointer-events: none;">
+          <h2 style="margin: 0; color: #1a365d; font-size: 1.8rem;">Photo Gallery</h2>
+        </div>
+      </nav>
+    </div>
+  </div>
+  <!-- Gallery Page Content -->
+  <div class="container gallery-page">
+    <div class="section-header">
+      <!-- <h2>📸 Full Photo Gallery</h2>
+            <h3>Browse photos by category</h3> -->
+    </div>
+
+    <div class="gallery-categories">
+      <button class="category-btn active" data-category="all">All Photos</button>
+      <button class="category-btn" data-category="entrepreneur">Entrepreneur Journey</button>
+      <button class="category-btn" data-category="family">Family & Friends</button>
+    </div>
+
+    <!-- All Photos -->
+    <div id="all-gallery" class="category-gallery">
+      <!-- Meeting Images -->
+      <div class="gallery-item" data-category="entrepreneur">
+        <img src="images/meeting/1.ATMA.jpg" alt="American Tamil Medical Association Meeting">
+      </div>
+      <div class="gallery-item" data-category="entrepreneur">
+        <img src="images/meeting/1.Rotary.jpg" alt="Rotary Meeting">
+      </div>
+      <div class="gallery-item" data-category="entrepreneur">
+        <img src="images/meeting/19.Meet.jpg" alt="Business Meeting">
+      </div>
+      <div class="gallery-item" data-category="entrepreneur">
+        <img src="images/meeting/United1.jpg" alt="Opening of United Technology Solutions">
+      </div>
+      <div class="gallery-item" data-category="entrepreneur">
+        <img src="images/meeting/2.ATMA.jpg" alt="American Tamil Medical Association Meeting">
+      </div>
+      <div class="gallery-item" data-category="entrepreneur">
+        <img src="images/meeting/2.Rotary.jpg" alt="Rotary Meeting">
+      </div>
+      <div class="gallery-item" data-category="entrepreneur">
+        <img src="images/meeting/11-Meet.jpg" alt="Team Meeting">
+      </div>
+      <div class="gallery-item" data-category="entrepreneur">
+        <img src="images/meeting/12Meet.jpg" alt="Business Meeting">
+      </div>
+      <div class="gallery-item" data-category="entrepreneur">
+        <img src="images/meeting/13.Meet.jpg" alt="Business Meeting">
+      </div>
+      <div class="gallery-item" data-category="family">
+        <img src="images/meeting/13.MeetBFast.jpg" alt="Breakfast Meeting">
+      </div>
+      <div class="gallery-item" data-category="entrepreneur">
+        <img src="images/meeting/14.Meet.jpg" alt="Business Meeting">
+      </div>
+      <div class="gallery-item" data-category="entrepreneur">
+        <img src="images/meeting/16.Meet.jpg" alt="Professional Meeting">
+      </div>
+      <div class="gallery-item" data-category="entrepreneur">
+        <img src="images/meeting/17.Meet.jpg" alt="Professional Meeting">
+      </div>
+      <div class="gallery-item" data-category="entrepreneur">
+        <img src="images/meeting/18.Meet.jpg" alt="Professional Meeting">
+      </div>
+      <div class="gallery-item" data-category="family">
+        <img src="images/meeting/1_1Meet.jpg" alt="Family Event">
+      </div>
+      <div class="gallery-item" data-category="family">
+        <img src="images/meeting/1SugadevVeluAnand.jpg" alt="With Friends">
+      </div>
+      <div class="gallery-item" data-category="family">
+        <img src="images/meeting/20Meet.jpg" alt="Social Gathering">
+      </div>
+      <div class="gallery-item" data-category="family">
+        <img src="images/meeting/21Meet.jpg" alt="Friends Meeting">
+      </div>
+      <div class="gallery-item" data-category="family">
+        <img src="images/meeting/3.Rotary.jpg" alt="Rotary Event">
+      </div>
+      <div class="gallery-item" data-category="family">
+        <img src="images/meeting/8WithTeam.jpg" alt="Team Gathering">
+      </div>
+      <div class="gallery-item" data-category="family">
+        <img src="images/meeting/9.Meet.jpg" alt="Social Meeting">
+      </div>
+      <div class="gallery-item" data-category="family">
+        <img src="images/meeting/IMG-20251026-WA0010.jpg" alt="Lunch with Team">
+      </div>
+      <div class="gallery-item" data-category="family">
+        <img src="images/meeting/IMG-20251026-WA0028.jpg" alt="Office Workspace">
+      </div>
+      <div class="gallery-item" data-category="family">
+        <img src="images/meeting/WithAgaram-Surya.jpg" alt="Suriya in Agaram Foundation">
+      </div>
+      <div class="gallery-item" data-category="family">
+        <img src="images/meeting/WithIlayarja.jpg" alt="Isaignani Ilayaraja">
+      </div>
+
+      <!-- Entrepreneur Journey Images -->
+      <div class="gallery-item" data-category="entrepreneur">
+        <img src="images/entjourney/1_3.Meets.jpg" alt="Business Meetings">
+      </div>
+      <div class="gallery-item" data-category="entrepreneur">
+        <img src="images/entjourney/1Tranzlogix-Launch.jpg" alt="Tranzlogix Launch">
+      </div>
+      <div class="gallery-item" data-category="entrepreneur">
+        <img src="images/entjourney/1TrustedRoadWays.jpg" alt="Trusted Roadways">
+      </div>
+      <div class="gallery-item" data-category="entrepreneur">
+        <img src="images/entjourney/2.Meets.jpg" alt="Business Meetings">
+      </div>
+      <div class="gallery-item" data-category="entrepreneur">
+        <img src="images/entjourney/2.Tranzlogix.jpg" alt="Tranzlogix">
+      </div>
+      <div class="gallery-item" data-category="entrepreneur">
+        <img src="images/entjourney/3.Meet_EmeralsPublishers.jpg" alt="Emerald Publishers">
+      </div>
+      <div class="gallery-item" data-category="entrepreneur">
+        <img src="images/entjourney/3.United.jpg" alt="Opening of United Technology Solutions">
+      </div>
+      <div class="gallery-item" data-category="entrepreneur">
+        <img src="images/entjourney/4.Oman Automobile Club.jpg" alt="Oman Automobile Club">
+      </div>
+      <div class="gallery-item" data-category="entrepreneur">
+        <img src="images/entjourney/4.United-Accpol.jpg" alt="United Accounting">
+      </div>
+      <div class="gallery-item" data-category="entrepreneur">
+        <img src="images/entjourney/4_1_United.jpg" alt="Opening of United Technology Solutions">
+      </div>
+      <div class="gallery-item" data-category="entrepreneur">
+        <img src="images/entjourney/5. Oman Automobile Club-2.jpg" alt="Oman Automobile Club Event">
+      </div>
+      <div class="gallery-item" data-category="entrepreneur">
+        <img src="images/entjourney/5.Enrichware.jpg" alt="Enrichware">
+      </div>
+      <div class="gallery-item" data-category="entrepreneur">
+        <img src="images/entjourney/6.Oman Automobile Club.jpg" alt="Oman Automobile Club">
+      </div>
+      <div class="gallery-item" data-category="entrepreneur">
+        <img src="images/entjourney/6.WithTeam_AtCheckers.jpg" alt="Team at Checkers">
+      </div>
+      <div class="gallery-item" data-category="entrepreneur">
+        <img src="images/entjourney/7.Compvue.jpg" alt="Compvue">
+      </div>
+      <div class="gallery-item" data-category="entrepreneur">
+        <img src="images/entjourney/7.RiseEvent.jpg" alt="RISE Event">
+      </div>
+      <div class="gallery-item" data-category="entrepreneur">
+        <img src="images/entjourney/7_2_Compvue.jpg" alt="Compvue Team">
+      </div>
+      <div class="gallery-item" data-category="entrepreneur">
+        <img src="images/entjourney/7_Compvue_STP.jpg" alt="Compvue STP">
+      </div>
+      <div class="gallery-item" data-category="entrepreneur">
+        <img src="images/entjourney/8.RiseEvent.jpg" alt="RISE Event">
+      </div>
+      <div class="gallery-item" data-category="entrepreneur">
+        <img src="images/entjourney/9.Riseevent2.jpg" alt="RISE Event">
+      </div>
+      <div class="gallery-item" data-category="entrepreneur">
+        <img src="images/entjourney/9.Riseevent3.jpg" alt="RISE Event">
+      </div>
+      <div class="gallery-item" data-category="entrepreneur">
+        <img src="images/entjourney/United2.jpg" alt="Opening of United Technology Solutions">
+      </div>
+
+      <!-- Family & Friends Images -->
+      <div class="gallery-item" data-category="family">
+        <img src="images/family/1.SundaySchool-1965.jpg" alt="Sunday School 1965">
+      </div>
+      <div class="gallery-item" data-category="family">
+        <img src="images/family/10.SchoolWhereIStudied.jpg" alt="School Days">
+      </div>
+      <div class="gallery-item" data-category="family">
+        <img src="images/family/2.MyPrimarySchoolTeachers.jpg" alt="Primary School Teachers">
+      </div>
+      <div class="gallery-item" data-category="family">
+        <img src="images/family/3.SundaySchoolTeachers-1980.jpg" alt="Sunday School Teachers 1980">
+      </div>
+      <div class="gallery-item" data-category="family">
+        <img src="images/family/4.GroupImage.jpg" alt="Group Photo">
+      </div>
+      <div class="gallery-item" data-category="family">
+        <img src="images/family/5-WithFriends.jpg" alt="With Friends">
+      </div>
+      <div class="gallery-item" data-category="family">
+        <img src="images/family/6.WithFriends-2.jpg" alt="Friends Gathering">
+      </div>
+      <div class="gallery-item" data-category="family">
+        <img src="images/family/7.WithFriendsAtMuttomBeacah.jpg" alt="Friends at Muttom Beach">
+      </div>
+      <div class="gallery-item" data-category="family">
+        <img src="images/family/8.WithFriends-2.jpg" alt="Friends Time">
+      </div>
+      <div class="gallery-item" data-category="family">
+        <img src="images/family/Profile1.jpg" alt="With Family">
+      </div>
+      <div class="gallery-item" data-category="family">
+        <img src="images/family/Profile2.jpg" alt="With Family">
+      </div>
+      <div class="gallery-item" data-category="family">
+        <img src="images/family/Profile3.jpg" alt="With Family">
+      </div>
+      <div class="gallery-item" data-category="family">
+        <img src="images/family/Profile4.jpg" alt="With Family">
+      </div>
+    </div>
+
+    <!-- Category Galleries -->
+    <div id="entrepreneur-gallery" class="category-gallery hidden"></div>
+    <div id="family-gallery" class="category-gallery hidden"></div>
+  </div>
+
+  <!-- Image Modal -->
+  <div id="imageModal" class="modal">
+    <span class="close-btn">&times;</span>
+    <img class="modal-content" id="modalImage">
+    <div class="modal-caption" id="modalCaption"></div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Category filtering functionality
+      const categoryButtons = document.querySelectorAll('.category-btn');
+      const allGalleryItems = document.querySelectorAll('#all-gallery .gallery-item');
+
+      // Initialize category galleries
+      function initializeCategoryGalleries() {
+        const entrepreneurGallery = document.getElementById('entrepreneur-gallery');
+        const familyGallery = document.getElementById('family-gallery');
+
+        // Clear existing content
+        entrepreneurGallery.innerHTML = '';
+        familyGallery.innerHTML = '';
+
+        // Populate category galleries
+        allGalleryItems.forEach(item => {
+          const category = item.getAttribute('data-category');
+          const clone = item.cloneNode(true);
+
+          if (category === 'entrepreneur') {
+            entrepreneurGallery.appendChild(clone);
+          } else if (category === 'family') {
+            familyGallery.appendChild(clone);
+          }
+        });
+
+        // Add modal functionality to cloned items
+        addModalFunctionality();
+      }
+
+      // Filter gallery by category
+      categoryButtons.forEach(button => {
+        button.addEventListener('click', function () {
+          // Update active button
+          categoryButtons.forEach(btn => btn.classList.remove('active'));
+          this.classList.add('active');
+
+          // Get selected category
+          const category = this.getAttribute('data-category');
+
+          // Show/hide galleries based on category
+          document.querySelectorAll('.category-gallery').forEach(gallery => {
+            gallery.classList.add('hidden');
+          });
+
+          if (category === 'all') {
+            document.getElementById('all-gallery').classList.remove('hidden');
+          } else {
+            document.getElementById(`${category}-gallery`).classList.remove('hidden');
+          }
+        });
+      });
+
+      // Modal functionality
+      function addModalFunctionality() {
+        const modal = document.getElementById('imageModal');
+        const modalImg = document.getElementById('modalImage');
+        const modalCaption = document.getElementById('modalCaption');
+        const closeBtn = document.querySelector('.close-btn');
+
+        // Function to open modal
+        function openModal(imgSrc, altText) {
+          if (modal && modalImg) {
+            modal.style.display = 'block';
+            modalImg.src = imgSrc;
+            modalCaption.textContent = altText || '';
+            document.body.style.overflow = 'hidden';
+          }
+        }
+
+        // Function to close modal
+        function closeModal() {
+          if (modal) {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+          }
+        }
+
+        // Add click events to all gallery images
+        const galleryImages = document.querySelectorAll('.gallery-item img');
+        galleryImages.forEach(img => {
+          img.addEventListener('click', function () {
+            openModal(this.src, this.alt);
+          });
+        });
+
+        // Close modal events
+        if (closeBtn) {
+          closeBtn.addEventListener('click', closeModal);
+        }
+
+        if (modal) {
+          modal.addEventListener('click', function (e) {
+            if (e.target === modal) {
+              closeModal();
+            }
+          });
+        }
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function (e) {
+          if (e.key === 'Escape' && modal && modal.style.display === 'block') {
+            closeModal();
+          }
+        });
+      }
+
+      // Initialize the galleries and modal functionality
+      initializeCategoryGalleries();
+      addModalFunctionality();
+    });
+  </script>
+</body>
+
+</html>
