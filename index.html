@@ -10,14 +10,14 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
 
-
+r
   <title>Asir Justifus | Visionary Entrepreneur | SART Accelerator | AI & Logistics Innovator</title>
 
   <!-- Meta Description -->
-  <meta name="description" content="Discover Asir Justifus – Parallel Entrepreneur, Visionary Leader, and Founder of SART Accelerator. Explore his transformative ventures in AI, logistics, FinTech, healthcare, and talent tech across USA, India, and the Middle East.">
+  <meta name="description" content="Discover Asir Justifus – Entrepreneur, Visionary Leader, and Founder of SART Accelerator. Explore his transformative ventures in AI, logistics, FinTech, healthcare, and talent tech across USA, India, and the Middle East.">
 
   <!-- Meta Keywords -->
-  <meta name="keywords" content="Asir Justifus, Parallel Entrepreneur, SART Accelerator, AI Innovation, Logistics Tech, FinTech, Healthcare AI, Talent Tech, Tranzlogix, Trucker Cloud, Cyber Arcadia, EnterKey Solutions, Startup Mentor, Visionary Leader, Internet of Humans, Smart Score Technology, ELD Marketplace, TruckerGIG, RomarKing, HomieFix, SimpleGo Taxi, SeTLD, tiipstr, ADRX, motivational speaker, Indo-American Chamber of Commerce, Raise Global, ATMA, Fetna, US Tamil Groups">
+  <meta name="keywords" content="Asir Justifus, Entrepreneur, SART Accelerator, AI Innovation, Logistics Tech, FinTech, Healthcare AI, Talent Tech, Tranzlogix, Trucker Cloud, Cyber Arcadia, EnterKey Solutions, Startup Mentor, Visionary Leader, Internet of Humans, Smart Score Technology, ELD Marketplace, TruckerGIG, RomarKing, HomieFix, SimpleGo Taxi, SeTLD, tiipstr, ADRX, motivational speaker, Indo-American Chamber of Commerce, Raise Global, ATMA, Fetna, US Tamil Groups">
 
   <!-- Canonical URL -->
   <link rel="canonical" href="https://justifus.com">
@@ -51,7 +51,7 @@
   "alternateName": "Justifus Asir B Positive  (Justi)",
   "url": "https://justifus.com",
   "image": "https://justifus.com/images/justifus.jpg",
-  "jobTitle": "Parallel Entrepreneur, Visionary Leader, Startup Mentor",
+  "jobTitle": "Entrepreneur, Visionary Leader, Startup Mentor",
   "worksFor": {
     "@type": "Organization",
     "name": "SART Accelerator"
@@ -93,7 +93,7 @@
         :root {
             --primary: #1a365d;
             --secondary: #2b6cb0;
-            --accent: #ecc94b;
+            /* --accent: #ecc94b; */
             --light: #f7fafc;
             --dark: #2d3748;
             --gray: #718096;
@@ -356,7 +356,7 @@
             font-weight: 600;
         }
 
-        h2::after {
+        /* h2::after {
             content: '';
             position: absolute;
             bottom: 0;
@@ -365,7 +365,7 @@
             height: 3px;
             background: var(--accent);
             border-radius: 2px;
-        }
+        } */
 
         h3 {
             font-size: 1.4rem;
@@ -386,6 +386,7 @@
             font-size: 1rem;
             line-height: 1.7;
             color: var(--dark);
+            text-align: justify;
         }
 
         ul {
@@ -477,9 +478,9 @@
 }
 
 .book img{
-    width: 60%;
+    width: 80%;
     max-width: 100%; /* Ensure image doesn’t exceed container */
-    height: auto;
+    /* height: auto; */
     max-height: 1000px; /* Reduced height */
     object-fit: cover; /* Maintain aspect ratio, crop if needed */
     border-radius: 8px;
@@ -743,7 +744,7 @@ h2::after {
   .community-images img { height: 180px; }
   .community-text li { 
     flex-direction: column; 
-    text-align: center; 
+    text-align: justify; 
     gap: 12px;
   }
   .community-text li img {
@@ -949,6 +950,7 @@ h2::after {
             margin: 0;
             font-size: 1.1rem;
             color: #ccc;
+            text-align: center;
         }
 
         .full-gallery {
@@ -2429,8 +2431,18 @@ h2::after {
 
 @media (max-width: 768px) {
   .highlight-box {
-    width: 94vw;
+    width: 90%;
     padding: 24px;
+       background: #f8f9fa; /* Light background for contrast */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.8s ease-out; /* Fade-in animation */
+
+    max-width: 100%;      /* Full width of container */
+    width: 90vw;          /* 90% of screen width */
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
@@ -2553,6 +2565,17 @@ h2::after {
 
     .highlight-box {
         padding: 12px;
+        width: 100%;
+           background: #f8f9fa; /* Light background for contrast */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.8s ease-out; /* Fade-in animation */
+
+    max-width: 100%;      /* Full width of container */
+    width: 90vw;          /* 90% of screen width */
+    margin-left: auto;
+    margin-right: auto;
     }
 
     .highlight-box h4 {
@@ -2906,7 +2929,83 @@ h2::after {
     }
 }
 
+@media (max-width: 480px) {
+    #imprint-1971 {
+        padding: 15px;
+    }
+    h2 {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+    h3 {
+        font-size: 1.3rem;
+    }
+    h4 {
+        font-size: 1.2rem;
+    }
+    p {
+        font-size: 0.9rem;
+        text-align: justify;
+    }
+    .content-image img {
+        max-height: 300px;
+    }
+}
 
+@media (max-width: 480px) {
+    #imprint-1971 {
+        padding: 15px;
+    }
+    h4 {
+        font-size: 1.2rem;
+    }
+    p {
+        font-size: 0.9rem;
+        text-align: justify;
+    }
+    .content-image img {
+        max-height: 300px;
+    }
+}
+
+
+
+
+.toast-container {
+    z-index: 9999 !important;
+}
+
+.toast {
+    min-width: 300px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.bg-success {
+    background-color: #28a745 !important;
+}
+
+
+
+@media (max-width: 768px) {
+
+ .book {
+        /* Ensure container takes full width and centers content */
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 20px; /* Add some padding on sides */
+    }
+    
+    .book img {
+        /* Center and constrain image */
+        width: auto;
+        max-width: 100%;
+        height: auto;
+        max-height: 400px;
+    }
+
+}
 
 </style>
 </head>
@@ -2923,7 +3022,7 @@ h2::after {
             <div class="header-text">
                 <div class="title-section">
                     <h1>Asir Justifus</h1>
-                    <p class="subtitle"><b></b>Parallel Entrepreneur | Founder and Chairman - SART Accelerator | Author |
+                    <p class="subtitle"><b></b>Entrepreneur | Founder and Chairman - SART Accelerator | Author |
                         Mentor | Visionary</p>
                 </div>
                 <!-- <div class="social-links">
@@ -2974,23 +3073,27 @@ h2::after {
                         transformation. He is the Founder and Chairman of <a href="https://www.sartaccel.com/"
                             target="_blank">SART Accelerator</a>, where he mentors startups and scales ventures across
                         the USA, India, and the Middle East.</p>
-                    <p>Born on July 22, 1971, in Waterfall Estate, Valparai — a serene tea plantation nestled in the
-                        Anaimalai hills of Pollachi, Tamil Nadu — Asir's early life was shaped by nature, tradition, and
+                    <p>Born on July, 1971, in Waterfall Estate, Valparai - a serene tea plantation nestled in the
+                        Anaimalai hills of Pollachi, Tamil Nadu - Asir's early life was shaped by nature, tradition, and
                         community. He grew up in Santhapuram, a small village near Nagercoil in the Kanyakumari
                         district, where the values of faith, dignity, and perseverance were deeply woven into his
                         upbringing.</p>
                     <p>Over the years, Asir’s journey as an entrepreneur has enriched his expertise across industries.
                         Fueled by a passion for innovation and a relentless drive for growth, Asir Justifus continues to
                         lead as a visionary entrepreneur. His journey is defined by the transformation of bold ideas
-                        into meaningful solutions—solutions that deliver measurable value and help shape the future of
-                        the startups and ventures he champions. industries. He has consulted with leading global
+                        into meaningful solutions - solutions that deliver measurable value and help shape the future of
+                        the startups and ventures he champions. Industries he has consulted with leading global
                         companies including:
                     </p>
                 </div>
 
             </div>
 
-            <div class="stats-container">
+              <div class="parallel">
+    <img src="images/parallelentrepreneur.jpeg" alt="Early Life">
+</div>
+
+            <!-- <div class="stats-container">
                 <div class="stat-card">
                     <div class="stat-number">20+</div>
                     <div class="stat-label">Years of Experience</div>
@@ -3007,12 +3110,10 @@ h2::after {
                     <div class="stat-number">100+</div>
                     <div class="stat-label">Startups Mentored</div>
                 </div>
-            </div>
+            </div> -->
 
        
-           <div class="parallel">
-    <img src="images/parallelentrepreneur.jpg" alt="Early Life">
-</div>
+         
         </section> 
 
        
@@ -3037,7 +3138,7 @@ h2::after {
                                         target="_blank">TruckerCloud</a> in 2020 after securing investment from Rule1
                                     Ventures, Buckhead, Atlanta, revolutionizing logistics visibility and operations for
                                     Risk Management by leveraging Electronic Logging Devices (ELD) data through
-                                    Telematics. He didn't stop there — he built ELDMarketplace.com, TruckerGIG, and
+                                    Telematics. He didn't stop there - he built ELDMarketplace.com, TruckerGIG, and
                                     EnterKey Solutions, each designed to streamline supply chains and empower digital
                                     transformation.</p>
                             </div>
@@ -3049,7 +3150,7 @@ h2::after {
                                     (India) Pvt Ltd. in 2004 and later merged with Compvue in 2018. His international
                                     footprint includes a Board Member role at the <a href="http://www.ltna.org"
                                         target="_blank">Logistics & Transportation Association of North America</a>
-                                    (LTNA) — shaping the future of global mobility and innovation.</p>
+                                    (LTNA) - shaping the future of global mobility and innovation.</p>
                             </div>
                         </div>
                     </div>
@@ -3094,7 +3195,7 @@ h2::after {
     <div class="content-with-image reverse">
         <p>Asir Justifus's entrepreneurial journey continues to evolve through a bold commitment to
             <em>AI-driven innovation</em> and <em>cyber resilience</em>. His work spans multiple
-            domains—TalentTech, FinTech, Healthcare, CRM, and beyond—where he architects solutions that are not
+            domains -TalentTech, FinTech, Healthcare, CRM, and beyond - where he architects solutions that are not
             only smart, but secure.
         </p>
         <div class="content-text">
@@ -3193,7 +3294,7 @@ h2::after {
                                 target="_blank"><em>Parallel Entrepreneurship Journey</em></a> - A guide to building
                             multiple ventures with clarity and purpose.</li>
                         <li><em>Internet of Humans</em> - A vision for networks built on trust, empathy, and
-                            collaboration — not just machines.</li>
+                            collaboration - not just machines.</li>
                     </ul>
                     <p>His writing reflects a deep understanding of both technology and human dynamics, offering
                         insights that bridge the gap between innovation and human values.</p>
@@ -3217,19 +3318,19 @@ h2::after {
                 <div class="services-grid">
                     <div class="service-card">
                         <div class="service-icon">
-                            <i class="fas fa-rocket"></i>
+                            <i class="fas fa-handshake"></i>
                         </div>
                         <p>Structured business frameworks for scalable operations</p>
                     </div>
                     <div class="service-card">
                         <div class="service-icon">
-                            <i class="fas fa-rocket"></i>
+                            <i class="fas fa-handshake"></i>
                         </div>
                         <p>Compliance and performance monitoring</p>
                     </div>
                     <div class="service-card">
                         <div class="service-icon">
-                            <i class="fas fa-rocket"></i>
+                            <i class="fas fa-handshake"></i>
                         </div>
                         <p>Equity-based investment opportunities</p>
                     </div>
@@ -3239,13 +3340,13 @@ h2::after {
                 <div style="display: flex; justify-content: center; gap: 25px; flex-wrap: wrap; margin: 20px 0;">
                     <div class="service-card" style="flex: 0 0 280px; max-width: 300px;">
                         <div class="service-icon">
-                            <i class="fas fa-rocket"></i>
+                            <i class="fas fa-handshake"></i>
                         </div>
                         <p>Strategic networks for timely and successful exits</p>
                     </div>
                     <div class="service-card" style="flex: 0 0 280px; max-width: 300px;">
                         <div class="service-icon">
-                            <i class="fas fa-rocket"></i>
+                            <i class="fas fa-handshake"></i>
                         </div>
                         <p>Marketing & Sales acceleration to ignite traction and revenue</p>
                     </div>
@@ -3270,10 +3371,10 @@ h2::after {
 
       <h4>What Sets Him Apart:</h4>
       <ul>
-        <li>Inclusive Team Building — Unites high-net-worth investors and everyday changemakers into purpose-driven ecosystems.</li>
-        <li>Youth & Founder Empowerment — Guides first-time founders and emerging leaders with clarity, courage, and actionable wisdom.</li>
-        <li>Human-Centric Innovation — Champions solutions that honor dignity, diversity, and the lived experiences of real people.</li>
-        <li>Values-Driven Leadership — Inspires bold action rooted in integrity, service, and long-term impact.</li>
+        <li>Inclusive Team Building - Unites high-net-worth investors and everyday changemakers into purpose-driven ecosystems.</li>
+        <li>Youth & Founder Empowerment - Guides first-time founders and emerging leaders with clarity, courage, and actionable wisdom.</li>
+        <li>Human-Centric Innovation - Champions solutions that honor dignity, diversity, and the lived experiences of real people.</li>
+        <li>Values-Driven Leadership - Inspires bold action rooted in integrity, service, and long-term impact.</li>
       </ul>
 
       <!-- ONE IMAGE ON RIGHT — SERVES BOTH SECTIONS -->
@@ -3347,18 +3448,18 @@ h2::after {
                 community development through active engagement in diverse organizations across the globe.</p>
 
             <ul>
-                <li><a href="https://tamilrise.org/" target="_blank">The Rise Global</a> — Driving global
+                <li><a href="https://tamilrise.org/" target="_blank">The Rise Global</a> - Driving global
                     initiatives that promote inclusive growth and positive change.</li>
-                <li>US Tamil Groups — Strengthening Tamil entrepreneurship and diaspora collaboration across
+                <li>US Tamil Groups - Strengthening Tamil entrepreneurship and diaspora collaboration across
                     North America and beyond.</li>
                 <li><a href="https://fetna.org/" target="_blank">FeTNA</a>(Federation of Tamil Sangams of North
                     America) – Supporting cultural preservation, youth empowerment, and community development.
                 </li>
-                <li>Indo-American Chamber of Commerce — Atlanta — Serving as Brand Ambassador, promoting
+                <li>Indo-American Chamber of Commerce - Atlanta - Serving as Brand Ambassador, promoting
                     cross-cultural business and economic partnerships.</li>
-                <li>Rotary Club (since 2014) — Actively contributing to community service initiatives and civic
+                <li>Rotary Club (since 2014) - Actively contributing to community service initiatives and civic
                     engagement.</li>
-                <li>Transportation Club of Atlanta — Participating in industry discussions, logistics
+                <li>Transportation Club of Atlanta - Participating in industry discussions, logistics
                     innovation, and professional networking.</li>
             </ul>
 
@@ -3383,7 +3484,7 @@ h2::after {
                     <h3 style="color: var(--primary); margin: 15px 0 20px 0; font-size: 1.3rem;">Strategic Acceleration
                         with Empathy, Precision & Vision</h3>
                     <p style="margin-bottom: 25px;">Under Asir Justifus's personal guidance, ventures receive more than
-                        just services—they gain a trusted partner in their journey toward scalable success:</p>
+                        just services-they gain a trusted partner in their journey toward scalable success:</p>
 
                     <div style="display: grid; gap: 20px;">
                         <div style="display: flex; gap: 15px; align-items: flex-start;">
@@ -3429,17 +3530,21 @@ h2::after {
 <div class="d-flex align-items-center gap-5 my-5">
   
   <!-- LEFT: 75% Content -->
-  <div class="flex-fill" style="max-width: 75%;">
-    <div class="highlight-box p-4 bg-light rounded-4 shadow-sm border-start border-5 border-primary">
-      <h4 class="text-primary fw-bold mb-3">Born into a World of Change</h4>
-      <p class="mb-3">
-        The year 1971 marked a turning point in global history — a time when nations were redefining themselves, technology was shifting from mainframes to microchips, and a new generation of leaders, artists, and innovators was quietly emerging.
-      </p>
-      <p>
-        Among them was <strong>Asir Justifus</strong>, born in Santhapuram, Nagercoil, in the southern tip of Tamil Nadu, India. His early life was steeped in the rhythms of family, faith, and community, where values like dignity, perseverance, and service were not just taught but lived. These foundational principles would later become the compass for his entrepreneurial journey.
-      </p>
+<div class="generationclass w-100">
+    <div class="highlight-box p-4 bg-light rounded-4 shadow-sm border-start border-5 border-primary mx-auto" 
+         style="max-width: 100%; width: 100%; text-align: justify;">
+        <!-- Desktop: max 75%, Mobile: 100% -->
+        <div class="w-100" style="margin-left: auto; margin-right: auto;">
+            <h4 class="text-primary fw-bold mb-3">Born into a World of Change</h4>
+            <p class="mb-3">
+                The year 1971 marked a turning point in global history - a time when nations were redefining themselves, technology was shifting from mainframes to microchips, and a new generation of leaders, artists, and innovators was quietly emerging.
+            </p>
+            <p>
+                Among them was <strong>Asir Justifus</strong>, born in Santhapuram, Nagercoil, in the southern tip of Tamil Nadu, India. His early life was steeped in the rhythms of family, faith, and community, where values like dignity, perseverance, and service were not just taught but lived. These foundational principles would later become the compass for his entrepreneurial journey.
+            </p>
+        </div>
     </div>
-  </div>
+</div>
 
   <!-- RIGHT: 25% Image -->
   <div style="flex: 0 0 25%; text-align: center;">
@@ -3466,53 +3571,60 @@ h2::after {
   </div>
 
   <!-- RIGHT: 75% Content -->
-  <div class="flex-fill" style="max-width: 75%;">
-   
-    
-    <p class="mb-3">
-      Asir shares his birth year (1971) with a remarkable cohort of changemakers:
-    </p>
-    
-  <ul class="list-unstyled" style="font-size: 1.0rem; line-height: 1.6;">
-  <li class="mb-3">
-    <strong style="color:#000000;">Volodymyr Zelenskyy</strong>
-    <span style="color:#000000; font-weight:400;"> – Leading with courage</span>
-  </li>
-
-  <li class="mb-3">
-    <strong style="color:#000000;">Justin Trudeau</strong>
-    <span style="color:#000000; font-weight:400;"> – Governing a diverse democracy</span>
-  </li>
-
-  <li class="mb-3">
-    <strong style="color:#000000;">Mary J. Blige, Snoop Dogg, Ricky Martin</strong>
-    <span style="color:#000000; font-weight:400;"> – Reshaping music</span>
-  </li>
-
-  <li class="mb-3">
-    <strong style="color:#000000;">Winona Ryder, Ewan McGregor, Sandra Oh</strong>
-    <span style="color:#000000; font-weight:400;"> – Defining global cinema</span>
-  </li>
-
-  <li class="mb-0">
-    <strong style="color:#000000;">Pete Sampras, Lance Armstrong</strong>
-    <span style="color:#000000; font-weight:400;"> – Testing human endurance</span>
-  </li>
-</ul>
-
-    <blockquote class="border-start border-5 border-accent ps-4 py-3 bg-light rounded-end mt-4">
-      <p class="fst-italic mb-0" style="font-size:1.1rem; color:#333;">
-        Though their paths diverged, they all carried the 1971 imprint — a calling to challenge, disrupt, and rebuild.
+  <div class="flex-fill w-100">
+  <!-- Inner wrapper handles the responsive max-width -->
+  <div style="max-width: 100%; margin-left: auto; margin-right: auto;">
+    <!-- Your original 75% block starts here -->
+    <div class="flex-fill" style="max-width: 100%;">
+      
+      <p class="mb-3">
+        Asir shares his birth year (1971) with a remarkable cohort of changemakers:
       </p>
-    </blockquote>
+      
+      <ul class="list-unstyled" style="font-size: 1.0rem; line-height: 1.6;">
+        <li class="mb-3">
+          <strong style="color:#000000;">Volodymyr Zelenskyy</strong>
+          <span style="color:#000000; font-weight:400;"> – Leading with courage</span>
+        </li>
+
+        <li class="mb-3">
+          <strong style="color:#000000;">Justin Trudeau</strong>
+          <span style="color:#000000; font-weight:400;"> – Governing a diverse democracy</span>
+        </li>
+
+        <li class="mb-3">
+          <strong style="color:#000000;">Mary J. Blige, Snoop Dogg, Ricky Martin</strong>
+          <span style="color:#000000; font-weight:400;"> – Reshaping music</span>
+        </li>
+
+        <li class="mb-3">
+          <strong style="color:#000000;">Winona Ryder, Ewan McGregor, Sandra Oh</strong>
+          <span style="color:#000000; font-weight:400;"> – Defining global cinema</span>
+        </li>
+
+        <li class="mb-0">
+          <strong style="color:#000000;">Pete Sampras, Lance Armstrong</strong>
+          <span style="color:#000000; font-weight:400;"> – Testing human endurance</span>
+        </li>
+      </ul>
+
+      <blockquote class="border-start border-5 border-accent ps-4 py-3 bg-light rounded-end mt-4">
+        <p class="fst-italic mb-0" style="font-size:1.1rem; color:#333;">
+          Though their paths diverged, they all carried the 1971 imprint - a calling to challenge, disrupt, and rebuild.
+        </p>
+      </blockquote>
+      
+    </div>
+    <!-- Your original 75% block ends here -->
   </div>
+</div>
 </div>
 
     <!-- Third section: Normal full-width text -->
     <div class="full-width-content">
         <h4>The First Leap: Late 1990s</h4>
         <p>Asir's first overseas engagement in the late 1990s was a defining moment. It exposed him to the power of global networks and the promise of entrepreneurship. What began as a fascination with transportation and systems evolved into a mission to build ventures that solve real-world problems.</p>
-        <p>Armed with little more than faith, grit, and vision, he stepped into the world of startups — transforming his passion into platforms that empower others.</p>
+        <p>Armed with little more than faith, grit, and vision, he stepped into the world of startups - transforming his passion into platforms that empower others.</p>
     </div>
 </section>
 
@@ -3542,7 +3654,7 @@ h2::after {
                         value systems, and the dignity of life itself."</p>
                 </div>
 
-                <p>This philosophy is reflected in his ventures, mentorship, and writing — especially in his book
+                <p>This philosophy is reflected in his ventures, mentorship, and writing - especially in his book
                     <em>Internet of Humans</em>, which envisions a world where technology serves connection, not
                     isolation.
                 </p>
@@ -3574,7 +3686,7 @@ h2::after {
     </h4>
 
     <p style="color:rgba(255,255,255,0.9); margin-bottom:15px; line-height:1.75; font-size:1.05rem;">
-      Asir's generational calling culminates in his vision for the Internet of Humans — a network not just of machines, but of people bound by trust, collaboration, and purpose. It's a response to the fragmentation of modern life and a blueprint for restoring meaningful relationships in business, society, and beyond.
+      Asir's generational calling culminates in his vision for the Internet of Humans - a network not just of machines, but of people bound by trust, collaboration, and purpose. It's a response to the fragmentation of modern life and a blueprint for restoring meaningful relationships in business, society, and beyond.
     </p>
 
     <div style="border-left:3px solid var(--accent); padding-left:20px; margin-top:20px;">
@@ -3582,7 +3694,7 @@ h2::after {
         "1971 was not just the year of my birth. It was the year destiny placed me among dreamers, risk-takers, and leaders."
       </p>
       <p style="color:var(--accent); margin-top:10px; font-weight:600; text-align:right;">
-        — Asir Justifus
+        - Asir Justifus
       </p>
     </div>
   </div>
@@ -3733,7 +3845,7 @@ h2::after {
                                 loading="lazy">
                             </iframe>
                         </div>
-                        <h5>Parallel Entrepreneurship Journey of Asir Justifus</h5>
+                        <h5>Entrepreneurship Journey of Asir Justifus</h5>
                         <div class="video-actions">
                             <a href="https://www.youtube.com/watch?v=DJd73xwDHU4" target="_blank" class="youtube-btn">
                                 <i class="fab fa-youtube"></i> Watch on YouTube
@@ -3850,7 +3962,7 @@ h2::after {
         </div>
 
         <!-- Infographics -->
-        <div class="infographics-section">
+        <!-- <div class="infographics-section">
             <h4>📊 Infographics & Highlights</h4>
             <div class="infographics-grid">
                 <div class="infographic-item">
@@ -3865,7 +3977,7 @@ h2::after {
                     <div>100+</div>
                     <p>Startups Mentored</p>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 
@@ -3874,64 +3986,195 @@ h2::after {
 
 
 <!-- Connect Section -->
-<section id="connect" class="fade-in" style="margin: 0; padding: 0; width: 100%; background-color: #aaaeb2;">
-    <div class="container-fluid  text-dark footer wow fadeIn" data-wow-delay="0.1s" style="margin: 0; padding: 50px 0 0 0; background-color: #b3bec1; font-size: 20px; width: 100%;">
-        <div class="container py-1" >
-            <div class="row g-5">
-                <div class="col-lg-4 col-md-6">
-                    <h4 class="text-dark b-4">Location</h4>
-                   <div class="d-flex align-items-center" style="display: flex; align-items: center;">
-    <i class="fa fa-map-marker-alt me-3 icon-img" style="color: #000000; flex-shrink: 0;"></i>
-    <p class="text-dark mb-0" style="margin-left: 10px;margin-top: 20px; padding: 0; line-height: 1.5;">
-        Atlanta, GA | Chennai, India | San Francisco Bay Area
-    </p>
-</div>
-                    <div class="d-flex align-items-center mt-3" style="display: flex; align-items: center;">
-                        <i class="fa fa-envelope me-2 icon-img" style="color:#000000; margin-top: -15px;"></i>
-                        <p class="text-dark b-0" style="margin-left: 10px;" >
-                           <a href="mailto:justifus@gmail.com">Justifus</a>
-                        </p>
+  <section id="connect" class="fade-in" style="margin: 0; padding: 0; width: 100%; background-color: #aaaeb2;">
+        <div class="container-fluid text-dark footer" data-wow-delay="0.1s" style="margin: 0; padding: 50px 0 0 0; background-color: #b3bec1; font-size: 20px; width: 100%;">
+            <div class="container py-1">
+                <div class="row g-5">
+                    <div class="col-lg-4 col-md-6">
+                        <h4 class="text-dark b-4">Location</h4>
+                        <div class="d-flex align-items-center" style="display: flex; align-items: center;">
+                            <i class="fa fa-map-marker-alt me-3 icon-img" style="color: #000000; flex-shrink: 0;"></i>
+                            <p class="text-dark mb-0" style="margin-left: 10px;margin-top: 20px; padding: 0; line-height: 1.5;">
+                                Atlanta, GA | Chennai, India | San Francisco Bay Area
+                            </p>
+                        </div>
+                        <div class="d-flex align-items-center mt-3" style="display: flex; align-items: center;">
+                            <i class="fa fa-envelope me-2 icon-img" style="color:#000000; margin-top: -15px;"></i>
+                            <p class="text-dark b-0" style="margin-left: 10px;">
+                                <a href="mailto:justifus@gmail.com">Justifus</a>
+                            </p>
+                        </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <h4 class="text-dark mb-4">Social Media</h4>
-                    <p class="text-dark mb-4">Sign up for more updates</p>
-                    <div class="d-flex pt-2">
-                        <a class="btn btn-outline-dark btn-social me-2" href="https://www.facebook.com/share/18kC7NvxME/" target="_blank"><i class="fab fa-facebook"></i></a>
-                        <a class="btn btn-outline-dark btn-social me-2" href="https://www.instagram.com/justifus.asir?igsh=ajNqa3FrcmJ0c3Jv" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a class="btn btn-outline-dark btn-social me-2" href="https://www.linkedin.com/in/justifus?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fab fa-linkedin"></i></a>
-                        <a class="btn btn-outline-dark btn-social" href="https://www.youtube.com/@AsirJustifus" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <div class="col-lg-4 col-md-6">
+                        <h4 class="text-dark mb-4">Social Media</h4>
+                        <p class="text-dark mb-4">Sign up for more updates</p>
+                        <div class="d-flex pt-2">
+                            <a class="btn btn-outline-dark btn-social me-2" href="https://www.facebook.com/share/18kC7NvxME/" target="_blank"><i class="fab fa-facebook"></i></a>
+                            <a class="btn btn-outline-dark btn-social me-2" href="https://www.instagram.com/justifus.asir?igsh=ajNqa3FrcmJ0c3Jv" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a class="btn btn-outline-dark btn-social me-2" href="https://www.linkedin.com/in/justifus?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fab fa-linkedin"></i></a>
+                            <a class="btn btn-outline-dark btn-social" href="https://www.youtube.com/@AsirJustifus" target="_blank"><i class="fab fa-youtube"></i></a>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-4 col-sm-12">
-                    <h4 class="text-dark mb-4">Connect with Justifus Asir</h4>
-                    <form class="contact-form" method="POST" action="https://api.web3forms.com/submit">
-                        <input type="hidden" name="access_key" value="90efeba1-2826-4722-8b89-8cc70fab73fd" />
-                        <input type="hidden" name="replyto" value="{{aashvinianbalagan@gmail.com}}" />
-                        <input type="hidden" name="subject" value="New Message from Contact Form" />
-                        <input type="hidden" name="redirect" value="https://web3forms.com/success" />
-                        <input type="text" name="name" placeholder="Name" required class="form-control mb-3">
-                        <input type="email" name="email" placeholder="Email" required class="form-control mb-3">
-                        <textarea name="message" placeholder="Message" required class="form-control mb-3" rows="3"></textarea>
-                        <button class="btn btn-warning w-100" type="submit" style="background: var(--accent); color: var(--primary); font-weight: 600;">Send</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-        <div class="container-fluid" style="color: #245bc9; margin-top: 30px;">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 text-center py-3" style="text-align: center;">
-                        &copy; SART. All Rights Reserved. Developed by <a class="border-bottom" style="text-decoration: none; color: #245bc9;" target="_blank" href="https://www.enterkeysolutions.com/">EnterKey Solutions</a>
+                    <div class="col-md-4 col-sm-12">
+                        <h4 class="text-dark mb-4">Connect with Justifus Asir</h4>
+                        <form id="contactForm" class="contact-form">
+                            <input type="hidden" name="access_key" value="90efeba1-2826-4722-8b89-8cc70fab73fd" />
+                            <input type="hidden" name="replyto" id="replyto" value="aashvinianbalagan@gmail.com" />
+                            <input type="hidden" name="subject" value="New Message from Contact Form" />
+                            <input type="text" name="name" id="name" placeholder="Name" required class="form-control mb-3">
+                            <input type="email" name="email" id="email" placeholder="Email" required class="form-control mb-3">
+                            <textarea name="message" id="message" placeholder="Message" required class="form-control mb-3" rows="3"></textarea>
+                            <button class="btn btn-warning w-100" type="submit" id="submitBtn" style="background:#ecc94b; color: var(--primary); font-weight: 600;">
+                                <span id="btnText">Send Message</span>
+                                <div id="btnLoading" class="spinner-border spinner-border-sm d-none" role="status">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
+            <div class="container-fluid" style="color: #245bc9; margin-top: 30px;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 text-center py-3" style="text-align: center;">
+                            &copy; SART. All Rights Reserved. Developed by <a class="border-bottom" style="text-decoration: none; color: #245bc9;" target="_blank" href="https://www.enterkeysolutions.com/">EnterKey Solutions</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+    </section>
+
+    <!-- Notification Element -->
+    <div id="notification" class="notification">
+        <i class="fas fa-check-circle me-2"></i>
+        <span id="notificationText">Your message has been sent successfully!</span>
     </div>
-</section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactForm = document.getElementById('contactForm');
+            const submitBtn = document.getElementById('submitBtn');
+            const btnText = document.getElementById('btnText');
+            const btnLoading = document.getElementById('btnLoading');
+            const notification = document.getElementById('notification');
+            const notificationText = document.getElementById('notificationText');
+            
+            // Initialize fade-in elements
+            const fadeElements = document.querySelectorAll('.fade-in');
+            fadeElements.forEach(element => {
+                element.style.opacity = "1";
+                element.style.transform = "translateY(0)";
+            });
+            
+            // Function to show notification
+            function showNotification(message, type = 'success') {
+                notificationText.textContent = message;
+                notification.className = `notification ${type}`;
+                notification.classList.add('show');
+                
+                // Hide notification after 4 seconds
+                setTimeout(() => {
+                    notification.classList.remove('show');
+                }, 4000);
+            }
+            
+            // Function to clear form fields
+            function clearForm() {
+                document.getElementById('name').value = '';
+                document.getElementById('email').value = '';
+                document.getElementById('message').value = '';
+            }
+            
+            // Function to show loading state
+            function showLoading() {
+                btnText.textContent = 'Sending...';
+                btnLoading.classList.remove('d-none');
+                submitBtn.disabled = true;
+            }
+            
+            // Function to hide loading state
+            function hideLoading() {
+                btnText.textContent = 'Send Message';
+                btnLoading.classList.add('d-none');
+                submitBtn.disabled = false;
+            }
+            
+            // Handle form submission
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Show loading state
+                    showLoading();
+                    
+                    // Get form data
+                    const formData = new FormData(contactForm);
+                    
+                    // Submit form using fetch API
+                    fetch('https://api.web3forms.com/submit', {
+                        method: 'POST',
+                        body: formData
+                    })
+                    .then(response => {
+                        if (response.ok) {
+                            // Success - show notification and clear form
+                            showNotification('Your message has been sent successfully!', 'success');
+                            clearForm();
+                        } else {
+                            // Error - show error message
+                            showNotification('There was a problem sending your message. Please try again.', 'error');
+                        }
+                    })
+                    .catch(error => {
+                        // Network error
+                        console.error('Error:', error);
+                        showNotification('There was a network error. Please check your connection and try again.', 'error');
+                    })
+                    .finally(() => {
+                        // Always hide loading state
+                        hideLoading();
+                    });
+                });
+            }
+        });
+    </script>
+
+
+
 
 
 <style>
+
+
+     .toast-container {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1055;
+        }
+        
+        .toast {
+            background-color: #28a745;
+            color: white;
+            border-radius: 5px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        
+        h4 {
+            color: var(--primary);
+            font-weight: 700;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--accent);
+        }
+        
+        @media (max-width: 768px) {
+            .contact-container {
+                margin: 20px;
+            }
+        }
 /* CONNECT SECTION – MOBILE-FIRST & PERFECT ORDER */
 #connect { background:#b3bec1; }
 #connect .container-fluid { padding:60px 20px 20px; }
@@ -4022,211 +4265,282 @@ h2::after {
 #connect .text-center a { color:#245bc9; font-weight:500; }
 </style>
 
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const contactForm = document.getElementById('contactForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const btnText = document.getElementById('btnText');
+    const btnLoading = document.getElementById('btnLoading');
+    const successToast = new bootstrap.Toast(document.getElementById('successToast'));
 
+    // Function to clear form fields
+    function clearForm() {
+        document.getElementById('name').value = '';
+        document.getElementById('email').value = '';
+        document.getElementById('message').value = '';
+    }
+
+    // Function to show loading state
+    function showLoading() {
+        btnText.textContent = 'Sending...';
+        btnLoading.classList.remove('d-none');
+        submitBtn.disabled = true;
+    }
+
+    // Function to hide loading state
+    function hideLoading() {
+        btnText.textContent = 'Send';
+        btnLoading.classList.add('d-none');
+        submitBtn.disabled = false;
+    }
+
+    // Handle form submission
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Show loading state
+            showLoading();
+            
+            // Get form data
+            const formData = new FormData(contactForm);
+            
+            // Submit form using fetch API
+            fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => {
+                if (response.ok) {
+                    // Success - show toast and clear form
+                    successToast.show();
+                    clearForm();
+                } else {
+                    // Error - show error message
+                    alert('There was a problem sending your message. Please try again.');
+                }
+            })
+            .catch(error => {
+                // Network error
+                console.error('Error:', error);
+                alert('There was a network error. Please check your connection and try again.');
+            })
+            .finally(() => {
+                // Always hide loading state
+                hideLoading();
+            });
+        });
+    }
+});
+</script>
 
 <script>
-    // Simple animations and interactions
-    document.addEventListener('DOMContentLoaded', function () {
-        // Fade in elements on scroll
-        const fadeElements = document.querySelectorAll('.fade-in');
+        // Simple animations and interactions
+        document.addEventListener('DOMContentLoaded', function () {
+            // Fade in elements on scroll
+            const fadeElements = document.querySelectorAll('.fade-in');
 
-        const fadeInOnScroll = function () {
+            const fadeInOnScroll = function () {
+                fadeElements.forEach(element => {
+                    const elementTop = element.getBoundingClientRect().top;
+                    const elementVisible = 150;
+
+                    if (elementTop < window.innerHeight - elementVisible) {
+                        element.style.opacity = "1";
+                        element.style.transform = "translateY(0)";
+                    }
+                });
+            };
+
+            // Set initial state
             fadeElements.forEach(element => {
-                const elementTop = element.getBoundingClientRect().top;
-                const elementVisible = 150;
-
-                if (elementTop < window.innerHeight - elementVisible) {
-                    element.style.opacity = "1";
-                    element.style.transform = "translateY(0)";
-                }
+                element.style.opacity = "0";
+                element.style.transform = "translateY(20px)";
+                element.style.transition = "opacity 0.8s ease, transform 0.8s ease";
             });
-        };
 
-        // Set initial state
-        fadeElements.forEach(element => {
-            element.style.opacity = "0";
-            element.style.transform = "translateY(20px)";
-            element.style.transition = "opacity 0.8s ease, transform 0.8s ease";
-        });
+            window.addEventListener('scroll', fadeInOnScroll);
+            fadeInOnScroll(); // Check on load
 
-        window.addEventListener('scroll', fadeInOnScroll);
-        fadeInOnScroll(); // Check on load
+            // Mobile menu functionality
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const navLinks = document.querySelector('.nav-links');
 
-        // Mobile menu functionality
-        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-        const navLinks = document.querySelector('.nav-links');
-
-        if (mobileMenuBtn) {
-            mobileMenuBtn.addEventListener('click', function () {
-                navLinks.classList.toggle('active');
-            });
-        }
-
-        // Close mobile menu when clicking on a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', function () {
-                if (window.innerWidth <= 768) {
-                    navLinks.classList.remove('active');
-                }
-            });
-        });
-
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', function (event) {
-            if (window.innerWidth <= 768) {
-                if (!event.target.closest('.main-nav') && navLinks.classList.contains('active')) {
-                    navLinks.classList.remove('active');
-                }
+            if (mobileMenuBtn) {
+                mobileMenuBtn.addEventListener('click', function () {
+                    navLinks.classList.toggle('active');
+                });
             }
-        });
 
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-
-                    // Close mobile menu if open
+            // Close mobile menu when clicking on a link
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', function () {
                     if (window.innerWidth <= 768) {
+                        navLinks.classList.remove('active');
+                    }
+                });
+            });
+
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', function (event) {
+                if (window.innerWidth <= 768) {
+                    if (!event.target.closest('.main-nav') && navLinks.classList.contains('active')) {
                         navLinks.classList.remove('active');
                     }
                 }
             });
-        });
 
-        // Gallery functionality
-        const viewAllBtn = document.getElementById('viewAllBtn');
-        const backBtn = document.getElementById('backBtn');
-        const gallerySection = document.getElementById('gallery');
-        const fullGallerySection = document.getElementById('fullGallery');
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
 
-        if (viewAllBtn && backBtn && gallerySection && fullGallerySection) {
-            // Toggle between main gallery and full gallery
-            viewAllBtn.addEventListener('click', function(e) {
-                e.preventDefault();
-                gallerySection.style.display = 'none';
-                fullGallerySection.style.display = 'block';
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+
+                        // Close mobile menu if open
+                        if (window.innerWidth <= 768) {
+                            navLinks.classList.remove('active');
+                        }
+                    }
+                });
             });
 
-            backBtn.addEventListener('click', function(e) {
-                e.preventDefault();
-                fullGallerySection.style.display = 'none';
-                gallerySection.style.display = 'block';
-            });
+            // Gallery functionality
+            const viewAllBtn = document.getElementById('viewAllBtn');
+            const backBtn = document.getElementById('backBtn');
+            const gallerySection = document.getElementById('gallery');
+            const fullGallerySection = document.getElementById('fullGallery');
 
-            // Category filtering functionality
-            const categoryButtons = document.querySelectorAll('.category-btn');
-            const allGalleryItems = document.querySelectorAll('#all-gallery .gallery-item');
-            
-            // Initialize category galleries with appropriate items
-            function initializeCategoryGalleries() {
-                const entrepreneurGallery = document.getElementById('entrepreneur-gallery');
-                const familyGallery = document.getElementById('family-gallery');
-                const eventsGallery = document.getElementById('events-gallery');
+            if (viewAllBtn && backBtn && gallerySection && fullGallerySection) {
+                // Toggle between main gallery and full gallery
+                viewAllBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    gallerySection.style.display = 'none';
+                    fullGallerySection.style.display = 'block';
+                });
+
+                backBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    fullGallerySection.style.display = 'none';
+                    gallerySection.style.display = 'block';
+                });
+
+                // Category filtering functionality
+                const categoryButtons = document.querySelectorAll('.category-btn');
+                const allGalleryItems = document.querySelectorAll('#all-gallery .gallery-item');
                 
-                allGalleryItems.forEach(item => {
-                    const category = item.getAttribute('data-category');
-                    const clone = item.cloneNode(true);
+                // Initialize category galleries with appropriate items
+                function initializeCategoryGalleries() {
+                    const entrepreneurGallery = document.getElementById('entrepreneur-gallery');
+                    const familyGallery = document.getElementById('family-gallery');
+                    const eventsGallery = document.getElementById('events-gallery');
                     
-                    if (category === 'entrepreneur') {
-                        entrepreneurGallery.appendChild(clone);
-                    } else if (category === 'family') {
-                        familyGallery.appendChild(clone);
-                    } else if (category === 'events') {
-                        eventsGallery.appendChild(clone);
-                    }
-                });
-            }
-            
-            // Filter gallery by category
-            categoryButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    // Update active button
-                    categoryButtons.forEach(btn => btn.classList.remove('active'));
-                    this.classList.add('active');
-                    
-                    // Get selected category
-                    const category = this.getAttribute('data-category');
-                    
-                    // Show/hide galleries based on category
-                    document.querySelectorAll('.category-gallery').forEach(gallery => {
-                        gallery.classList.add('hidden');
+                    allGalleryItems.forEach(item => {
+                        const category = item.getAttribute('data-category');
+                        const clone = item.cloneNode(true);
+                        
+                        if (category === 'entrepreneur') {
+                            entrepreneurGallery.appendChild(clone);
+                        } else if (category === 'family') {
+                            familyGallery.appendChild(clone);
+                        } else if (category === 'events') {
+                            eventsGallery.appendChild(clone);
+                        }
                     });
-                    
-                    if (category === 'all') {
-                        document.getElementById('all-gallery').classList.remove('hidden');
-                    } else {
-                        document.getElementById(`${category}-gallery`).classList.remove('hidden');
-                    }
+                }
+                
+                // Filter gallery by category
+                categoryButtons.forEach(button => {
+                    button.addEventListener('click', function() {
+                        // Update active button
+                        categoryButtons.forEach(btn => btn.classList.remove('active'));
+                        this.classList.add('active');
+                        
+                        // Get selected category
+                        const category = this.getAttribute('data-category');
+                        
+                        // Show/hide galleries based on category
+                        document.querySelectorAll('.category-gallery').forEach(gallery => {
+                            gallery.classList.add('hidden');
+                        });
+                        
+                        if (category === 'all') {
+                            document.getElementById('all-gallery').classList.remove('hidden');
+                        } else {
+                            document.getElementById(`${category}-gallery`).classList.remove('hidden');
+                        }
+                    });
+                });
+                
+                // Initialize the galleries
+                initializeCategoryGalleries();
+            }
+
+            // Image Modal Functionality
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            const modalCaption = document.getElementById('modalCaption');
+            const closeBtn = document.querySelector('.close-btn');
+
+            // Function to open modal with image
+            function openModal(imgSrc, altText) {
+                if (modal && modalImg) {
+                    modal.style.display = 'block';
+                    modalImg.src = imgSrc;
+                    modalCaption.textContent = altText || '';
+                    document.body.style.overflow = 'hidden';
+                }
+            }
+
+            // Function to close modal
+            function closeModal() {
+                if (modal) {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            }
+
+            // Add click event to all gallery images
+            const galleryImages = document.querySelectorAll('.gallery-item img');
+            galleryImages.forEach(img => {
+                img.addEventListener('click', function() {
+                    openModal(this.src, this.alt);
                 });
             });
-            
-            // Initialize the galleries
-            initializeCategoryGalleries();
-        }
 
-        // Image Modal Functionality
-        const modal = document.getElementById('imageModal');
-        const modalImg = document.getElementById('modalImage');
-        const modalCaption = document.getElementById('modalCaption');
-        const closeBtn = document.querySelector('.close-btn');
-
-        // Function to open modal with image
-        function openModal(imgSrc, altText) {
-            if (modal && modalImg) {
-                modal.style.display = 'block';
-                modalImg.src = imgSrc;
-                modalCaption.textContent = altText || '';
-                document.body.style.overflow = 'hidden';
+            // Close modal when clicking X
+            if (closeBtn) {
+                closeBtn.addEventListener('click', closeModal);
             }
-        }
 
-        // Function to close modal
-        function closeModal() {
+            // Close modal when clicking outside the image
             if (modal) {
-                modal.style.display = 'none';
-                document.body.style.overflow = 'auto';
+                modal.addEventListener('click', function(e) {
+                    if (e.target === modal) {
+                        closeModal();
+                    }
+                });
             }
-        }
 
-        // Add click event to all gallery images
-        const galleryImages = document.querySelectorAll('.gallery-item img');
-        galleryImages.forEach(img => {
-            img.addEventListener('click', function() {
-                openModal(this.src, this.alt);
-            });
-        });
-
-        // Close modal when clicking X
-        if (closeBtn) {
-            closeBtn.addEventListener('click', closeModal);
-        }
-
-        // Close modal when clicking outside the image
-        if (modal) {
-            modal.addEventListener('click', function(e) {
-                if (e.target === modal) {
+            // Close modal with Escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && modal && modal.style.display === 'block') {
                     closeModal();
                 }
             });
-        }
 
-        // Close modal with Escape key
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape' && modal && modal.style.display === 'block') {
-                closeModal();
-            }
+         
+                
+
         });
-    });
-</script>
+    </script>
 </body>
 </html>

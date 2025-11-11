@@ -6,37 +6,712 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Photo Gallery - Asir Justifus</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-   <link rel="stylesheet" href="Gallery.css">
- 
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
 
+    :root {
+      --primary: #1a365d;
+      --secondary: #2b6cb0;
+      --accent: #ecc94b;
+      --light: #f7fafc;
+      --dark: #2d3748;
+      --gray: #718096;
+      --success: #38a169;
+      --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
+      --shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+      --radius: 8px;
+    }
 
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    }
 
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      line-height: 1.6;
+      color: var(--dark);
+      background-color: var(--light);
+      overflow-x: hidden;
+    }
 
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    /* Navigation */
+    .sticky-nav {
+      position: sticky;
+      top: 0;
+      background: white;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      z-index: 1000;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .main-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 0;
+      position: relative;
+      min-height: 90px;
+    }
+
+    .back-btn {
+      color: #1a365d;
+      font-size: 30px;
+      padding: 15px 25px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.9);
+      border: 2px solid #2b6cb0;
+      z-index: 1000;
+      position: relative;
+    }
+
+    .back-btn:hover {
+      /* background-color: #1a252f; */
+      transform: translateY(-2px);
+    }
+
+    .nav-title {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      text-align: center;
+      pointer-events: none;
+    }
+
+    .nav-title h2 {
+      margin: 0;
+      color: #1a365d;
+      font-size: 1.8rem;
+    }
+
+    /* Gallery Page Styles */
+    .gallery-page {
+      padding: 40px 0;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .section-header h2 {
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+
+    .section-header h3 {
+      font-size: 1.2rem;
+      color: var(--gray);
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      color: var(--primary);
+      margin-bottom: 30px;
+      position: relative;
+      padding-bottom: 15px;
+      font-weight: 600;
+    }
+
+    h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background: var(--accent);
+      border-radius: 2px;
+    }
+
+    /* Gallery Categories */
+    .gallery-categories {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .category-btn {
+      padding: 10px 20px;
+      background: var(--light);
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      color: var(--dark);
+    }
+
+    .category-btn.active,
+    .category-btn:hover {
+      background: var(--secondary);
+      color: white;
+    }
+
+    /* Category Gallery */
+    .category-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+      gap: 35px;
+      margin-bottom: 40px;
+    }
+
+    .category-gallery.hidden {
+      display: none;
+    }
+
+    .gallery-item {
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      position: relative;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .gallery-item:hover {
+      transform: scale(1.05);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .gallery-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+      padding: 15px;
+      color: white;
+    }
+
+    .gallery-caption p {
+      margin: 0;
+      font-size: 0.9rem;
+    }
+
+    /* Modal - IMPROVED FOR MOBILE */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      animation: fadeIn 0.3s ease;
+      overflow: hidden;
+    }
+
+    .modal-content {
+      display: block;
+      margin: auto;
+      max-width: 95%;
+      max-height: 85%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      object-fit: contain;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 20px;
+      right: 25px;
+      color: #fff;
+      font-size: 35px;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 1001;
+      transition: color 0.3s ease;
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 50%;
+    }
+
+    .close-btn:hover {
+      color: #ccc;
+      background: rgba(0, 0, 0, 0.7);
+    }
+
+    .modal-caption {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: white;
+      text-align: center;
+      font-size: 16px;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 10px 20px;
+      border-radius: 20px;
+      max-width: 90%;
+      word-break: break-word;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+      .category-gallery {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 20px;
+      }
+
+      .section-header h2 {
+        font-size: 2rem;
+      }
+
+      .gallery-categories {
+        gap: 5px;
+      }
+
+      .category-btn {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+      }
+      
+      /* Improved modal for mobile */
+      .modal-content {
+        max-width: 90%;
+        max-height: 90%;
+      }
+      
+      .close-btn {
+        top: 15px;
+        right: 15px;
+        font-size: 30px;
+        width: 40px;
+        height: 40px;
+      }
+      
+      .modal-caption {
+        font-size: 14px;
+        bottom: 15px;
+        padding: 8px 16px;
+        max-width: 95%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .category-gallery {
+        grid-template-columns: 1fr;
+        gap: 15px;
+      }
+
+      .section-header h2 {
+        font-size: 1.8rem;
+      }
+      
+      /* Further improvements for small screens */
+      .modal-content {
+        max-width: 90%;
+        max-height: 85%;
+        border-radius: 0;
+      }
+      
+      .close-btn {
+        top: 10px;
+        right: 10px;
+        font-size: 28px;
+        width: 36px;
+        height: 36px;
+      }
+      
+      .modal-caption {
+        font-size: 13px;
+        bottom: 10px;
+      }
+    }
+
+    /* ===== TABLET STYLES (768px and up) ===== */
+    @media (min-width: 768px) {
+      .sticky-nav {
+        padding: 15px 0;
+      }
+
+      .nav-container {
+        padding: 0 20px;
+      }
+
+      .main-nav {
+        min-height: 80px;
+      }
+
+      .back-btn {
+        font-size: 26px;
+        padding: 12px 20px;
+      }
+
+      .nav-title h2 {
+        font-size: 1.6rem;
+      }
+
+      .gallery-page {
+        padding: 30px 0 50px;
+      }
+
+      .section-header {
+        margin-bottom: 40px;
+      }
+
+      .section-header h2 {
+        font-size: 2.2rem;
+      }
+
+      .section-header h3 {
+        font-size: 1.1rem;
+      }
+
+      h2 {
+        font-size: 1.8rem;
+        margin-bottom: 25px;
+      }
+
+      .gallery-categories {
+        margin-bottom: 30px;
+        gap: 12px;
+      }
+
+      .category-btn {
+        padding: 12px 22px;
+        font-size: 1rem;
+      }
+
+      .category-gallery {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 25px;
+        margin-bottom: 40px;
+      }
+
+      .gallery-item img {
+        height: 250px;
+      }
+    }
+
+    /* ===== DESKTOP STYLES (1024px and up) ===== */
+    @media (min-width: 1024px) {
+      .container {
+        padding: 0 30px;
+      }
+
+      .nav-container {
+        padding: 0 30px;
+      }
+
+      .main-nav {
+        min-height: 90px;
+      }
+
+      .back-btn {
+        font-size: 28px;
+        padding: 15px 25px;
+      }
+
+      .nav-title h2 {
+        font-size: 1.8rem;
+      }
+
+      .gallery-page {
+        padding: 40px 0 60px;
+      }
+
+      .section-header h2 {
+        font-size: 2.5rem;
+      }
+
+      .section-header h3 {
+        font-size: 1.2rem;
+      }
+
+      h2 {
+        font-size: 2rem;
+        margin-bottom: 30px;
+      }
+
+      .gallery-categories {
+        margin-bottom: 35px;
+        gap: 15px;
+      }
+
+      .category-btn {
+        padding: 12px 24px;
+        font-size: 1rem;
+      }
+
+      .category-gallery {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 30px;
+        margin-bottom: 50px;
+      }
+
+      .gallery-item img {
+        height: 280px;
+      }
+
+      .gallery-caption {
+        padding: 15px;
+      }
+
+      .gallery-caption p {
+        font-size: 0.9rem;
+      }
+    }
+
+    /* ===== LARGE DESKTOP STYLES (1200px and up) ===== */
+    @media (min-width: 1200px) {
+      .category-gallery {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 35px;
+      }
+
+      .gallery-item img {
+        height: 300px;
+      }
+    }
+
+    /* ===== SMALL MOBILE STYLES (480px and below) ===== */
+    @media (max-width: 480px) {
+      .container {
+        padding: 0 15px;
+      }
+
+      .nav-container {
+        padding: 0 10px;
+      }
+
+      .main-nav {
+        min-height: 70px;
+      }
+
+      .back-btn {
+        font-size: 24px;
+        padding: 10px 15px;
+      }
+
+      .nav-title h2 {
+        font-size: 1.2rem;
+      }
+
+      .gallery-page {
+        padding: 15px 0 30px;
+      }
+
+      .section-header {
+        margin-bottom: 20px;
+      }
+
+      .section-header h2 {
+        font-size: 1.6rem;
+      }
+
+      .section-header h3 {
+        font-size: 0.9rem;
+      }
+
+      h2 {
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+        padding-bottom: 8px;
+      }
+
+      h2::after {
+        width: 40px;
+        height: 2px;
+      }
+
+      .gallery-categories {
+        margin-bottom: 20px;
+        gap: 6px;
+      }
+
+      .category-btn {
+        padding: 8px 14px;
+        font-size: 0.8rem;
+        border-radius: 20px;
+      }
+
+      .category-gallery {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        margin-bottom: 25px;
+        padding: 0 5px;
+      }
+
+      .gallery-item img {
+        height: 200px;
+      }
+
+      .gallery-caption {
+        padding: 10px;
+        transform: translateY(0);
+        background: rgba(0, 0, 0, 0.7);
+      }
+
+      .gallery-caption p {
+        font-size: 0.8rem;
+      }
+    }
+
+    /* ===== EXTRA SMALL MOBILE STYLES (360px and below) ===== */
+    @media (max-width: 360px) {
+      .container {
+        padding: 0 10px;
+      }
+
+      .nav-title h2 {
+        font-size: 1.1rem;
+      }
+
+      .section-header h2 {
+        font-size: 1.4rem;
+      }
+
+      .category-btn {
+        padding: 6px 12px;
+        font-size: 0.75rem;
+      }
+
+      .gallery-item img {
+        height: 180px;
+      }
+
+      .gallery-caption p {
+        font-size: 0.75rem;
+      }
+    }
+
+    /* ===== ACCESSIBILITY AND PERFORMANCE ===== */
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+
+    /* High contrast mode support */
+    @media (prefers-contrast: high) {
+      :root {
+        --primary: #000000;
+        --secondary: #0000ff;
+        --accent: #ff0000;
+        --light: #ffffff;
+        --dark: #000000;
+        --gray: #666666;
+      }
+    }
+
+    /* Touch device improvements */
+    @media (hover: none) {
+      .gallery-item:hover {
+        transform: none;
+      }
+
+      .gallery-item:hover img {
+        transform: none;
+      }
+
+      .gallery-caption {
+        transform: translateY(0);
+        background: rgba(0, 0, 0, 0.7);
+      }
+
+      .category-btn:hover {
+        transform: none;
+      }
+    }
+
+    /* Print styles */
+    @media print {
+      .sticky-nav,
+      .gallery-categories,
+      .close-btn {
+        display: none !important;
+      }
+
+      .category-gallery {
+        display: block !important;
+      }
+
+      .gallery-item {
+        break-inside: avoid;
+        margin-bottom: 20px;
+      }
+
+      .gallery-item img {
+        height: auto;
+        max-height: 300px;
+      }
+    }
+  </style>
 </head>
 
 <body>
   <!-- Navigation -->
-  <!-- Navigation -->
   <div class="sticky-nav">
     <div class="nav-container">
-      <nav class="main-nav"
-        style="display: flex; justify-content: space-between; align-items: center; padding: 15px 0; position: relative; min-height: 90px;">
-        <a href="index.html#gallery" class="back-btn"
-          style="color: #1a365d; font-size: 30px; padding: 15px 25px; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 8px; background: rgba(255, 255, 255, 0.9); border: 2px solid #2b6cb0; z-index: 1000; position: relative; margin-left: 0px;">
-          <i class="fas fa-arrow-left" style="margin-left:-30px;"></i>
+      <nav class="main-nav">
+        <a href="index.html#gallery" class="back-btn">
+          <i class="fas fa-arrow-left"></i>
         </a>
-        <div class="nav-title"
-          style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 100%; text-align: center; pointer-events: none;">
-          <h2 style="margin: 0; color: #1a365d; font-size: 1.8rem;">Photo Gallery</h2>
+        <div class="nav-title">
+          <h2>Photo Gallery</h2>
         </div>
       </nav>
     </div>
   </div>
+  
   <!-- Gallery Page Content -->
   <div class="container gallery-page">
     <div class="section-header">
       <!-- <h2>📸 Full Photo Gallery</h2>
-            <h3>Browse photos by category</h3> -->
+      <h3>Browse photos by category</h3> -->
     </div>
 
     <div class="gallery-categories">
