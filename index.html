@@ -8,14 +8,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-
-
-r
   <title>Asir Justifus | Visionary Entrepreneur | SART Accelerator | AI & Logistics Innovator</title>
-
   <!-- Meta Description -->
   <meta name="description" content="Discover Asir Justifus – Entrepreneur, Visionary Leader, and Founder of SART Accelerator. Explore his transformative ventures in AI, logistics, FinTech, healthcare, and talent tech across USA, India, and the Middle East.">
-
   <!-- Meta Keywords -->
   <meta name="keywords" content="Asir Justifus, Entrepreneur, SART Accelerator, AI Innovation, Logistics Tech, FinTech, Healthcare AI, Talent Tech, Tranzlogix, Trucker Cloud, Cyber Arcadia, EnterKey Solutions, Startup Mentor, Visionary Leader, Internet of Humans, Smart Score Technology, ELD Marketplace, TruckerGIG, RomarKing, HomieFix, SimpleGo Taxi, SeTLD, tiipstr, ADRX, motivational speaker, Indo-American Chamber of Commerce, Raise Global, ATMA, Fetna, US Tamil Groups">
 
@@ -209,6 +204,13 @@ r
     animation: fadeInDown 0.8s ease-out; /* Fade-in animation on load */
 }
 
+
+/* Make sure all other content stays below */
+.container, section, .professional-header {
+    position: relative;
+    z-index: 1; /* Normal content flow */
+}
+
 .nav-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -219,7 +221,7 @@ r
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 0;
+    padding: 5px 0;
     position: relative;
 }
 
@@ -339,20 +341,20 @@ r
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 60px 20px;
+            padding: 30px 20px;
         }
 
         section {
-            margin-bottom: 80px;
+            margin-bottom: 30px;
             scroll-margin-top: 80px;
         }
 
         h2 {
             font-size: 1.8rem;
             color: var(--primary);
-            margin-bottom: 30px;
+            margin-bottom: 10px;
             position: relative;
-            padding-bottom: 15px;
+            padding-bottom: 5px;
             font-weight: 600;
         }
 
@@ -370,19 +372,19 @@ r
         h3 {
             font-size: 1.4rem;
             color: var(--secondary);
-            margin: 25px 0 15px;
+            margin: 5px 0 15px;
             font-weight: 600;
         }
 
         h4 {
             font-size: 1.2rem;
             color: var(--primary);
-            margin: 20px 0 10px;
+            margin: 10px 0 10px;
             font-weight: 600;
         }
 
         p {
-            margin-bottom: 20px;
+            margin-bottom: 0px;
             font-size: 1rem;
             line-height: 1.7;
             color: var(--dark);
@@ -390,7 +392,7 @@ r
         }
 
         ul {
-            margin-bottom: 20px;
+            margin-bottom: 0px;
             padding-left: 20px;
         }
 
@@ -424,8 +426,8 @@ r
             background: white;
             border-radius: var(--radius);
             box-shadow: var(--shadow);
-            padding: 30px;
-            margin-bottom: 30px;
+            padding: 10px 30px;
+            margin-bottom: 10px;
             border-top: 3px solid var(--secondary);
         }
 
@@ -444,6 +446,7 @@ r
     width: 100%;
     max-width: 100%; /* Ensure image doesn’t exceed container */
     height: auto;
+    border-color: #1a4d80;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     animation: fadeIn 0.8s ease-out; /* Subtle fade-in animation */
@@ -455,7 +458,7 @@ r
 .ventures img {
     width: 100%;
     max-width: 100%; /* Ensure image doesn’t exceed container */
-    height: 400px;
+    height: 300px;
     max-height: 1500px; /* Reduced height */
     object-fit: cover; /* Maintain aspect ratio, crop if needed */
     border-radius: 8px;
@@ -477,16 +480,16 @@ r
     animation: fadeIn 0.8s ease-out; /* Subtle fade-in animation */
 }
 
-.book img{
-    width: 80%;
-    max-width: 100%; /* Ensure image doesn’t exceed container */
-    /* height: auto; */
-    max-height: 1000px; /* Reduced height */
-    object-fit: cover; /* Maintain aspect ratio, crop if needed */
+.book img {
+    width: 50%;
+    max-width: 100%;
+    max-height: 1000px;
+    object-fit: cover;
     border-radius: 8px;
+    margin-left: 20px; /* Change from margin-right to margin-left */
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    animation: fadeIn 0.8s ease-out; /* Subtle fade-in animation */
-
+    animation: fadeIn 0.8s ease-out;
+    order: 2; /* Move image to the right */
 }
 
 .speech img{
@@ -661,9 +664,9 @@ h2::after {
         .quote {
             background: white;
             color: var(--dark);
-            padding: 30px;
+            padding: 10px;
             border-radius: var(--radius);
-            margin: 40px 0;
+            margin: 10px 0;
             text-align: center;
             position: relative;
             box-shadow: var(--shadow);
@@ -673,7 +676,8 @@ h2::after {
         .quote-text {
             font-size: 1.2rem;
             font-style: italic;
-            margin-bottom: 15px;
+            margin-bottom: 5px;
+            margin-top: 5px;
             position: relative;
             z-index: 1;
         }
@@ -766,7 +770,7 @@ h2::after {
             display: block;
             transition: transform 0.5s ease;
             /* margin-left: 0px; */
-            margin-top: -40px !important;
+            margin-top: 20px !important;
         }
 
         .content-image:hover img {
@@ -842,7 +846,7 @@ h2::after {
 
         .video-section h4 {
             color: var(--primary);
-            margin-bottom: 25px;
+            /* margin-bottom: 25px; */
             text-align:left;
             font-size: 1.5rem;
         }
@@ -1077,7 +1081,7 @@ h2::after {
             display: flex;
             gap: 40px;
             align-items: flex-start;
-            margin: 30px 0;
+            margin: 0px 0;
         }
 
         .content-text {
@@ -1124,9 +1128,9 @@ h2::after {
 
 
 
-#gallery .container {
+/* #gallery .container {
     padding-bottom: 0 !important;
-}
+} */
 
 /* Remove extra margin from the connect section */
 #connect {
@@ -1399,9 +1403,9 @@ h2::after {
 
 
 /* Gallery Section Responsive Styles */
-#gallery {
+/* #gallery {
     padding: 2rem 0;
-}
+} */
 
 #gallery .container {
     max-width: 1200px;
@@ -1519,7 +1523,7 @@ h2::after {
 .video-section h4 {
     font-size: 1.5rem;
     color: #333;
-    margin-bottom: 1.5rem;
+    /* margin-bottom: 1.5rem; */
 }
 
 .video-grid {
@@ -1844,7 +1848,7 @@ h2::after {
 
 .video-section h4 {
     color: var(--primary);
-    margin-bottom: 55px;
+    /* margin-bottom: 55px; */
     /* text-align: center; */
     font-size: 1.5rem;
 }
@@ -2396,15 +2400,37 @@ h2::after {
         font-size: 0.85rem;
     }
 }
-/* Content with image section */
+
 .content-with-image {
     display: flex;
-    align-items: center;
+    align-items: center; /* You can keep or remove this based on your design */
     gap: 20px;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
-    /* font-family: Arial, sans-serif; */
+    padding: 0;
+}
+
+.content-with-image .text-content {
+    flex: 0 0 75%; /* 75% width */
+}
+
+.content-with-image .book img {
+    flex: 0 0 25%; /* 25% width */
+    width: 50%;
+    max-height: 1000px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.8s ease-out;
+}
+/* Content with image section */
+.content-with-image {
+    display: flex;
+   
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
 }
 
 .image-right-content-left {
@@ -2444,6 +2470,16 @@ h2::after {
     margin-left: auto;
     margin-right: auto;
   }
+
+  .content-with-image .book img {
+   
+    width: 100%;
+    /* max-height: 1000px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.8s ease-out; */
+}
 }
 
 
@@ -3007,6 +3043,421 @@ h2::after {
 
 }
 
+
+#author {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.content-with-image {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+    margin-top: 20px;
+}
+
+.content-text {
+    flex: 0 0 70%; /* 75% width for content */
+}
+
+.book {
+    flex: 0 0 25%; /* 25% width for book image */
+}
+
+.book img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+.content-text {
+    flex: 0 0 75%; /* 75% width for content */
+}
+
+.book {
+    flex: 0 0 25%; /* 25% width for book image */
+}
+
+/* Mentor Section Styles */
+#mentor {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Full width sections */
+.mentor-intro,
+.mentor-quote,
+.mentor-full-width {
+  width: 100%;
+}
+
+.mentor-intro p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--gray);
+  /* margin-bottom: 40px; */
+}
+
+/* 75%/25% layout for What Sets Him Apart & His Reach */
+.mentor-content-wrapper {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+.mentor-main-content {
+  flex: 0 0 75%;
+}
+
+.mentor-image-container {
+    /* flex: 0 0 25%;
+    position: sticky;
+    top: 120px; */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* or use 'center' for vertical centering */
+}
+/* .mentor-image-container {
+  flex: 0 0 25%;
+  position: sticky;
+  top: 120px;
+} */
+
+/* Mentor sections */
+.mentor-section {
+  /* margin-bottom: 35px; */
+  padding-top: 10px;
+  border-top: 2px solid var(--accent);
+}
+
+.mentor-section h4 {
+  color: var(--primary);
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.mentor-section ul {
+  padding-left: 22px;
+  line-height: 1.9;
+  font-size: 1rem;
+}
+
+.mentor-section li {
+  margin-bottom: 8px;
+}
+
+/* Image styling */
+.mentor-img {
+  width: 100%;
+  max-width: 360px;
+  margin-top: 20px;
+  /* height: auto; */
+  height: 400px;
+  object-fit: cover;
+  border-radius: 18px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.22);
+}
+
+/* Quote styling */
+.mentor-quote {
+  font-style: italic;
+  color: var(--gray);
+  margin: 0px 0;
+  font-size: 1.1rem;
+  padding: 10px;
+  background: #fafafa;
+  border-left: 5px solid var(--accent);
+  border-radius: 0 10px 10px 0;
+  line-height: 1.8;
+}
+
+/* Full width Known For section */
+.mentor-full-width {
+  /* margin-top: 40px; */
+  padding-top: 25px;
+  border-top: 2px solid var(--accent);
+}
+
+.mentor-full-width h4 {
+  color: var(--primary);
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.mentor-full-width ul {
+  padding-left: 22px;
+  line-height: 1.9;
+  font-size: 1rem;
+}
+
+.mentor-full-width li {
+  margin-bottom: 8px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  #mentor {
+    padding: 0 15px;
+  }
+  
+  .mentor-content-wrapper {
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .mentor-main-content {
+    flex: 0 0 100%;
+    order: 2;
+  }
+  
+  
+  /* .mentor-image-container {
+    flex: 0 0 100%;
+    position: static;
+    order: 1;
+    text-align: center;
+  } */
+  
+  .mentor-img {
+    max-width: 280px;
+    max-height: 600px;
+  }
+  
+  .mentor-intro p {
+    font-size: 1rem;
+  }
+  
+  .mentor-section {
+    margin-bottom: 25px;
+    padding-top: 20px;
+  }
+  
+  .mentor-quote {
+    margin: 30px 0;
+    padding: 18px;
+    font-size: 1rem;
+  }
+  
+  .mentor-full-width {
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .mentor-img {
+    max-width: 100%;
+    max-height: 350px;
+  }
+  
+  .mentor-section ul,
+  .mentor-full-width ul {
+    padding-left: 18px;
+    font-size: 0.95rem;
+  }
+  
+  .mentor-quote {
+    font-size: 0.95rem;
+    padding: 15px;
+  }
+  
+  .mentor-section h4,
+  .mentor-full-width h4 {
+    font-size: 1.1rem;
+  }
+}
+
+/* Image Modal Styles */
+.image-modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(192, 187, 187, 0.9);
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+  display: block;
+   width: auto;
+  height: 80vh;
+  margin: auto;
+  max-width: 90%;
+  max-height: 80%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: #000000;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 1001;
+  transition: color 0.3s ease;
+}
+
+.modal-close:hover,
+.modal-close:focus {
+  color: #000000;
+  text-decoration: none;
+}
+
+/* #modalCaption {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  text-align: center;
+  font-size: 16px;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 10px 20px;
+  border-radius: 4px;
+  max-width: 80%;
+} */
+
+/* Hover effect for images */
+.clickable-image:hover {
+  transform: scale(1.02);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4);
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Mobile responsiveness for modal */
+@media (max-width: 768px) {
+  .modal-content {
+    max-width: 95%;
+    max-height: 70%;
+  }
+  
+  .modal-close {
+    top: 10px;
+    right: 20px;
+    font-size: 35px;
+  }
+  
+  #modalCaption {
+    font-size: 14px;
+    bottom: 10px;
+  }
+}
+
+
+/* Full Screen Modal Styles */
+.fullscreen-modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+ background: linear-gradient(135deg, rgba(193, 209, 214, 0.9), rgba(193, 209, 214, 0.9)); /* Softer gradient with transparency */
+  animation: fadeIn 0.3s ease;
+}
+
+.fullscreen-image {
+  display: block;
+  margin: auto;
+  max-width: 95%;
+  max-height: 115%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  object-fit: contain;
+  border-radius: 8px;
+   z-index: 10000;
+}
+
+.fullscreen-close {
+  position: absolute;
+  top: 25px;
+  right: 35px;
+  color: #fff;
+  font-size: 50px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 10001;
+  transition: color 0.3s ease;
+  background: rgba(0, 0, 0, 0.5);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fullscreen-close:hover {
+  color: #ccc;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+body.modal-open {
+    overflow: hidden;
+}
+
+/* Hover effect for images */
+.clickable-image:hover {
+  transform: scale(1.02);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4);
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .fullscreen-image {
+    max-width: 98%;
+    max-height: 98%;
+  }
+  
+  .fullscreen-close {
+    top: 15px;
+    right: 20px;
+    font-size: 40px;
+    width: 50px;
+    height: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .fullscreen-close {
+    top: 10px;
+    right: 15px;
+    font-size: 35px;
+    width: 45px;
+    height: 45px;
+  }
+}
+
+
+
+
 </style>
 </head>
 
@@ -3052,7 +3503,7 @@ h2::after {
                     <a href="#mentor">Mentorship</a>
                     <a href="#community">Community</a>
                     <a href="#gallery">Gallery</a>
-                    <a href="#connect">Connect</a>
+                    <a href="#connect">Reach Out</a>
                 </div>
                 <button class="mobile-menu-btn">
                     <i class="fas fa-bars"></i>
@@ -3073,7 +3524,7 @@ h2::after {
                         transformation. He is the Founder and Chairman of <a href="https://www.sartaccel.com/"
                             target="_blank">SART Accelerator</a>, where he mentors startups and scales ventures across
                         the USA, India, and the Middle East.</p>
-                    <p>Born on July, 1971, in Waterfall Estate, Valparai - a serene tea plantation nestled in the
+                    <p>Born in July, 1971, in Waterfall Estate, Valparai - a serene tea plantation nestled in the
                         Anaimalai hills of Pollachi, Tamil Nadu - Asir's early life was shaped by nature, tradition, and
                         community. He grew up in Santhapuram, a small village near Nagercoil in the Kanyakumari
                         district, where the values of faith, dignity, and perseverance were deeply woven into his
@@ -3088,9 +3539,9 @@ h2::after {
                 </div>
 
             </div>
-
+            
               <div class="parallel">
-    <img src="images/parallelentrepreneur.jpeg" alt="Early Life">
+    <img src="images/parallelentrepreneur.jpg" alt="Early Life">
 </div>
 
             <!-- <div class="stats-container">
@@ -3166,7 +3617,7 @@ h2::after {
                         acceleration, and founder mentorship.</p>
                 </div>
                 <div
-                    style="background: var(--light); padding: 25px; border-radius: var(--radius); margin: 30px 0; border-left: 4px solid var(--accent);">
+                    style="background: var(--light); padding: 15px; border-radius: var(--radius); margin: 10px 0; border-left: 4px solid var(--accent);">
                     <h4>Beyond Logistics: Expanding Horizons</h4>
                     <p>Every venture he touches reflects a relentless drive to build smarter systems, empower people,
                         and create lasting impact. Whether he's launching startups, advising founders, or steering
@@ -3304,7 +3755,7 @@ h2::after {
                 </div>
             </div>
         </section>
-
+<br>
         <!-- SART Accelerator Section -->
         <section id="sart" class="fade-in">
             <h2>SART Accelerator</h2>
@@ -3359,79 +3810,66 @@ h2::after {
             </div>
         </section>
 
-       <section id="mentor" class="fade-in">
+
+   <section id="mentor" class="fade-in">
   <h2>Motivator & Mentor</h2>
   <h3>Empowering People. Inspiring Possibility. Building Legacy.</h3>
 
-  <div class="content-with-image">
-    <div class="content-text">
-      <p>Asir Justifus is a sought-after motivational speaker and mentor whose influence spans boardrooms,
-        classrooms, and grassroots communities. His approach blends empathy with strategy, unlocking
-        potential in individuals and teams across the spectrum.</p>
+  <!-- Full width intro section -->
+  <div class="mentor-intro">
+    <p>Asir Justifus is a sought-after motivational speaker and mentor whose influence spans boardrooms,
+      classrooms, and grassroots communities. His approach blends empathy with strategy, unlocking
+      potential in individuals and teams across the spectrum.</p>
+  </div>
 
-      <h4>What Sets Him Apart:</h4>
-      <ul>
-        <li>Inclusive Team Building - Unites high-net-worth investors and everyday changemakers into purpose-driven ecosystems.</li>
-        <li>Youth & Founder Empowerment - Guides first-time founders and emerging leaders with clarity, courage, and actionable wisdom.</li>
-        <li>Human-Centric Innovation - Champions solutions that honor dignity, diversity, and the lived experiences of real people.</li>
-        <li>Values-Driven Leadership - Inspires bold action rooted in integrity, service, and long-term impact.</li>
-      </ul>
-
-      <!-- ONE IMAGE ON RIGHT — SERVES BOTH SECTIONS -->
-      <div class="row g-5 align-items-center">
-        
-        <!-- LEFT: All Text (70%) -->
-        <div class="col-lg-7">
-
-          <!-- His Reach -->
-          <div style="border-top:2px solid var(--accent); padding-top:25px; margin-bottom:35px;">
-            <h4 style="color:var(--primary); margin-bottom:20px; font-weight:600;">His Reach:</h4>
-            <ul style="padding-left:22px; line-height:1.9; font-size:1rem;">
-              <li>Keynote speaker at entrepreneurial summits, cultural forums, and youth leadership events</li>
-              <li>Mentor to startups, accelerators, and community initiatives across India and the U.S.</li>
-              <li>Active contributor to organizations like RISE, FeTNA, Rotary, and The Rise Global</li>
-            </ul>
-          </div>
-
-          <!-- Quote -->
-          <p style="font-style:italic; color:var(--gray); margin:40px 0; font-size:1.1rem; 
-                    padding:22px; background:#fafafa; border-left:5px solid var(--accent); 
-                    border-radius:0 10px 10px 0; line-height:1.8;">
-            Whether you're launching a venture or leading a movement, Asir brings the kind of mentorship
-            that transforms ambition into legacy.
-          </p>
-
-          <!-- Known For -->
-          <div style="border-top:2px solid var(--accent); padding-top:25px;">
-            <h4 style="color:var(--primary); margin-bottom:20px; font-weight:600;">
-              Asir is a sought-after motivational speaker and mentor, known for:
-            </h4>
-            <ul style="padding-left:22px; line-height:1.9; font-size:1rem;">
-              <li>Building inclusive teams of high-net-worth and everyday individuals</li>
-              <li>Empowering youth and first-time founders</li>
-              <li>Championing human-centric innovation</li>
-              <li>Inspiring action through values-driven leadership</li>
-            </ul>
-          </div>
-
-        </div>
-
-        <!-- RIGHT: ONE CENTERED IMAGE (30%) -->
-        <div class="col-lg-5 text-center">
-          <div style="position:sticky; top:120px;">
-            <img src="images/speech.jpg" alt="Asir on Stage"
-                 style="width:100%; max-width:360px; height:auto; max-height:520px; 
-                        object-fit:cover; border-radius:18px; 
-                        box-shadow:0 16px 40px rgba(0,0,0,0.22); 
-                       ">
-            <!-- <p style="margin-top:14px; font-size:0.9rem; color:var(--gray); font-weight:500;">
-              Global Leadership Summit 2024
-            </p> -->
-          </div>
-        </div>
-
+  <!-- Main content with image layout for What Sets Him Apart & His Reach -->
+  <div class="mentor-content-wrapper">
+    <div class="mentor-main-content">
+      
+      <!-- What Sets Him Apart section -->
+      <div class="mentor-section">
+        <h4>What Sets Him Apart:</h4>
+        <ul>
+          <li>Inclusive Team Building - Unites high-net-worth investors and everyday changemakers into purpose-driven ecosystems.</li>
+          <li>Youth & Founder Empowerment - Guides first-time founders and emerging leaders with clarity, courage, and actionable wisdom.</li>
+          <li>Human-Centric Innovation - Champions solutions that honor dignity, diversity, and the lived experiences of real people.</li>
+          <li>Values-Driven Leadership - Inspires bold action rooted in integrity, service, and long-term impact.</li>
+        </ul>
       </div>
+
+      <!-- His Reach -->
+      <div class="mentor-section">
+        <h4>His Reach:</h4>
+        <ul>
+          <li>Keynote speaker at entrepreneurial summits, cultural forums, and youth leadership events</li>
+          <li>Mentor to startups, accelerators, and community initiatives across India and the U.S.</li>
+          <li>Active contributor to organizations like RISE, FeTNA, Rotary, and The Rise Global</li>
+        </ul>
+      </div>
+
     </div>
+
+    <!-- Image Section -->
+    <div class="mentor-image-container">
+      <img src="images/speech.jpg" alt="Asir on Stage" class="mentor-img">
+    </div>
+  </div>
+
+  <!-- Quote - Full Width -->
+  <div class="mentor-quote">
+    <p>Whether you're launching a venture or leading a movement, Asir brings the kind of mentorship
+      that transforms ambition into legacy.</p>
+  </div>
+
+  <!-- Known For - Full Width -->
+  <div class="mentor-full-width">
+    <h4>Asir is a sought-after motivational speaker and mentor, known for:</h4>
+    <ul>
+      <li>Building inclusive teams of high-net-worth and everyday individuals</li>
+      <li>Empowering youth and first-time founders</li>
+      <li>Championing human-centric innovation</li>
+      <li>Inspiring action through values-driven leadership</li>
+    </ul>
   </div>
 </section>
 
@@ -3468,22 +3906,22 @@ h2::after {
         </div>
     </div>
 </section>
-
+<br>
         <!-- Community & Services Section -->
         <section id="community-services" class="fade-in">
             <h2>Community Engagement & Strategic Services</h2>
 
             <div class="card">
-                <p style="font-size: 1.1rem; color: var(--primary); font-weight: 600; margin-bottom: 25px;">
+                <p style="font-size: 1.1rem; color: var(--primary); font-weight: 600; margin-bottom: 10px;">
                     Asir is deeply involved in organizations that promote cultural and entrepreneurial empowerment
                 </p>
 
                 <div
-                    style="background: linear-gradient(135deg, var(--light) 0%, #f0f4f8 100%); padding: 30px; border-radius: var(--radius); margin: 30px 0; border: 1px solid rgba(0,0,0,0.05);">
+                    style="background: linear-gradient(135deg, var(--light) 0%, #f0f4f8 100%); padding: 10px; border-radius: var(--radius); margin: 0; border: 1px solid rgba(0,0,0,0.05);">
                     <h4 style="color: var(--secondary); margin-bottom: 10px;">Strategic Care & Mentorship</h4>
                     <h3 style="color: var(--primary); margin: 15px 0 20px 0; font-size: 1.3rem;">Strategic Acceleration
                         with Empathy, Precision & Vision</h3>
-                    <p style="margin-bottom: 25px;">Under Asir Justifus's personal guidance, ventures receive more than
+                    <p style="margin-bottom: 5px;">Under Asir Justifus's personal guidance, ventures receive more than
                         just services-they gain a trusted partner in their journey toward scalable success:</p>
 
                     <div style="display: grid; gap: 20px;">
@@ -3527,7 +3965,7 @@ h2::after {
     <h3>A Life of Purpose, Connection & Reinvention</h3>
 
    <!-- 75% Content LEFT + 25% Image RIGHT -->
-<div class="d-flex align-items-center gap-5 my-5">
+<div class="d-flex align-items-center gap-5">
   
   <!-- LEFT: 75% Content -->
 <div class="generationclass w-100">
@@ -3560,7 +3998,7 @@ h2::after {
      <h3 class="display-7 fw-bold text-primary mb-4 lh-1">
       A Generational Kinship
     </h3>
-<div class="d-flex align-items-center gap-5 my-5">
+<div class="d-flex align-items-center gap-5">
   
   <!-- LEFT: 25% Image -->
   <div style="flex: 0 0 25%; text-align: center; height: 300px;">
@@ -3710,52 +4148,67 @@ h2::after {
 
 
         <!-- Gallery Section -->
-       <section id="timeline" class="fade-in">
+    <section id="timeline" class="fade-in">
   <h2>Career Timeline</h2>
 
   <div class="gallery-container" style="margin:40px 0;">
 
     <!-- Mobile: Image 1 (on top) -->
     <div class="gallery-item-mobile text-center mb-4 d-block d-lg-none">
-      <img src="images/timeline1.jpg" alt="Professional Engagement"
-           class="img-fluid rounded-3 shadow-lg"
-           style="max-height:320px; object-fit:cover; ">
+      <img src="images/timeline1.jpg" alt=""
+           class="img-fluid rounded-3 shadow-lg clickable-image"
+           style="max-height:320px; object-fit:cover; cursor:pointer;"
+           data-src="images/timeline1.jpg"
+           data-alt="">
     </div>
 
     <!-- Mobile: Image 2 (under Image 1) -->
     <div class="gallery-item-mobile text-center mb-5 d-block d-lg-none">
-      <img src="images/timeline2.jpg" alt="Leadership Moment"
-           class="img-fluid rounded-3 shadow-lg"
-           style="max-height:320px; object-fit:cover; ">
+      <img src="images/timeline2.jpg" alt=""
+           class="img-fluid rounded-3 shadow-lg clickable-image"
+           style="max-height:320px; object-fit:cover; cursor:pointer;"
+           data-src="images/timeline2.jpg"
+           data-alt="">
     </div>
-
 
     <!-- Desktop: Two Images Side-by-Side -->
     <div class="gallery-row d-none d-lg-flex" style="gap:200px; justify-content:center;">
       <!-- Left Image -->
       <div class="gallery-item-large">
-        <img src="images/timeline1.jpg" alt="Professional Engagement"
-             style="width:100%; max-width:520px; height:500px; object-fit:cover;
+        <img src="images/timeline1.jpg" alt=""
+             class="clickable-image"
+             style="width:100%; max-width:520px;  object-fit:cover;
                     border-radius:12px; box-shadow:0 15px 35px rgba(0,0,0,0.3);
-                    transition:transform .5s ease;">
+                    transition:transform .5s ease; cursor:pointer;"
+             data-src="images/timeline1.jpg"
+            data-alt="">
       </div>
 
       <!-- Right Image -->
       <div class="gallery-item-large">
-        <img src="images/timeline2.jpg" alt="Leadership Moment"
-             style="width:100%; max-width:420px; height:500px; object-fit:cover;
+        <img src="images/timeline2.jpg" alt=""
+             class="clickable-image"
+             style="width:100%; max-width:500px; height:760px; object-fit:cover;
                     border-radius:12px; box-shadow:0 15px 35px rgba(0,0,0,0.3);
-                    transition:transform .5s ease;">
+                    transition:transform .5s ease; cursor:pointer;"
+             data-src="images/timeline2.jpg"
+             data-alt="">
       </div>
     </div>
   </div>
+
+  <!-- Full Screen Image Modal -->
+  <!-- <div id="fullscreenModal" class="fullscreen-modal">
+    <span class="fullscreen-close">&times;</span>
+    <img class="fullscreen-image" id="fullscreenImage">
+  </div> -->
 </section>
 
        <section id="vision" class="fade-in">
-  <h2>Vision & Mission</h2>
+  <h2>Vision & Mission</h2><br><br>
   <div class="vision-row" style="display: flex; justify-content: center;">
     <div class="vision-item-center" style="width: 70%;">
-      <img src="images/vision.jpg" alt="Community Impact"
+      <img src="images/vision.jpeg" alt="Community Impact"
            style="width: 100%; height: 500px; transition: transform 0.5s ease;">
     </div>
   </div>
@@ -3785,49 +4238,61 @@ h2::after {
 
         <!-- Horizontal Photo Gallery -->
         <div class="gallery-section">
-            <div class="gallery-header">
-                <h4>Photo Gallery</h4>
-                <a href="Gallery.html" class="view-all-btn" id="viewAllBtn">View All Photos</a>
-            </div>
-            <div class="horizontal-scroll">
-                <div class="gallery-item">
-                    <img src="images/meeting/1.ATMA.jpg" alt="">
-                    <div class="gallery-caption">
-                        <!-- <p>Entrepreneurship Summit 2023</p> -->
-                    </div>
+    <div class="gallery-header">
+        <h4>Photo Gallery</h4>
+        <a href="Gallery.html" class="view-all-btn" id="viewAllBtn">View All Photos</a>
+    </div>
+    <div class="horizontal-scroll">
+        <div class="gallery-item">
+            <a href="Gallery.html" class="gallery-link">
+                <img src="images/meeting/1.ATMA.jpg" alt="">
+                <div class="gallery-caption">
+                    <!-- <p>Entrepreneurship Summit 2023</p> -->
                 </div>
-                <div class="gallery-item">
-                    <img src="images/meeting/1.Rotary.jpg" alt="">
-                    <div class="gallery-caption">
-                        <!-- <p>Keynote Speech - Tech Conference</p> -->
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="images/meeting/11-Meet.jpg" alt="">
-                    <div class="gallery-caption">
-                        <!-- <p>Mentorship Session</p> -->
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="images/meeting/12Meet.jpg" alt="">
-                    <div class="gallery-caption">
-                        <!-- <p>Community Outreach</p> -->
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="images/meeting/13.Meet.jpg" alt="">
-                    <div class="gallery-caption">
-                        <!-- <p>Team Building Activity</p> -->
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="images/meeting/13.MeetBFast.jpg" alt="">
-                    <div class="gallery-caption">
-                        <!-- <p>Product Launch Event</p> -->
-                    </div>
-                </div>
-            </div>
+            </a>
         </div>
+        <div class="gallery-item">
+            <a href="Gallery.html" class="gallery-link">
+                <img src="images/meeting/1.Rotary.jpg" alt="">
+                <div class="gallery-caption">
+                    <!-- <p>Keynote Speech - Tech Conference</p> -->
+                </div>
+            </a>
+        </div>
+        <div class="gallery-item">
+            <a href="Gallery.html" class="gallery-link">
+                <img src="images/meeting/11-Meet.jpg" alt="">
+                <div class="gallery-caption">
+                    <!-- <p>Mentorship Session</p> -->
+                </div>
+            </a>
+        </div>
+        <div class="gallery-item">
+            <a href="Gallery.html" class="gallery-link">
+                <img src="images/meeting/12Meet.jpg" alt="">
+                <div class="gallery-caption">
+                    <!-- <p>Community Outreach</p> -->
+                </div>
+            </a>
+        </div>
+        <div class="gallery-item">
+            <a href="Gallery.html" class="gallery-link">
+                <img src="images/meeting/13.Meet.jpg" alt="">
+                <div class="gallery-caption">
+                    <!-- <p>Team Building Activity</p> -->
+                </div>
+            </a>
+        </div>
+        <div class="gallery-item">
+            <a href="Gallery.html" class="gallery-link">
+                <img src="images/meeting/13.MeetBFast.jpg" alt="">
+                <div class="gallery-caption">
+                    <!-- <p>Product Launch Event</p> -->
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
 
         <!-- Video Gallery -->
         <div class="video-section">
@@ -4047,10 +4512,10 @@ h2::after {
     </section>
 
     <!-- Notification Element -->
-    <div id="notification" class="notification">
+    <!-- <div id="notification" class="notification">
         <i class="fas fa-check-circle me-2"></i>
         <span id="notificationText">Your message has been sent successfully!</span>
-    </div>
+    </div> -->
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -4165,7 +4630,7 @@ h2::after {
         h4 {
             color: var(--primary);
             font-weight: 700;
-            margin-bottom: 25px;
+            margin-bottom: 5px;
             padding-bottom: 10px;
             border-bottom: 2px solid var(--accent);
         }
@@ -4265,6 +4730,8 @@ h2::after {
 #connect .text-center a { color:#245bc9; font-weight:500; }
 </style>
 
+
+
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     const contactForm = document.getElementById('contactForm');
@@ -4333,6 +4800,63 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 </script>
+
+
+
+<script>
+    // Full Screen Image Modal Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // Get modal elements
+    const fullscreenModal = document.getElementById('fullscreenModal');
+    const fullscreenImage = document.getElementById('fullscreenImage');
+    const closeBtn = document.querySelector('.fullscreen-close');
+    
+    // Get all clickable images
+    const images = document.querySelectorAll('.clickable-image');
+    
+    // Add click event to all images
+    images.forEach(function(img) {
+        img.addEventListener('click', function() {
+            fullscreenModal.style.display = 'block';
+            fullscreenImage.src = this.getAttribute('data-src');
+            // Disable body scroll when modal is open
+            document.body.classList.add('modal-open');
+            // Hide navbar temporarily (optional)
+            document.querySelector('.sticky-nav').style.visibility = 'hidden';
+        });
+    });
+    
+    // Close modal when clicking X
+    closeBtn.addEventListener('click', function() {
+        fullscreenModal.style.display = 'none';
+        // Re-enable body scroll
+        document.body.classList.remove('modal-open');
+        // Show navbar again
+        document.querySelector('.sticky-nav').style.visibility = 'visible';
+    });
+    
+    // Close modal when clicking outside the image
+    fullscreenModal.addEventListener('click', function(e) {
+        if (e.target === fullscreenModal) {
+            fullscreenModal.style.display = 'none';
+            document.body.classList.remove('modal-open');
+            // Show navbar again
+            document.querySelector('.sticky-nav').style.visibility = 'visible';
+        }
+    });
+    
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && fullscreenModal.style.display === 'block') {
+            fullscreenModal.style.display = 'none';
+            document.body.classList.remove('modal-open');
+            // Show navbar again
+            document.querySelector('.sticky-nav').style.visibility = 'visible';
+        }
+    });
+});
+</script>
+
 
 <script>
         // Simple animations and interactions
@@ -4536,9 +5060,78 @@ document.addEventListener('DOMContentLoaded', function() {
                     closeModal();
                 }
             });
-
+// Add this to your existing fullscreen modal JavaScript
+function closeModal() {
+    fullscreenModal.style.display = 'none';
+    document.body.classList.remove('modal-open');
+    
+    // Remove hash from URL without refreshing page
+    history.pushState("", document.title, window.location.pathname + window.location.search);
+}
          
-                
+           
+// URL Hash Management
+document.addEventListener('DOMContentLoaded', function() {
+    
+    // Function to clean URL hash
+    function cleanURLHash() {
+        if (window.location.hash) {
+            // Remove hash without page refresh
+            history.replaceState(null, null, ' ');
+            // Alternative method that works better in some browsers:
+            // history.pushState("", document.title, window.location.pathname + window.location.search);
+        }
+    }
+    
+    // Clean hash on page load
+    cleanURLHash();
+    
+    // Clean hash when clicking on any navigation link except gallery
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (href !== '#gallery') {
+                setTimeout(cleanURLHash, 100);
+            }
+        });
+    });
+    
+    // Clean hash when clicking on logo or home area
+    document.querySelector('.professional-header, .header-content').addEventListener('click', function() {
+        setTimeout(cleanURLHash, 100);
+    });
+    
+    // Clean hash when scrolling (optional)
+    let scrollTimer;
+    window.addEventListener('scroll', function() {
+        clearTimeout(scrollTimer);
+        scrollTimer = setTimeout(function() {
+            if (window.pageYOffset < 100 && window.location.hash) {
+                cleanURLHash();
+            }
+        }, 150);
+    });
+    
+    // Prevent gallery from adding hash to URL
+    const galleryLinks = document.querySelectorAll('a[href="#gallery"], .gallery-item, .view-all-btn');
+    galleryLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            if (this.getAttribute('href') === '#gallery') {
+                e.preventDefault();
+                // Scroll to gallery without adding hash to URL
+                const gallerySection = document.getElementById('gallery');
+                if (gallerySection) {
+                    gallerySection.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        });
+    });
+    
+    // Fix for browser back/forward buttons
+    window.addEventListener('popstate', function(e) {
+        cleanURLHash();
+    });
+});
 
         });
     </script>

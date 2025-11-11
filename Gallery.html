@@ -697,7 +697,7 @@
   <div class="sticky-nav">
     <div class="nav-container">
       <nav class="main-nav">
-        <a href="index.html#gallery" class="back-btn">
+        <a href="index.html" class="back-btn">
           <i class="fas fa-arrow-left"></i>
         </a>
         <div class="nav-title">
@@ -1033,6 +1033,65 @@
       initializeCategoryGalleries();
       addModalFunctionality();
     });
+
+
+
+    // Full Screen Image Modal Functionality - Fixed version
+document.addEventListener('DOMContentLoaded', function() {
+    // Get modal elements
+    const fullscreenModal = document.getElementById('fullscreenModal');
+    const fullscreenImage = document.getElementById('fullscreenImage');
+    const closeBtn = document.querySelector('.fullscreen-close');
+    
+    // Get all clickable images
+    const images = document.querySelectorAll('.clickable-image');
+    
+    // Add click event to all images
+    images.forEach(function(img) {
+        img.addEventListener('click', function(e) {
+            e.preventDefault(); // Prevent any default behavior
+            e.stopPropagation(); // Stop event bubbling
+            
+            fullscreenModal.style.display = 'block';
+            fullscreenImage.src = this.getAttribute('data-src');
+            
+            // Disable body scroll
+            document.body.classList.add('modal-open');
+            
+            // DO NOT add hash to URL
+        });
+    });
+    
+    // Close modal function
+    function closeModal() {
+        fullscreenModal.style.display = 'none';
+        document.body.classList.remove('modal-open');
+        
+        // Clean URL hash when closing modal
+        if (window.location.hash) {
+            history.replaceState(null, null, ' ');
+        }
+    }
+    
+    // Close modal when clicking X
+    closeBtn.addEventListener('click', closeModal);
+    
+    // Close modal when clicking on the modal background
+    fullscreenModal.addEventListener('click', function(e) {
+        if (e.target === fullscreenModal) {
+            closeModal();
+        }
+    });
+    
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && fullscreenModal.style.display === 'block') {
+            closeModal();
+        }
+    });
+});
+
+
   </script>
 </body>
 
