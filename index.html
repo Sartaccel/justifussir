@@ -38,7 +38,7 @@
 
   <!-- Viewport -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script type="application/ld+json">
+<script type="application/ld+json"> 
 {
   "@context": "https://schema.org",
   "@type": "Person",
@@ -83,7 +83,9 @@
 }
 </script>
 
-
+ <!-- Add these before closing body tag -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <style>
         :root {
             --primary: #1a365d;
@@ -289,7 +291,7 @@
 }
 
 .mobile-menu-btn:hover {
-    color: #ffd700;
+    color: #264cd8;
     transform: rotate(90deg); /* Rotate icon on hover */
 }
 
@@ -1123,6 +1125,13 @@ h2::after {
     max-width: 100% !important;
   }
   .left-image { order: -1; }
+
+  .content-with-image {
+            display: flex;
+            gap: 40px;
+            align-items: center !important;
+            margin: 0px 0;
+        }
 }
         
 
@@ -2019,6 +2028,180 @@ h2::after {
     .nav-links.active {
         display: flex;
     }
+.nav-links {
+    /* display: flex; */
+    gap: 0px !important;
+    /* list-style: none; */
+    margin: 0;
+    border-radius: 10px;
+}
+    .nav-links.active {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  width: 100%;
+  top: 100%;
+  left: 0;
+  right: 0;
+  border-radius: 10px;
+  background: linear-gradient(135deg, 
+    rgba(255, 255, 255, 0.95) 0%, 
+    rgba(248, 250, 252, 0.98) 100%);
+  padding: 30px 25px;
+  border-radius: 0 0 20px 20px;
+  box-shadow: 
+    0 25px 50px rgba(0, 0, 0, 0.15),
+    0 10px 30px rgba(43, 108, 176, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-top: none;
+  z-index: 999;
+  animation: glassSlideDown 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.nav-links.active a {
+  display: flex;
+  align-items: center;
+  padding: 16px 20px;
+  margin: 8px 0;
+  color: #1a365d;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  border-radius: 12px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 
+    0 2px 10px rgba(0, 0, 0, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hover glow effect */
+.nav-links.active a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    transparent, 
+    rgba(236, 201, 75, 0.2), 
+    transparent);
+  transition: left 0.6s ease;
+}
+
+.nav-links.active a:hover::before {
+  left: 100%;
+}
+
+.nav-links.active a:hover {
+  background: linear-gradient(135deg, #2b6cb0, #1a4d80);
+  color: white;
+  transform: translateX(12px) scale(1.02);
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 
+    0 8px 25px rgba(43, 108, 176, 0.3),
+    0 4px 15px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* Icon dots with gradient */
+.nav-links.active a::after {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: linear-gradient(135deg, #4b4eec, #3a51d5);
+  border-radius: 50%;
+  margin-right: 15px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(236, 201, 75, 0.3);
+}
+
+.nav-links.active a:hover::after {
+  background: linear-gradient(135deg, #ffffff, #e2e8f0);
+  transform: scale(1.4) rotate(180deg);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/* Active click effect */
+.nav-links.active a:active {
+  transform: translateX(12px) scale(0.98);
+  transition: transform 0.1s ease;
+}
+
+/* Enhanced animations */
+@keyframes glassSlideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.95);
+    backdrop-filter: blur(0px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    backdrop-filter: blur(15px);
+  }
+}
+
+/* Staggered entrance with bounce */
+.nav-links.active a {
+  animation: slideInBounce 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+  opacity: 0;
+  transform: translateX(-20px);
+}
+
+.nav-links.active a:nth-child(1) { animation-delay: 0.1s; }
+.nav-links.active a:nth-child(2) { animation-delay: 0.15s; }
+.nav-links.active a:nth-child(3) { animation-delay: 0.2s; }
+.nav-links.active a:nth-child(4) { animation-delay: 0.25s; }
+.nav-links.active a:nth-child(5) { animation-delay: 0.3s; }
+.nav-links.active a:nth-child(6) { animation-delay: 0.35s; }
+.nav-links.active a:nth-child(7) { animation-delay: 0.4s; }
+
+@keyframes slideInBounce {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  70% {
+    opacity: 1;
+    transform: translateX(5px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Subtle pulse animation on hover */
+@keyframes subtlePulse {
+  0%, 100% { transform: translateX(12px) scale(1.02); }
+  50% { transform: translateX(12px) scale(1.03); }
+}
+
+.nav-links.active a:hover {
+  animation: subtlePulse 2s infinite;
+}
+
+/* Mobile optimization */
+@media (max-width: 480px) {
+  .nav-links.active {
+    padding: 25px 20px;
+    border-radius: 0 0 15px 15px;
+  }
+  
+  .nav-links.active a {
+    padding: 14px 18px;
+    font-size: 1rem;
+  }
+}
 
     .nav-links a {
         padding: 0.5rem 0;
@@ -2028,6 +2211,18 @@ h2::after {
     .mobile-menu-btn {
         display: block;
     }
+
+
+   .ventures img {
+    width: 100%;
+    max-width: 100%; /* Ensure image doesn’t exceed container */
+    height: 300px;
+    max-height: 1500px; /* Reduced height */
+    object-fit: cover; /* Maintain aspect ratio, crop if needed */
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.8s ease-out; /* Subtle fade-in animation */
+}
 }
 
 @media (max-width: 480px) {
@@ -2732,6 +2927,14 @@ h2::after {
     box-shadow: 0 12px 35px rgba(0,0,0,0.4);
     border: 4px solid var(--accent);
   }
+
+  .ai-image img {
+   justify-items: center !important;
+}
+
+.ai-image{
+    justify-items: center !important;
+}
 }
 
 .vision-row { 
@@ -3225,6 +3428,7 @@ h2::after {
   .mentor-img {
     max-width: 280px;
     max-height: 600px;
+    justify-items: center !important;
   }
   
   .mentor-intro p {
@@ -3251,6 +3455,7 @@ h2::after {
   .mentor-img {
     max-width: 100%;
     max-height: 350px;
+     justify-items: center !important;
   }
   
   .mentor-section ul,
@@ -3331,10 +3536,10 @@ h2::after {
 } */
 
 /* Hover effect for images */
-.clickable-image:hover {
+/* .clickable-image:hover {
   transform: scale(1.02);
   box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4);
-}
+} */
 
 /* Animation */
 @keyframes fadeIn {
@@ -3418,10 +3623,10 @@ body.modal-open {
 }
 
 /* Hover effect for images */
-.clickable-image:hover {
+/* .clickable-image:hover {
   transform: scale(1.02);
   box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4);
-}
+} */
 
 /* Animation */
 @keyframes fadeIn {
@@ -4156,7 +4361,7 @@ body.modal-open {
     <!-- Mobile: Image 1 (on top) -->
     <div class="gallery-item-mobile text-center mb-4 d-block d-lg-none">
       <img src="images/timeline1.jpg" alt=""
-           class="img-fluid rounded-3 shadow-lg clickable-image"
+           class="img-fluid rounded-3 shadow-lg "
            style="max-height:320px; object-fit:cover; cursor:pointer;"
            data-src="images/timeline1.jpg"
            data-alt="">
@@ -4165,7 +4370,7 @@ body.modal-open {
     <!-- Mobile: Image 2 (under Image 1) -->
     <div class="gallery-item-mobile text-center mb-5 d-block d-lg-none">
       <img src="images/timeline2.jpg" alt=""
-           class="img-fluid rounded-3 shadow-lg clickable-image"
+           class="img-fluid rounded-3 shadow-lg "
            style="max-height:320px; object-fit:cover; cursor:pointer;"
            data-src="images/timeline2.jpg"
            data-alt="">
@@ -4179,7 +4384,7 @@ body.modal-open {
              class="clickable-image"
              style="width:100%; max-width:520px;  object-fit:cover;
                     border-radius:12px; box-shadow:0 15px 35px rgba(0,0,0,0.3);
-                    transition:transform .5s ease; cursor:pointer;"
+                    transition:transform .5s ease; ;"
              data-src="images/timeline1.jpg"
             data-alt="">
       </div>
@@ -4190,7 +4395,7 @@ body.modal-open {
              class="clickable-image"
              style="width:100%; max-width:500px; height:760px; object-fit:cover;
                     border-radius:12px; box-shadow:0 15px 35px rgba(0,0,0,0.3);
-                    transition:transform .5s ease; cursor:pointer;"
+                    transition:transform .5s ease; ;"
              data-src="images/timeline2.jpg"
              data-alt="">
       </div>
@@ -4451,65 +4656,418 @@ body.modal-open {
 
 
 <!-- Connect Section -->
-  <section id="connect" class="fade-in" style="margin: 0; padding: 0; width: 100%; background-color: #aaaeb2;">
-        <div class="container-fluid text-dark footer" data-wow-delay="0.1s" style="margin: 0; padding: 50px 0 0 0; background-color: #b3bec1; font-size: 20px; width: 100%;">
-            <div class="container py-1">
-                <div class="row g-5">
-                    <div class="col-lg-4 col-md-6">
-                        <h4 class="text-dark b-4">Location</h4>
-                        <div class="d-flex align-items-center" style="display: flex; align-items: center;">
-                            <i class="fa fa-map-marker-alt me-3 icon-img" style="color: #000000; flex-shrink: 0;"></i>
-                            <p class="text-dark mb-0" style="margin-left: 10px;margin-top: 20px; padding: 0; line-height: 1.5;">
-                                Atlanta, GA | Chennai, India | San Francisco Bay Area
-                            </p>
-                        </div>
-                        <div class="d-flex align-items-center mt-3" style="display: flex; align-items: center;">
-                            <i class="fa fa-envelope me-2 icon-img" style="color:#000000; margin-top: -15px;"></i>
-                            <p class="text-dark b-0" style="margin-left: 10px;">
-                                <a href="mailto:justifus@gmail.com">Justifus</a>
-                            </p>
-                        </div>
+<section id="connect" class="fade-in" style="margin: 0; padding: 0; width: 100%; background-color: #aaaeb2;">
+    <div class="container-fluid text-dark footer" data-wow-delay="0.1s" style="margin: 0; padding: 50px 0 0 0; background-color: #b3bec1; font-size: 20px; width: 100%;">
+        <div class="container py-1">
+            <div class="row g-5">
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="text-dark b-4">Location</h4>
+                    <div class="d-flex align-items-center" style="display: flex; align-items: center;">
+                        <i class="fa fa-map-marker-alt me-3 icon-img" style="color: #000000; flex-shrink: 0;"></i>
+                        <p class="text-dark mb-0" style="margin-left: 0px;margin-top: 20px; padding: 0; line-height: 1.5;">
+                            Atlanta, GA | Chennai, India | San Francisco Bay Area
+                        </p>
                     </div>
-                    <div class="col-lg-4 col-md-6">
-                        <h4 class="text-dark mb-4">Social Media</h4>
-                        <p class="text-dark mb-4">Sign up for more updates</p>
-                        <div class="d-flex pt-2">
-                            <a class="btn btn-outline-dark btn-social me-2" href="https://www.facebook.com/share/18kC7NvxME/" target="_blank"><i class="fab fa-facebook"></i></a>
-                            <a class="btn btn-outline-dark btn-social me-2" href="https://www.instagram.com/justifus.asir?igsh=ajNqa3FrcmJ0c3Jv" target="_blank"><i class="fab fa-instagram"></i></a>
-                            <a class="btn btn-outline-dark btn-social me-2" href="https://www.linkedin.com/in/justifus?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fab fa-linkedin"></i></a>
-                            <a class="btn btn-outline-dark btn-social" href="https://www.youtube.com/@AsirJustifus" target="_blank"><i class="fab fa-youtube"></i></a>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-12">
-                        <h4 class="text-dark mb-4">Connect with Justifus Asir</h4>
-                        <form id="contactForm" class="contact-form">
-                            <input type="hidden" name="access_key" value="90efeba1-2826-4722-8b89-8cc70fab73fd" />
-                            <input type="hidden" name="replyto" id="replyto" value="aashvinianbalagan@gmail.com" />
-                            <input type="hidden" name="subject" value="New Message from Contact Form" />
-                            <input type="text" name="name" id="name" placeholder="Name" required class="form-control mb-3">
-                            <input type="email" name="email" id="email" placeholder="Email" required class="form-control mb-3">
-                            <textarea name="message" id="message" placeholder="Message" required class="form-control mb-3" rows="3"></textarea>
-                            <button class="btn btn-warning w-100" type="submit" id="submitBtn" style="background:#ecc94b; color: var(--primary); font-weight: 600;">
-                                <span id="btnText">Send Message</span>
-                                <div id="btnLoading" class="spinner-border spinner-border-sm d-none" role="status">
-                                    <span class="visually-hidden">Loading...</span>
-                                </div>
-                            </button>
-                        </form>
+                    <div class="d-flex align-items-center mt-3" style="display: flex; align-items: center;">
+    <i class="fa fa-envelope me-2 icon-img" style="color:#000000; margin-top: 0px;"></i>
+    <p class="text-dark b-0" style="margin-left: 2px;">
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=justifus@gmail.com" target="_blank" id="gmailLink">Justifus</a>
+    </p>
+</div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="text-dark mb-4">Social Media</h4>
+                    <p class="text-dark mb-4">Sign up for more updates</p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-outline-dark btn-social me-2" href="https://www.facebook.com/share/18kC7NvxME/" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a class="btn btn-outline-dark btn-social me-2" href="https://www.instagram.com/justifus.asir?igsh=ajNqa3FrcmJ0c3Jv" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a class="btn btn-outline-dark btn-social me-2" href="https://www.linkedin.com/in/justifus?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a class="btn btn-outline-dark btn-social" href="https://www.youtube.com/@AsirJustifus" target="_blank"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
+                <div class="col-md-4 col-sm-12">
+                    <h4 class="text-dark mb-4">Connect with Asir Justifus</h4>
+                    <form id="contactForm" class="contact-form">
+                        <input type="hidden" name="access_key" value="90efeba1-2826-4722-8b89-8cc70fab73fd" />
+                        <input type="hidden" name="replyto" id="replyto" value="aashvinianbalagan@gmail.com" />
+                        <input type="hidden" name="subject" value="New Message from Contact Form" />
+                        <input type="text" name="name" id="name" placeholder="Name" required class="form-control mb-3">
+                        <input type="email" name="email" id="email" placeholder="Email" required class="form-control mb-3">
+                        <textarea name="message" id="message" placeholder="Message" required class="form-control mb-3" rows="3"></textarea>
+                        <button class="btn btn-warning w-100" type="submit" id="submitBtn" style="background:#ecc94b; color: var(--primary); font-weight: 600;">
+                            <span id="btnText">Send Message</span>
+                            <div id="btnLoading" class="spinner-border spinner-border-sm d-none" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                        </button>
+                    </form>
+                </div>
             </div>
-            <div class="container-fluid" style="color: #245bc9; margin-top: 30px;">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12 text-center py-3" style="text-align: center;">
-                            &copy; SART. All Rights Reserved. Developed by <a class="border-bottom" style="text-decoration: none; color: #245bc9;" target="_blank" href="https://www.enterkeysolutions.com/">EnterKey Solutions</a>
-                        </div>
+        </div>
+        <div class="container-fluid" style="color: #245bc9; margin-top: 30px;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center py-3" style="text-align: center;">
+                        &copy; SART. All Rights Reserved. Developed by <a class="border-bottom" style="text-decoration: none; color: #245bc9;" target="_blank" href="https://www.enterkeysolutions.com/">EnterKey Solutions</a>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+    
+    <!-- Success Notification -->
+    <div id="successNotification" class="notification-toast">
+        <div class="notification-content">
+            <i class="fas fa-check-circle notification-icon"></i>
+            <span class="notification-message">Message sent successfully!</span>
+            <button class="notification-close" onclick="hideNotification()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
+</section>
+
+<style>
+    /* Notification Styles */
+    .notification-toast {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: #28a745;
+        color: white;
+        padding: 15px 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        z-index: 9999;
+        transform: translateX(400px);
+        opacity: 0;
+        transition: all 0.3s ease;
+        max-width: 350px;
+    }
+    
+    .notification-toast.show {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    
+    .notification-content {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+    
+    .notification-icon {
+        font-size: 1.2rem;
+        flex-shrink: 0;
+    }
+    
+    .notification-message {
+        flex: 1;
+        font-weight: 500;
+    }
+    
+    .notification-close {
+        background: none;
+        border: none;
+        color: white;
+        cursor: pointer;
+        padding: 4px;
+        border-radius: 4px;
+        transition: background-color 0.2s ease;
+    }
+    
+    .notification-close:hover {
+        background-color: rgba(255,255,255,0.2);
+    }
+    
+    /* Existing styles remain unchanged */
+    .toast-container {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 1055;
+    }
+    
+    .toast {
+        background-color: #28a745;
+        color: white;
+        border-radius: 5px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    
+    h4 {
+        color: var(--primary);
+        font-weight: 700;
+        margin-bottom: 5px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid var(--accent);
+    }
+    
+    @media (max-width: 768px) {
+        .contact-container {
+            margin: 20px;
+        }
+        
+        .notification-toast {
+            top: 10px;
+            right: 10px;
+            left: 10px;
+            max-width: none;
+        }
+    }
+    
+    /* CONNECT SECTION – MOBILE-FIRST & PERFECT ORDER */
+    #connect { background:#b3bec1; }
+    #connect .container-fluid { padding:60px 20px 20px; }
+    
+    /* Desktop: 3 equal columns */
+    #connect .row.g-5 {
+        display:flex; 
+        flex-wrap:wrap;  
+        justify-content:center;
+    }
+    
+    /* MOBILE: FORCE EXACT ORDER + HORIZONTAL ICON ROWS */
+    @media (max-width:767px) {
+        #connect .row.g-5 { 
+            display:flex; 
+            flex-direction:column; 
+        }
+        
+        /* 1. Location  2. Social  3. Form */
+        #connect .col-lg-4:nth-child(1) { order:1; }
+        #connect .col-lg-4:nth-child(2) { order:2; }
+        #connect .col-md-4 { order:3; }
+        
+        /* ICON + TEXT ALWAYS HORIZONTAL (never wraps) */
+        #connect .d-flex.align-items-center {
+            display:flex !important;
+            align-items:center !important;
+            flex-wrap:nowrap !important;
+            overflow-x:auto;
+            -webkit-overflow-scrolling:touch;
+            padding:6px 0;
+            scrollbar-width:none;
+        }
+        
+        #connect .d-flex.align-items-center::-webkit-scrollbar { 
+            display:none; 
+        }
+        
+        #connect .fa {
+            font-size:1.5rem;
+            flex-shrink:0;
+            color:#000;
+        }
+        
+        #connect .d-flex.align-items-center p {
+            margin:0 !important;
+            margin-top:0 !important;
+            line-height:1.5;
+            white-space:normal;
+        }
+        
+        /* Remove weird inline margins */
+        #connect .d-flex.align-items-center p { 
+            margin-left:0 !important; 
+        }
+        
+        #connect .mt-3 { 
+            margin-top:16px !important; 
+        }
+        
+        /* Social buttons */
+        #connect .btn-social {
+            width:52px; 
+            height:52px; 
+            font-size:1.4rem;
+            border:2.5px solid #222; 
+            border-radius:50%;
+            display:inline-flex; 
+            align-items:center; 
+            justify-content:center;
+        }
+        
+        /* Form */
+        #connect .form-control { 
+            font-size:1.05rem !important; 
+            padding:16px; 
+            border-radius:8px; 
+        }
+        
+        #connect textarea { 
+            min-height:110px; 
+        }
+        
+        #connect .btn-warning { 
+            padding:18px; 
+            font-weight:600; 
+            border-radius:8px; 
+            background:#f9b234; 
+            border:none; 
+        }
+    }
+    
+    @media (max-width:992px) {
+        #connect .d-flex { 
+            flex-direction:row;
+        }
+    }
+    
+    /* Tiny phones – tighter but still perfect */
+    @media (max-width:480px) {
+        #connect .container-fluid { 
+            padding:50px 15px 15px; 
+        }
+        
+        #connect h4 { 
+            font-size:1.35rem; 
+        }
+        
+        #connect .fa { 
+            font-size:1.4rem; 
+        }
+    }
+    
+    /* Footer */
+    #connect > .container-fluid + .container-fluid {
+        margin-top:40px; 
+        padding:20px 0; 
+        background:#a0adb3;
+        text-align:center; 
+        font-size:0.95rem;
+    }
+    
+    #connect .text-center a { 
+        color:#245bc9; 
+        font-weight:500; 
+    }
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const gmailLink = document.getElementById('gmailLink');
+    
+    // Function to detect if user is on mobile
+    function isMobileDevice() {
+        return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    }
+    
+    // Set the appropriate link based on device
+    if (isMobileDevice()) {
+        // For mobile devices, use standard mailto link
+        gmailLink.href = 'mailto:justifus@gmail.com';
+        gmailLink.removeAttribute('target'); // Remove target blank for mobile
+    } else {
+        // For desktop, use Gmail compose URL
+        gmailLink.href = 'https://mail.google.com/mail/?view=cm&fs=1&to=justifus@gmail.com&su=Contact%20from%20Website';
+        gmailLink.setAttribute('target', '_blank');
+    }
+    
+    // Optional: Add click tracking
+    gmailLink.addEventListener('click', function() {
+        console.log('Gmail link clicked');
+        // You can add analytics tracking here
+    });
+});
+</script>
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const contactForm = document.getElementById('contactForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const btnText = document.getElementById('btnText');
+    const btnLoading = document.getElementById('btnLoading');
+    
+    // Function to show notification
+    function showNotification() {
+        const notification = document.getElementById('successNotification');
+        notification.classList.add('show');
+        
+        // Auto hide after 5 seconds
+        setTimeout(() => {
+            hideNotification();
+        }, 5000);
+    }
+    
+    // Function to hide notification
+    function hideNotification() {
+        const notification = document.getElementById('successNotification');
+        notification.classList.remove('show');
+    }
+    
+    // Function to clear form fields
+    function clearForm() {
+        document.getElementById('name').value = '';
+        document.getElementById('email').value = '';
+        document.getElementById('message').value = '';
+    }
+    
+    // Function to show loading state
+    function showLoading() {
+        btnText.textContent = 'Sending...';
+        btnLoading.classList.remove('d-none');
+        submitBtn.disabled = true;
+    }
+    
+    // Function to hide loading state
+    function hideLoading() {
+        btnText.textContent = 'Send Message';
+        btnLoading.classList.add('d-none');
+        submitBtn.disabled = false;
+    }
+    
+    // Handle form submission
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Show loading state
+            showLoading();
+            
+            // Get form data
+            const formData = new FormData(contactForm);
+            
+            // Submit form using fetch API
+            fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => {
+                if (response.ok) {
+                    // Success - show notification and clear form
+                    showNotification();
+                    clearForm();
+                } else {
+                    // Error - show error message
+                    alert('There was a problem sending your message. Please try again.');
+                }
+            })
+            .catch(error => {
+                // Network error
+                console.error('Error:', error);
+                alert('There was a network error. Please check your connection and try again.');
+            })
+            .finally(() => {
+                // Always hide loading state
+                hideLoading();
+            });
+        });
+    }
+    
+    // Make hideNotification function globally available
+    window.hideNotification = hideNotification;
+});
+</script>
+
+
+
+
+
+
+
 
     <!-- Notification Element -->
     <!-- <div id="notification" class="notification">
@@ -4517,218 +5075,13 @@ body.modal-open {
         <span id="notificationText">Your message has been sent successfully!</span>
     </div> -->
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const contactForm = document.getElementById('contactForm');
-            const submitBtn = document.getElementById('submitBtn');
-            const btnText = document.getElementById('btnText');
-            const btnLoading = document.getElementById('btnLoading');
-            const notification = document.getElementById('notification');
-            const notificationText = document.getElementById('notificationText');
-            
-            // Initialize fade-in elements
-            const fadeElements = document.querySelectorAll('.fade-in');
-            fadeElements.forEach(element => {
-                element.style.opacity = "1";
-                element.style.transform = "translateY(0)";
-            });
-            
-            // Function to show notification
-            function showNotification(message, type = 'success') {
-                notificationText.textContent = message;
-                notification.className = `notification ${type}`;
-                notification.classList.add('show');
-                
-                // Hide notification after 4 seconds
-                setTimeout(() => {
-                    notification.classList.remove('show');
-                }, 4000);
-            }
-            
-            // Function to clear form fields
-            function clearForm() {
-                document.getElementById('name').value = '';
-                document.getElementById('email').value = '';
-                document.getElementById('message').value = '';
-            }
-            
-            // Function to show loading state
-            function showLoading() {
-                btnText.textContent = 'Sending...';
-                btnLoading.classList.remove('d-none');
-                submitBtn.disabled = true;
-            }
-            
-            // Function to hide loading state
-            function hideLoading() {
-                btnText.textContent = 'Send Message';
-                btnLoading.classList.add('d-none');
-                submitBtn.disabled = false;
-            }
-            
-            // Handle form submission
-            if (contactForm) {
-                contactForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    
-                    // Show loading state
-                    showLoading();
-                    
-                    // Get form data
-                    const formData = new FormData(contactForm);
-                    
-                    // Submit form using fetch API
-                    fetch('https://api.web3forms.com/submit', {
-                        method: 'POST',
-                        body: formData
-                    })
-                    .then(response => {
-                        if (response.ok) {
-                            // Success - show notification and clear form
-                            showNotification('Your message has been sent successfully!', 'success');
-                            clearForm();
-                        } else {
-                            // Error - show error message
-                            showNotification('There was a problem sending your message. Please try again.', 'error');
-                        }
-                    })
-                    .catch(error => {
-                        // Network error
-                        console.error('Error:', error);
-                        showNotification('There was a network error. Please check your connection and try again.', 'error');
-                    })
-                    .finally(() => {
-                        // Always hide loading state
-                        hideLoading();
-                    });
-                });
-            }
-        });
-    </script>
-
-
-
-
-
-<style>
-
-
-     .toast-container {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 1055;
-        }
-        
-        .toast {
-            background-color: #28a745;
-            color: white;
-            border-radius: 5px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-        }
-        
-        h4 {
-            color: var(--primary);
-            font-weight: 700;
-            margin-bottom: 5px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid var(--accent);
-        }
-        
-        @media (max-width: 768px) {
-            .contact-container {
-                margin: 20px;
-            }
-        }
-/* CONNECT SECTION – MOBILE-FIRST & PERFECT ORDER */
-#connect { background:#b3bec1; }
-#connect .container-fluid { padding:60px 20px 20px; }
-
-/* Desktop: 3 equal columns */
-#connect .row.g-5 {
-  display:flex; flex-wrap:wrap;  justify-content:center;
-}
-/* #connect [class*="col-"] { flex:1 1 280px; } */
-
-/* MOBILE: FORCE EXACT ORDER + HORIZONTAL ICON ROWS */
-@media (max-width:767px) {
-  #connect .row.g-5 { 
-    display:flex; 
-    flex-direction:column; 
-    /* gap:48px;  */
-  }
-  /* 1. Location  2. Social  3. Form */
-  #connect .col-lg-4:nth-child(1) { order:1; }
-  #connect .col-lg-4:nth-child(2) { order:2; }
-  #connect .col-md-4      { order:3; }
-
-  /* ICON + TEXT ALWAYS HORIZONTAL (never wraps) */
-  #connect .d-flex.align-items-center {
-    display:flex !important;
-    align-items:center !important;
-    flex-wrap:nowrap !important;
-    /* gap:14px; */
-    overflow-x:auto;
-    -webkit-overflow-scrolling:touch;
-    padding:6px 0;
-    scrollbar-width:none;
-  }
-  #connect .d-flex.align-items-center::-webkit-scrollbar { display:none; }
-
-  #connect .fa {
-    font-size:1.5rem;
-    flex-shrink:0;
-    color:#000;
-  }
-  #connect .d-flex.align-items-center p {
-    margin:0 !important;
-    margin-top:0 !important;
-    line-height:1.5;
-    white-space:normal;
-  }
-  /* Remove weird inline margins */
-  #connect .d-flex.align-items-center p { margin-left:0 !important; }
-  #connect .mt-3 { margin-top:16px !important; }
-
-  /* Social buttons */
-  #connect .btn-social {
-    width:52px; height:52px; font-size:1.4rem;
-    border:2.5px solid #222; border-radius:50%;
-    display:inline-flex; align-items:center; justify-content:center;
-  }
-  /* Form */
-  #connect .form-control { 
-    font-size:1.05rem !important; padding:16px; border-radius:8px; 
-  }
-  #connect textarea { min-height:110px; }
-  #connect .btn-warning { 
-    padding:18px; font-weight:600; border-radius:8px; 
-    background:#f9b234; border:none; 
-  }
-}
-
-
-
-@media (max-width:992px)
- {
-   #connect .d-flex { 
-        flex-direction:row;}
    
-  }
-/* Tiny phones – tighter but still perfect */
-@media (max-width:480px) {
-  #connect .container-fluid { padding:50px 15px 15px; }
-  #connect h4 { font-size:1.35rem; }
-  #connect .fa { font-size:1.4rem; }
-}
 
-/* Footer */
-#connect > .container-fluid + .container-fluid {
-  margin-top:40px; padding:20px 0; background:#a0adb3;
-  text-align:center; font-size:0.95rem;
-}
-#connect .text-center a { color:#245bc9; font-weight:500; }
-</style>
+
+
+
+
+
 
 
 
@@ -4803,337 +5156,440 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
+
+
 <script>
-    // Full Screen Image Modal Functionality
 document.addEventListener('DOMContentLoaded', function() {
-    // Get modal elements
-    const fullscreenModal = document.getElementById('fullscreenModal');
-    const fullscreenImage = document.getElementById('fullscreenImage');
-    const closeBtn = document.querySelector('.fullscreen-close');
-    
-    // Get all clickable images
-    const images = document.querySelectorAll('.clickable-image');
-    
-    // Add click event to all images
-    images.forEach(function(img) {
-        img.addEventListener('click', function() {
-            fullscreenModal.style.display = 'block';
-            fullscreenImage.src = this.getAttribute('data-src');
-            // Disable body scroll when modal is open
-            document.body.classList.add('modal-open');
-            // Hide navbar temporarily (optional)
-            document.querySelector('.sticky-nav').style.visibility = 'hidden';
-        });
-    });
-    
-    // Close modal when clicking X
-    closeBtn.addEventListener('click', function() {
-        fullscreenModal.style.display = 'none';
-        // Re-enable body scroll
-        document.body.classList.remove('modal-open');
-        // Show navbar again
-        document.querySelector('.sticky-nav').style.visibility = 'visible';
-    });
-    
-    // Close modal when clicking outside the image
-    fullscreenModal.addEventListener('click', function(e) {
-        if (e.target === fullscreenModal) {
-            fullscreenModal.style.display = 'none';
-            document.body.classList.remove('modal-open');
-            // Show navbar again
-            document.querySelector('.sticky-nav').style.visibility = 'visible';
-        }
-    });
-    
-    // Close modal with Escape key
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && fullscreenModal.style.display === 'block') {
-            fullscreenModal.style.display = 'none';
-            document.body.classList.remove('modal-open');
-            // Show navbar again
-            document.querySelector('.sticky-nav').style.visibility = 'visible';
-        }
-    });
-});
-</script>
+    // ===== MOBILE MENU FUNCTIONALITY =====
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const navLinks = document.querySelector('.nav-links');
+    const stickyNav = document.querySelector('.sticky-nav');
 
-
-<script>
-        // Simple animations and interactions
-        document.addEventListener('DOMContentLoaded', function () {
-            // Fade in elements on scroll
-            const fadeElements = document.querySelectorAll('.fade-in');
-
-            const fadeInOnScroll = function () {
-                fadeElements.forEach(element => {
-                    const elementTop = element.getBoundingClientRect().top;
-                    const elementVisible = 150;
-
-                    if (elementTop < window.innerHeight - elementVisible) {
-                        element.style.opacity = "1";
-                        element.style.transform = "translateY(0)";
-                    }
-                });
-            };
-
-            // Set initial state
-            fadeElements.forEach(element => {
-                element.style.opacity = "0";
-                element.style.transform = "translateY(20px)";
-                element.style.transition = "opacity 0.8s ease, transform 0.8s ease";
-            });
-
-            window.addEventListener('scroll', fadeInOnScroll);
-            fadeInOnScroll(); // Check on load
-
-            // Mobile menu functionality
-            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-            const navLinks = document.querySelector('.nav-links');
-
+    // Function to hide mobile menu
+    function hideMobileMenu() {
+        if (navLinks && navLinks.classList.contains('active')) {
+            navLinks.classList.remove('active');
+            // Reset menu icon
             if (mobileMenuBtn) {
-                mobileMenuBtn.addEventListener('click', function () {
-                    navLinks.classList.toggle('active');
-                });
+                const icon = mobileMenuBtn.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
             }
-
-            // Close mobile menu when clicking on a link
-            document.querySelectorAll('.nav-links a').forEach(link => {
-                link.addEventListener('click', function () {
-                    if (window.innerWidth <= 768) {
-                        navLinks.classList.remove('active');
-                    }
-                });
-            });
-
-            // Close mobile menu when clicking outside
-            document.addEventListener('click', function (event) {
-                if (window.innerWidth <= 768) {
-                    if (!event.target.closest('.main-nav') && navLinks.classList.contains('active')) {
-                        navLinks.classList.remove('active');
-                    }
-                }
-            });
-
-            // Smooth scrolling for navigation links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-
-                    const targetId = this.getAttribute('href');
-                    if (targetId === '#') return;
-
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        window.scrollTo({
-                            top: targetElement.offsetTop - 80,
-                            behavior: 'smooth'
-                        });
-
-                        // Close mobile menu if open
-                        if (window.innerWidth <= 768) {
-                            navLinks.classList.remove('active');
-                        }
-                    }
-                });
-            });
-
-            // Gallery functionality
-            const viewAllBtn = document.getElementById('viewAllBtn');
-            const backBtn = document.getElementById('backBtn');
-            const gallerySection = document.getElementById('gallery');
-            const fullGallerySection = document.getElementById('fullGallery');
-
-            if (viewAllBtn && backBtn && gallerySection && fullGallerySection) {
-                // Toggle between main gallery and full gallery
-                viewAllBtn.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    gallerySection.style.display = 'none';
-                    fullGallerySection.style.display = 'block';
-                });
-
-                backBtn.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    fullGallerySection.style.display = 'none';
-                    gallerySection.style.display = 'block';
-                });
-
-                // Category filtering functionality
-                const categoryButtons = document.querySelectorAll('.category-btn');
-                const allGalleryItems = document.querySelectorAll('#all-gallery .gallery-item');
-                
-                // Initialize category galleries with appropriate items
-                function initializeCategoryGalleries() {
-                    const entrepreneurGallery = document.getElementById('entrepreneur-gallery');
-                    const familyGallery = document.getElementById('family-gallery');
-                    const eventsGallery = document.getElementById('events-gallery');
-                    
-                    allGalleryItems.forEach(item => {
-                        const category = item.getAttribute('data-category');
-                        const clone = item.cloneNode(true);
-                        
-                        if (category === 'entrepreneur') {
-                            entrepreneurGallery.appendChild(clone);
-                        } else if (category === 'family') {
-                            familyGallery.appendChild(clone);
-                        } else if (category === 'events') {
-                            eventsGallery.appendChild(clone);
-                        }
-                    });
-                }
-                
-                // Filter gallery by category
-                categoryButtons.forEach(button => {
-                    button.addEventListener('click', function() {
-                        // Update active button
-                        categoryButtons.forEach(btn => btn.classList.remove('active'));
-                        this.classList.add('active');
-                        
-                        // Get selected category
-                        const category = this.getAttribute('data-category');
-                        
-                        // Show/hide galleries based on category
-                        document.querySelectorAll('.category-gallery').forEach(gallery => {
-                            gallery.classList.add('hidden');
-                        });
-                        
-                        if (category === 'all') {
-                            document.getElementById('all-gallery').classList.remove('hidden');
-                        } else {
-                            document.getElementById(`${category}-gallery`).classList.remove('hidden');
-                        }
-                    });
-                });
-                
-                // Initialize the galleries
-                initializeCategoryGalleries();
-            }
-
-            // Image Modal Functionality
-            const modal = document.getElementById('imageModal');
-            const modalImg = document.getElementById('modalImage');
-            const modalCaption = document.getElementById('modalCaption');
-            const closeBtn = document.querySelector('.close-btn');
-
-            // Function to open modal with image
-            function openModal(imgSrc, altText) {
-                if (modal && modalImg) {
-                    modal.style.display = 'block';
-                    modalImg.src = imgSrc;
-                    modalCaption.textContent = altText || '';
-                    document.body.style.overflow = 'hidden';
-                }
-            }
-
-            // Function to close modal
-            function closeModal() {
-                if (modal) {
-                    modal.style.display = 'none';
-                    document.body.style.overflow = 'auto';
-                }
-            }
-
-            // Add click event to all gallery images
-            const galleryImages = document.querySelectorAll('.gallery-item img');
-            galleryImages.forEach(img => {
-                img.addEventListener('click', function() {
-                    openModal(this.src, this.alt);
-                });
-            });
-
-            // Close modal when clicking X
-            if (closeBtn) {
-                closeBtn.addEventListener('click', closeModal);
-            }
-
-            // Close modal when clicking outside the image
-            if (modal) {
-                modal.addEventListener('click', function(e) {
-                    if (e.target === modal) {
-                        closeModal();
-                    }
-                });
-            }
-
-            // Close modal with Escape key
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape' && modal && modal.style.display === 'block') {
-                    closeModal();
-                }
-            });
-// Add this to your existing fullscreen modal JavaScript
-function closeModal() {
-    fullscreenModal.style.display = 'none';
-    document.body.classList.remove('modal-open');
-    
-    // Remove hash from URL without refreshing page
-    history.pushState("", document.title, window.location.pathname + window.location.search);
-}
-         
-           
-// URL Hash Management
-document.addEventListener('DOMContentLoaded', function() {
-    
-    // Function to clean URL hash
-    function cleanURLHash() {
-        if (window.location.hash) {
-            // Remove hash without page refresh
-            history.replaceState(null, null, ' ');
-            // Alternative method that works better in some browsers:
-            // history.pushState("", document.title, window.location.pathname + window.location.search);
         }
     }
-    
-    // Clean hash on page load
-    cleanURLHash();
-    
-    // Clean hash when clicking on any navigation link except gallery
-    document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', function(e) {
-            const href = this.getAttribute('href');
-            if (href !== '#gallery') {
-                setTimeout(cleanURLHash, 100);
-            }
-        });
-    });
-    
-    // Clean hash when clicking on logo or home area
-    document.querySelector('.professional-header, .header-content').addEventListener('click', function() {
-        setTimeout(cleanURLHash, 100);
-    });
-    
-    // Clean hash when scrolling (optional)
-    let scrollTimer;
-    window.addEventListener('scroll', function() {
-        clearTimeout(scrollTimer);
-        scrollTimer = setTimeout(function() {
-            if (window.pageYOffset < 100 && window.location.hash) {
-                cleanURLHash();
-            }
-        }, 150);
-    });
-    
-    // Prevent gallery from adding hash to URL
-    const galleryLinks = document.querySelectorAll('a[href="#gallery"], .gallery-item, .view-all-btn');
-    galleryLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            if (this.getAttribute('href') === '#gallery') {
-                e.preventDefault();
-                // Scroll to gallery without adding hash to URL
-                const gallerySection = document.getElementById('gallery');
-                if (gallerySection) {
-                    gallerySection.scrollIntoView({ behavior: 'smooth' });
-                }
-            }
-        });
-    });
-    
-    // Fix for browser back/forward buttons
-    window.addEventListener('popstate', function(e) {
-        cleanURLHash();
-    });
-});
 
+    // Toggle mobile menu
+    if (mobileMenuBtn && navLinks) {
+        mobileMenuBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            navLinks.classList.toggle('active');
+            
+            // Change icon based on menu state
+            const icon = this.querySelector('i');
+            if (navLinks.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
         });
-    </script>
+    }
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('.main-nav') && navLinks && navLinks.classList.contains('active')) {
+            hideMobileMenu();
+        }
+    });
+
+    // Close mobile menu when clicking on links
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', function() {
+            hideMobileMenu();
+        });
+    });
+
+    // Close mobile menu on window resize
+    window.addEventListener('resize', function() {
+        if (window.innerWidth > 768 && navLinks && navLinks.classList.contains('active')) {
+            hideMobileMenu();
+        }
+    });
+
+    // ===== HIDE NAVBAR ON SCROLL =====
+    let lastScrollTop = 0;
+    const navbarHeight = stickyNav ? stickyNav.offsetHeight : 0;
+    
+    function handleScroll() {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        if (scrollTop > lastScrollTop && scrollTop > navbarHeight) {
+            // Scrolling down - hide navbar
+            if (stickyNav) {
+                stickyNav.style.transform = 'translateY(-100%)';
+                stickyNav.style.transition = 'transform 0.3s ease';
+            }
+        } else {
+            // Scrolling up - show navbar
+            if (stickyNav) {
+                stickyNav.style.transform = 'translateY(0)';
+            }
+        }
+        
+        lastScrollTop = scrollTop;
+        
+        // Also hide mobile menu when scrolling
+        if (navLinks && navLinks.classList.contains('active')) {
+            hideMobileMenu();
+        }
+    }
+
+    // Throttle scroll events for better performance
+    let scrollTimeout;
+    function throttleScroll() {
+        if (!scrollTimeout) {
+            scrollTimeout = setTimeout(function() {
+                scrollTimeout = null;
+                handleScroll();
+            }, 100);
+        }
+    }
+
+    window.addEventListener('scroll', throttleScroll);
+
+    // ===== SMOOTH SCROLLING =====
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                // Hide mobile menu first
+                hideMobileMenu();
+                
+                // Smooth scroll to target
+                const offsetTop = targetElement.offsetTop - 80;
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // ===== FADE IN ANIMATIONS =====
+    const fadeElements = document.querySelectorAll('.fade-in');
+
+    const fadeInOnScroll = function() {
+        fadeElements.forEach(element => {
+            const elementTop = element.getBoundingClientRect().top;
+            const elementVisible = 150;
+
+            if (elementTop < window.innerHeight - elementVisible) {
+                element.style.opacity = "1";
+                element.style.transform = "translateY(0)";
+            }
+        });
+    };
+
+    // Set initial state
+    fadeElements.forEach(element => {
+        element.style.opacity = "0";
+        element.style.transform = "translateY(20px)";
+        element.style.transition = "opacity 0.8s ease, transform 0.8s ease";
+    });
+
+    window.addEventListener('scroll', fadeInOnScroll);
+    fadeInOnScroll(); // Check on load
+
+    // ===== CONTACT FORM FUNCTIONALITY =====
+    const contactForm = document.getElementById('contactForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const btnText = document.getElementById('btnText');
+    const btnLoading = document.getElementById('btnLoading');
+
+    // Function to show notification
+    function showNotification() {
+        const notification = document.getElementById('successNotification');
+        if (notification) {
+            notification.classList.add('show');
+            
+            // Auto hide after 5 seconds
+            setTimeout(() => {
+                hideNotification();
+            }, 5000);
+        }
+    }
+
+    // Function to hide notification
+    function hideNotification() {
+        const notification = document.getElementById('successNotification');
+        if (notification) {
+            notification.classList.remove('show');
+        }
+    }
+
+    // Function to clear form fields
+    function clearForm() {
+        document.getElementById('name').value = '';
+        document.getElementById('email').value = '';
+        document.getElementById('message').value = '';
+    }
+
+    // Function to show loading state
+    function showLoading() {
+        if (btnText && btnLoading) {
+            btnText.textContent = 'Sending...';
+            btnLoading.classList.remove('d-none');
+            if (submitBtn) submitBtn.disabled = true;
+        }
+    }
+
+    // Function to hide loading state
+    function hideLoading() {
+        if (btnText && btnLoading) {
+            btnText.textContent = 'Send Message';
+            btnLoading.classList.add('d-none');
+            if (submitBtn) submitBtn.disabled = false;
+        }
+    }
+
+    // Email validation function
+    function isValidEmail(email) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    }
+
+    // Handle form submission
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Basic validation
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            
+            if (!name || !email || !message) {
+                alert('Please fill in all fields');
+                return;
+            }
+            
+            if (!isValidEmail(email)) {
+                alert('Please enter a valid email address');
+                return;
+            }
+            
+            // Show loading state
+            showLoading();
+            
+            // Get form data
+            const formData = new FormData(contactForm);
+            
+            // Submit form using fetch API
+            fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => {
+                if (response.ok) {
+                    // Success - show notification and clear form
+                    showNotification();
+                    clearForm();
+                } else {
+                    // Error - show error message
+                    alert('There was a problem sending your message. Please try again.');
+                }
+            })
+            .catch(error => {
+                // Network error
+                console.error('Error:', error);
+                alert('There was a network error. Please check your connection and try again.');
+            })
+            .finally(() => {
+                // Always hide loading state
+                hideLoading();
+            });
+        });
+    }
+
+    // ===== IMAGE MODAL FUNCTIONALITY =====
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImage');
+    const modalCaption = document.getElementById('modalCaption');
+    const closeBtn = document.querySelector('.close-btn');
+
+    // Function to open modal with image
+    function openModal(imgSrc, altText) {
+        if (modal && modalImg) {
+            modal.style.display = 'block';
+            modalImg.src = imgSrc;
+            if (modalCaption) {
+                modalCaption.textContent = altText || '';
+            }
+            document.body.style.overflow = 'hidden';
+        }
+    }
+
+    // Function to close modal
+    function closeModal() {
+        if (modal) {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+    }
+
+    // Add click event to all gallery images
+    const galleryImages = document.querySelectorAll('.gallery-item img, .clickable-image');
+    galleryImages.forEach(img => {
+        img.addEventListener('click', function() {
+            openModal(this.src, this.alt);
+        });
+    });
+
+    // Close modal when clicking X
+    if (closeBtn) {
+        closeBtn.addEventListener('click', closeModal);
+    }
+
+    // Close modal when clicking outside
+    if (modal) {
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+    }
+
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal && modal.style.display === 'block') {
+            closeModal();
+        }
+    });
+
+    // ===== FULLSCREEN IMAGE MODAL =====
+    const fullscreenModal = document.getElementById('fullscreenModal');
+    const fullscreenImage = document.getElementById('fullscreenImage');
+    const fullscreenClose = document.querySelector('.fullscreen-close');
+
+    // Add click event to timeline images for fullscreen view
+    document.querySelectorAll('.clickable-image').forEach(img => {
+        img.addEventListener('click', function() {
+            if (fullscreenModal && fullscreenImage) {
+                fullscreenModal.style.display = 'block';
+                fullscreenImage.src = this.src;
+                document.body.classList.add('modal-open');
+            }
+        });
+    });
+
+    // Close fullscreen modal
+    if (fullscreenClose) {
+        fullscreenClose.addEventListener('click', function() {
+            if (fullscreenModal) {
+                fullscreenModal.style.display = 'none';
+                document.body.classList.remove('modal-open');
+            }
+        });
+    }
+
+    // Close fullscreen modal when clicking outside image
+    if (fullscreenModal) {
+        fullscreenModal.addEventListener('click', function(e) {
+            if (e.target === fullscreenModal) {
+                fullscreenModal.style.display = 'none';
+                document.body.classList.remove('modal-open');
+            }
+        });
+    }
+
+    // Close fullscreen modal with Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && fullscreenModal && fullscreenModal.style.display === 'block') {
+            fullscreenModal.style.display = 'none';
+            document.body.classList.remove('modal-open');
+        }
+    });
+
+    // ===== GMAIL LINK FUNCTIONALITY =====
+    const gmailLink = document.getElementById('gmailLink');
+    
+    // Function to detect if user is on mobile
+    function isMobileDevice() {
+        return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    }
+    
+    // Set the appropriate link based on device
+    if (gmailLink) {
+        if (isMobileDevice()) {
+            // For mobile devices, use standard mailto link
+            gmailLink.href = 'mailto:justifus@gmail.com';
+            gmailLink.removeAttribute('target'); // Remove target blank for mobile
+        } else {
+            // For desktop, use Gmail compose URL
+            gmailLink.href = 'https://mail.google.com/mail/?view=cm&fs=1&to=justifus@gmail.com&su=Contact%20from%20Website';
+            gmailLink.setAttribute('target', '_blank');
+        }
+        
+        // Optional: Add click tracking
+        gmailLink.addEventListener('click', function() {
+            console.log('Gmail link clicked');
+            // You can add analytics tracking here
+        });
+    }
+
+    // ===== GALLERY FUNCTIONALITY =====
+    const viewAllBtn = document.getElementById('viewAllBtn');
+    const backBtn = document.getElementById('backBtn');
+    const gallerySection = document.querySelector('#gallery .gallery-section');
+    const fullGallerySection = document.getElementById('fullGallery');
+
+    if (viewAllBtn && backBtn && gallerySection && fullGallerySection) {
+        // Toggle between main gallery and full gallery
+        viewAllBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            gallerySection.style.display = 'none';
+            fullGallerySection.style.display = 'block';
+        });
+
+        backBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            fullGallerySection.style.display = 'none';
+            gallerySection.style.display = 'block';
+        });
+    }
+
+    // ===== HORIZONTAL SCROLL ENHANCEMENT =====
+    const horizontalScrolls = document.querySelectorAll('.horizontal-scroll');
+    horizontalScrolls.forEach(scroll => {
+        // Add smooth scrolling with mouse wheel
+        scroll.addEventListener('wheel', function(e) {
+            e.preventDefault();
+            this.scrollLeft += e.deltaY;
+        });
+    });
+
+    // ===== IMAGE HOVER EFFECTS =====
+    document.querySelectorAll('.content-image img, .gallery-item img, .clickable-image').forEach(img => {
+        img.addEventListener('mouseenter', function() {
+            this.style.transform = 'scale(1.03)';
+        });
+        
+        img.addEventListener('mouseleave', function() {
+            this.style.transform = 'scale(1)';
+        });
+    });
+
+    // Make hideNotification function globally available
+    window.hideNotification = hideNotification;
+
+    console.log('All JavaScript functionality loaded successfully!');
+});
+</script>
 </body>
 </html>
