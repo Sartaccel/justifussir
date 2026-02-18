@@ -182,7 +182,7 @@
             margin-bottom: 20px;
             color: rgb(30, 30, 192);
             width: 100%;
-            margin-left: -210px;
+            /* margin-left: -210px; */
 
 
         }
@@ -256,17 +256,20 @@
 
         .nav-container {
             width: 100%;
-            margin: 0 auto;
-            padding-left: 120px;
+
+            /* padding-left: 120px; */
 
         }
 
         .main-nav {
+
             display: flex;
-            justify-content: space-between;
+            /* justify-content: center; */
             align-items: center;
             padding: 5px 0;
             position: relative;
+            padding-left: 110px;
+
         }
 
         .nav-brand {
@@ -489,9 +492,15 @@
         }
 
 
+        @media (min-width: 900px) and (max-width: 1490px) {
+            .main-nav {
 
 
+                padding-left: 60px;
 
+            }
+
+        }
 
         /* Main Content */
         .container {
@@ -619,10 +628,10 @@
 
         .ventures img {
             width: 100%;
-            max-width: 100%;
+
             /* Ensure image doesn’t exceed container */
-            height: 300px;
-            max-height: 1500px;
+            height: 450px;
+
             /* Reduced height */
             object-fit: cover;
             /* Maintain aspect ratio, crop if needed */
@@ -632,6 +641,50 @@
             /* Subtle fade-in animation */
         }
 
+        /* AUTHOR SECTION */
+        .author-images {
+            display: flex;
+            gap: 100px;
+            justify-content: center;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+
+        .author-images img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            transition: transform .3s ease;
+        }
+
+        .author-images img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Full width text */
+        .author-content {
+            width: 100%;
+            max-width: 1200px;
+            margin: auto;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        @media (max-width:768px) {
+            .author-images img {
+                width: 90%;
+                height: auto;
+            }
+
+            .ventures img {
+                width: 100%;
+                height: 300px;
+
+
+            }
+        }
 
 
 
@@ -748,7 +801,7 @@
             display: flex;
             align-items: center;
             gap: 40px;
-            max-width: 1200px;
+            width: 100%;
             margin: 0 auto;
             padding: 40px 20px;
             /* font-family: Arial, sans-serif; */
@@ -756,7 +809,7 @@
 
         /* TEXT = 75% */
         .content-text {
-            flex: 0 0 75%;
+            flex: 0 0 60%;
             /* Takes exactly 75% */
 
         }
@@ -768,7 +821,7 @@
         .content-text {
             font-size: 1rem;
             /* or use clamp() for responsive sizing */
-            font-size: clamp(16px, 4vw, 20px);
+            /* font-size: clamp(16px, 4vw, 20px); */
             text-align: justify;
         }
 
@@ -2195,7 +2248,8 @@
             }
 
             .subtitle {
-                max-width: 320px;
+                width: auto;
+                text-align: left;
                 /* keeps lines neat */
                 margin: 0 auto;
             }
@@ -2232,9 +2286,6 @@
             font-size: 1rem;
         }
 
-        .subtitle {
-            text-align: center;
-        }
 
         .profile-image img {
             /* width: 150px;
@@ -2323,20 +2374,7 @@
         }
 
 
-        .ventures img {
-            width: 100%;
-            max-width: 100%;
-            /* Ensure image doesn’t exceed container */
-            height: 300px;
-            max-height: 1500px;
-            /* Reduced height */
-            object-fit: cover;
-            /* Maintain aspect ratio, crop if needed */
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            animation: fadeIn 0.8s ease-out;
-            /* Subtle fade-in animation */
-        }
+
 
 
         @media (max-width: 480px) {
@@ -2718,7 +2756,7 @@
             align-items: center;
             /* You can keep or remove this based on your design */
             gap: 20px;
-            max-width: 1200px;
+            width: 100%;
             margin: 0 auto;
             padding: 0;
         }
@@ -2731,8 +2769,8 @@
         .content-with-image .book img {
             flex: 0 0 25%;
             /* 25% width */
-            width: 50%;
-            max-height: 1000px;
+            width: 60%;
+            /* max-height: 1000px; */
             object-fit: cover;
             border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -2744,7 +2782,7 @@
             display: flex;
 
             gap: 20px;
-            max-width: 1200px;
+
             margin: 0 auto;
             padding: 0;
         }
@@ -3028,6 +3066,7 @@
 
         .ioh-master {
             width: 100%;
+            margin-bottom: 50px;
             /* margin: 40px; */
         }
 
@@ -3092,6 +3131,7 @@
                 flex: 0 0 25%;
                 max-width: 25%;
                 margin-top: 0;
+                margin-bottom: 20px;
             }
 
             .ioh-master>div.d-none.d-md-block img {
@@ -3524,7 +3564,7 @@
         }
 
         .content-text {
-            flex: 0 0 75%;
+            flex: 0 0 65%;
             /* 75% width for content */
         }
 
@@ -3550,7 +3590,7 @@
         .mentor-intro p {
             font-size: 1.1rem;
             line-height: 1.7;
-            color: var(--gray);
+            /* color: var(--gray); */
             /* margin-bottom: 40px; */
         }
 
@@ -4166,6 +4206,15 @@
                                     footprint includes a Board Member role at the <a href="http://www.ltna.org"
                                         target="_blank">Logistics & Transportation Association of North America</a>
                                     (LTNA) - shaping the future of global mobility and innovation.</p>
+
+                                <h3>Champion of Talent & Tech</h3>
+                                <p>With <a href="https://www.talentturbo.us/" target="_blank">TalentTurbo</a> launched
+                                    in 2016, Asir
+                                    created a platform that not only connects job seekers to opportunities but also
+                                    monetizes talent
+                                    discovery. His work at SART Accelerator fuels startup growth through strategic
+                                    marketing, sales
+                                    acceleration, and founder mentorship.</p>
                             </div>
                         </div>
                     </div>
@@ -4173,13 +4222,13 @@
                         <img src="images/ventures.svg" alt="Logistics Innovation">
                     </div>
                 </div>
-                <div>
+                <!-- <div>
                     <h3>Champion of Talent & Tech</h3>
                     <p>With <a href="https://www.talentturbo.us/" target="_blank">TalentTurbo</a> launched in 2016, Asir
                         created a platform that not only connects job seekers to opportunities but also monetizes talent
                         discovery. His work at SART Accelerator fuels startup growth through strategic marketing, sales
                         acceleration, and founder mentorship.</p>
-                </div>
+                </div> -->
                 <div
                     style="background: var(--light); padding: 15px; border-radius: var(--radius); margin: 10px 0; border-left: 4px solid var(--accent);">
                     <h4>Beyond Logistics: Expanding Horizons</h4>
@@ -4317,25 +4366,39 @@
         <!-- Author Section -->
         <section id="author" class="fade-in">
             <h2>Author & Thought Leader</h2>
-            <div class="content-with-image">
-                <div class="content-text">
-                    <p>Asir has written two influential books that reflect his philosophy and entrepreneurial journey:
-                    </p>
-                    <ul>
-                        <li><a href="https://emeraldpublishers.com/product/parallel-entrepreneurship-journey/"
-                                target="_blank"><em>Parallel Entrepreneurship Journey</em></a> - A guide to building
-                            multiple ventures with clarity and purpose.</li>
-                        <li><em>Internet of Humans</em> - A vision for networks built on trust, empathy, and
-                            collaboration - not just machines.</li>
-                    </ul>
-                    <p>His writing reflects a deep understanding of both technology and human dynamics, offering
-                        insights that bridge the gap between innovation and human values.</p>
-                </div>
-                <div class="book">
-                    <img src="images/book.svg" alt="Books">
-                </div>
+
+            <!-- IMAGE ROW -->
+            <div class="author-images">
+                <img src="images/book.jpg" alt="Book 1">
+                <img src="images/book.svg" alt="Book 2">
+            </div>
+
+            <!-- FULL WIDTH CONTENT -->
+            <div class="author-content">
+                <p>Asir has written two influential books that reflect his philosophy and entrepreneurial journey:</p>
+
+                <ul>
+                    <li>
+                        <a href="https://emeraldpublishers.com/product/parallel-entrepreneurship-journey/"
+                            target="_blank">
+                            <em>Parallel Entrepreneurship Journey</em>
+                        </a>
+                        — A guide to building multiple ventures with clarity and purpose.
+                    </li>
+
+                    <li>
+                        <em>Internet of Humans</em> — A vision for networks built on trust, empathy, and collaboration —
+                        not just machines.
+                    </li>
+                </ul>
+
+                <p>
+                    His writing reflects a deep understanding of both technology and human dynamics,
+                    offering insights that bridge the gap between innovation and human values.
+                </p>
             </div>
         </section>
+
         <br>
         <!-- SART Accelerator Section -->
         <section id="sart" class="fade-in">
@@ -4708,7 +4771,7 @@
 
                         <!-- MOBILE: Image right under heading -->
                         <div class="ioh-mobile-img w-100 text-center order-1 order-md-2 mb-4 mb-md-0">
-                            <img src="images/ioh.jpg" alt="Internet of Humans Concept" style="width:100%; max-width:300px; height:auto; border-radius:12px; 
+                            <img src="images/book.svg" alt="Internet of Humans Concept" style="width:100%; max-width:300px; height:auto; border-radius:12px; 
                 box-shadow:0 12px 30px rgba(0,0,0,0.4); ">
                         </div>
 
@@ -4721,10 +4784,16 @@
 
                             <p
                                 style="color:rgba(255,255,255,0.9); margin-bottom:15px; line-height:1.75; font-size:1.05rem;">
-                                Asir's generational calling culminates in his vision for the Internet of Humans - a
-                                network not just of machines, but of people bound by trust, collaboration, and purpose.
-                                It's a response to the fragmentation of modern life and a blueprint for restoring
-                                meaningful relationships in business, society, and beyond.
+                                The Internet of Humans offers a grounded and timely perspective on the role of humanity
+                                in a technology-driven world. It emphasizes that while systems and platforms continue to
+                                evolve, human values, ideas, and relationships remain essential to meaningful progress.
+
+                                The book presents a thoughtful vision for the future of the internet, highlighting
+                                trust, responsibility, and purposeful collaboration as key drivers of sustainable
+                                growth. It provides clarity on how technology can be aligned with human priorities
+                                across business, society, and everyday life, making it a relevant and impactful read.
+
+                               
                             </p>
 
                             <div style="border-left:3px solid var(--accent); padding-left:20px; margin-top:20px;">
@@ -4739,8 +4808,8 @@
                         </div>
 
                         <!-- Desktop image (hidden on mobile) -->
-                        <div class="d-none d-md-block" style="flex:0 0 200px; margin-top:10px;">
-                            <img src="images/ioh.jpg" alt="Internet of Humans Concept"
+                        <div class="d-none d-md-block" style="flex:0 0 200px; margin-top:50px;">
+                            <img src="images/book.svg" alt="Internet of Humans Concept"
                                 style="width:100%; height:auto; border-radius:8px; box-shadow:0 4px 15px rgba(0,0,0,0.2);">
                         </div>
                     </div>
